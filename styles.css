@@ -70,7 +70,13 @@ nav {
   gap: 20px;
 }
 
-h1 {
+.log-in {
+  padding-top: 100px;
+  align-content: center;
+  color: white;
+}
+
+#h1-user {
   font-size: 32px;
   color: white;
   margin-bottom: 20px;
@@ -82,7 +88,7 @@ button {
   display: block;
   font-size: 20px;
   margin: 30px;
-  padding: 40px 200px;
+  padding: 10px 50px;
   background-color: rgba(12, 8, 93, 0.75);
   color: white;
   border: none;
@@ -95,6 +101,10 @@ button {
   width: 40%;
 }
 
+.in-btn {
+  text-decoration: none;
+}
+
 button:hover {
   background-color: rgba(15, 12, 82, 1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -105,4 +115,49 @@ button:active {
   background-color: rgba(15, 12, 82, 1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.forgot-password-container {
+  position: absolute;
+  top: 50%;
+  right: -150px; /* Ajusta este valor según el diseño */
+  transform: translateY(-50%);
+}
+
+.forgot-password {
+  color: #7e6db7;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.forgot-password img {
+  margin-right: 8px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+form {
+  width: 50%;
+  align-content: center;
 }
