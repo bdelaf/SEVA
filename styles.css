@@ -60,7 +60,8 @@ header {
   align-items: center;
   z-index: 100;
 }
-nav {
+.t-user,
+.log-in {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,4 +161,79 @@ input[type="text"] {
 form {
   width: 50%;
   align-content: center;
+}
+
+main {
+  display: flex;
+  width: 80%;
+  margin-top: 100px;
+}
+
+/* Sidebar styles */
+.container-mat {
+  display: flex;
+  flex-direction: column;
+  background-color: #7e6db7;
+  width: 30%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 40px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
+  color: white;
+  line-height: 2;
+  font-size: 18px;
+}
+
+ul li {
+  margin-left: 10px;
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.main-content p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.checkbox-mat {
+  transform: scale(1.2); /* Tamaño del checkbox */
+}
+
+section p {
+  color: white;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: rgb(219, 207, 207);
+}
+
+button a {
+  text-decoration: none;
 }
