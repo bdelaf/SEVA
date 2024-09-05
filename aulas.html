@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscar Aulas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left-section">
+        <a href="#">
+          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+        </a>
+        <a href="index.html" id="texto-nav">SEVA</a>
+      </div>
+      <div class="right-section">
+        <a href="#" id="perfil-nav">Mi perfil</a>
+      </div>
+    </header>
+    <div class="main-content">
+      <div class="left-panel">
+        <input type="text" id="search-input" placeholder="Buscar aula..." />
+        <div class="filters">
+          <select id="size-filter">
+            <option value="">Tamaño</option>
+            <option value="small">Pequeño</option>
+            <option value="medium">Medio</option>
+            <option value="large">Grande</option>
+          </select>
+          <select id="computers-filter">
+            <option value="">Computadoras</option>
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+          </select>
+          <select id="projectors-filter">
+            <option value="">Proyectores</option>
+            <option value="yes">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="classrooms-container">
+          <div class="classroom">
+            <div class="classroom-image">
+              <img src="./img/uca-aula.jpg" alt="San Jose 126" />
+              <div class="classroom-info">
+                <p>San Jose 126</p>
+              </div>
+            </div>
+            <div class="classroom-details">
+              <div class="rating">
+                <span>★★★★★</span>
+              </div>
+              <div class="details">
+                <p>Capacidad: 30</p>
+                <p>Pantalla/Proyector: Sí</p>
+                <p>Computadoras: No</p>
+                <p>Reseñas: <a href="#">Agregar reseña</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- Añadir más aulas aquí -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

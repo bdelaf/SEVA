@@ -52,7 +52,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 100px;
+  padding: 10px 5%;
   background-color: rgba(15, 12, 82, 1);
   display: flex;
   justify-content: left;
@@ -318,4 +318,241 @@ button a {
 #texto-nav:hover::before,
 #perfil-nav:hover::before {
   width: 100%;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  text-align: center;
+  margin-top: 100px; /* Ajustado para permitir el espacio del header fijo */
+}
+
+.txt-bienv {
+  margin-bottom: 30px; /* Ajustado para separación con los botones */
+  color: white;
+  font-size: calc(1.5rem + 2vw); /* Tamaño de fuente responsivo */
+}
+
+.instruction-text {
+  margin-bottom: 40px; /* Añade espacio debajo del texto de instrucciones */
+  color: white;
+  font-size: 20px;
+  max-width: 600px; /* Limita el ancho del texto para una mejor legibilidad */
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.btn-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: none;
+  background-color: #7e6db7;
+  font-size: calc(0.8rem + 1vw); /* Tamaño de fuente responsivo */
+  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
+  max-width: 300px;
+}
+
+.edificios-link {
+  text-decoration: none;
+  color: white;
+}
+.main-content {
+  margin-top: 60px; /* Ajusta el margen superior para que no se solape con el header */
+  display: flex;
+}
+
+.left-panel {
+  width: 30%;
+  padding: 20px;
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.right-panel {
+  width: 70%;
+  padding: 20px;
+  overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+.classrooms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.classroom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.classroom-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.classroom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.classroom-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.classroom-details {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin-bottom: 5px;
+}
+
+.details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .right-panel {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #search-input {
+    font-size: 14px;
+  }
+
+  .filters select {
+    font-size: 14px;
+  }
+
+  .classroom-image {
+    height: 200px;
+  }
+
+  .classroom-details {
+    padding: 10px;
+  }
+
+  .details p {
+    font-size: 14px;
+  }
+
+  .details a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 3%;
+    flex-direction: row; /* Asegura que los elementos permanezcan en una fila */
+    justify-content: space-between; /* Mantiene el espacio entre los elementos */
+  }
+
+  .left-section,
+  .right-section {
+    width: auto;
+    justify-content: center;
+  }
+
+  #seva-img {
+    width: 50px; /* Ajusta aún más el tamaño de la imagen */
+  }
+
+  #texto-nav,
+  #perfil-nav {
+    font-size: 16px; /* Tamaño de fuente ajustado */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    height: 120vh;
+  }
+  header {
+    padding: 10px 2%;
+    flex-direction: row; /* Asegura que los elementos permanezcan en una fila */
+    justify-content: space-between; /* Mantiene el espacio entre los elementos */
+  }
+
+  .left-section,
+  .right-section {
+    width: auto;
+    justify-content: center;
+  }
+
+  #seva-img {
+    width: 40px; /* Tamaño de la imagen en pantallas muy pequeñas */
+  }
+  .instruction-text {
+    font-size: 8px; /* Tamaño de fuente ajustado */
+  }
+
+  #texto-nav,
+  #perfil-nav {
+    font-size: 14px; /* Tamaño de fuente ajustado */
+  }
 }
