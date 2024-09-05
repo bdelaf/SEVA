@@ -1,4 +1,3 @@
-/*Log in*/
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +5,9 @@
   font-family: sans-serif;
 }
 #seva-img {
-  width: 80px; /* Ajusta el ancho de la imagen */
-  height: auto; /* Mantiene la proporción de la imagen */
-  margin-right: 10px; /* Espacio entre la imagen y el texto */
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
 }
 
 #texto-nav {
@@ -16,8 +15,8 @@
   font-size: 20px;
   color: white;
   text-decoration: none;
-  padding-bottom: 5px; /* Espacio para la línea */
-  transition: color 0.3s ease; /* Transición del color del texto */
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 #texto-nav::before {
@@ -72,17 +71,30 @@ header {
 }
 
 .log-in {
-  padding-top: 100px;
-  align-content: center;
+  width: 50vw;
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #h1-user {
   font-size: 32px;
   color: white;
   margin-bottom: 20px;
+  margin-top: 0;
   text-align: center;
-  margin-top: 60px;
 }
 
 button {
@@ -122,13 +134,15 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 100%;
+  align-items: center;
   position: relative;
 }
 
 input[type="email"],
 input[type="password"],
 input[type="text"] {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 4px;
@@ -137,29 +151,39 @@ input[type="text"] {
 
 .forgot-password-container {
   position: absolute;
-  top: 50%;
-  right: -150px; /* Ajusta este valor según el diseño */
-  transform: translateY(-50%);
+  top: 60px;
+  right: -200px;
 }
 
 .forgot-password {
-  color: #7e6db7;
-  text-decoration: none;
-  font-size: 16px;
   display: flex;
   align-items: center;
-}
-
-.forgot-password img {
-  margin-right: 8px;
+  justify-content: center;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: rgba(126, 109, 183, 1);
+  color: white;
+  border-radius: 29px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 30%;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .forgot-password:hover {
-  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+.forgot-password:active {
+  background-color: rgba(100, 85, 160, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
 }
 
 form {
-  width: 50%;
+  width: 80%;
   align-content: center;
 }
 
@@ -236,4 +260,62 @@ li a:hover {
 
 button a {
   text-decoration: none;
+}
+
+.f-container {
+  display: inline;
+}
+
+.log-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 40%;
+  gap: 20px;
+  color: black;
+  margin-top: 40px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  margin-left: auto;
+}
+
+#seva-img {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+#texto-nav,
+#perfil-nav {
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+#texto-nav::before,
+#perfil-nav::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s;
+}
+
+#texto-nav:hover::before,
+#perfil-nav:hover::before {
+  width: 100%;
 }
