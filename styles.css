@@ -750,22 +750,22 @@ button a {
     white-space: nowrap;
   }
 
-.top-corn{
-  padding: 10px;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  display: flex;
-  width: 19%;
-  position: absolute;
-  top: 250px;
-  left: 100px;
-  color: white;
-  border-style: none;
-}
+  .top-corn{
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    width: 19%;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    color: white;
+    border-style: none;
+  }
   
-#mid{
-  display: flex;
-  background-color: #4b0082;
+  #mid{
+    display: flex;
+    background-color: #4b0082;
   
-}
+  }
 }
