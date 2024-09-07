@@ -711,61 +711,61 @@ button a {
     font-size: 14px; /* Tamaño de fuente ajustado */
   }
 }
-  .top-left{
-    padding: 10px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    display: flex;
-    width: 19%;
-    position: absolute;
-    top: 110px;
-    left: 100px;
-    color: white;
-    border-style: none;
-  }
+.top-left{
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  width: 19%;
+  position: absolute;
+  top: 110px;
+  left: 100px;
+  color: white;
+  border-style: none;
+}
 
-  .can{
-    display: flex;
-    padding: 10px 60px;
-    border-radius: 20px;
-    background-color: #4b0082; 
-    color: white;
-    border: none;
-    cursor: pointer;
-    justify-content: center;
-  }
+.can{
+  display: flex;
+  padding: 10px 60px;
+  border-radius: 20px;
+  background-color: #4b0082; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
 
-  .div-start{
-    display: flex;
-    flex-direction: nowrap;
-    position: absolute;
-    align-items: flex-end; 
-    gap: 10px; 
-  }
+.div-start{
+  display: flex;
+  flex-direction: nowrap;
+  position: absolute;
+  align-items: flex-end; 
+  gap: 10px; 
+}
 
-  .prof-body{
-    margin: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    white-space: nowrap;
-  }
+.prof-body{
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  white-space: nowrap;
+}
 
-  .top-corn{
-    padding: 10px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-    display: flex;
-    width: 19%;
-    position: absolute;
-    top: 250px;
-    left: 100px;
-    color: white;
-    border-style: none;
-  }
+.top-corn{
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  display: flex;
+  width: 19%;
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  color: white;
+  border-style: none;
+}
   
-  #mid{
-    display: flex;
-    background-color: #4b0082;
+#mid{
+  display: flex;
+  background-color: #4b0082;
   
-  }
+}
