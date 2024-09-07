@@ -710,6 +710,7 @@ button a {
   #perfil-nav {
     font-size: 14px; /* Tamaño de fuente ajustado */
   }
+}
   .top-left{
     padding: 10px;
     box-sizing: border-box;
@@ -768,4 +769,3 @@ button a {
     background-color: #4b0082;
   
   }
-}
