@@ -728,7 +728,7 @@ button a {
   display: flex;
   padding: 10px 60px;
   border-radius: 20px;
-  background-color: #4b0082; 
+  background-color: #7e6db7 ; 
   color: white;
   border: none;
   cursor: pointer;
@@ -766,10 +766,8 @@ button a {
   
 #mid{
   display: flex;
-  background-color: #4b0082;
+  background-color: #7e6db7;
   
-}
-
 }
 
 h1-c {
@@ -804,6 +802,7 @@ main {
 .reviewer-c {
     font-weight: bold;
     margin-bottom: 5px;
+    color: black;
 }
 
 .check-c {
