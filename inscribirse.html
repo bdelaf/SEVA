@@ -8,72 +8,39 @@
 </head>
 <body>
     <header>
-        <div class="left-section">
-            <img id="seva-img" src="img/logo.png" alt="Logo">
-            <nav>
-                <a id="texto-nav" href="#">Inicio</a>
-                <a id="perfil-nav" href="#">Perfil</a>
-            </nav>
-        </div>
-        <div class="right-section">
-            <button class="can">Canal</button>
-        </div>
+      <div class="left-section">
+        <a href="#">
+          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+        </a>
+        <a href="index.html" id="texto-nav">SEVA</a>
+      </div>
+      <div class="right-section">
+        <a href="#" id="perfil-nav">Mi perfil</a>
+      </div>
     </header>
-
     <main>
-        <div class="main-content">
-            <h1 id="h1-user">Bienvenido</h1>
-            <p class="instruction-text">Sigue las instrucciones a continuación para comenzar.</p>
-            <div class="button-container">
-                <a href="#" class="btn-home">Botón 1</a>
-                <a href="#" class="btn-home">Botón 2</a>
+        <h2>Seleccionar en qué aula y comisión va a cursar</h2>
+        
+        <section class="subject-ins">
+            <h3>Álgebra</h3>
+            <div class="class-ins">
+                 <p class="class-pi"><a class="class-i" href="#">AULA 356</a></p>
+                <p class="class-pi">Comisión DM</p>
+                <p class="class-pi"><span class="students-ins">7/15</span> <span class="inscribirse active">Inscribirse</span></p>
             </div>
-        </div>
+            <div class="class-ins">
+                <p class="class-pi"><a class="class-i" href="#">AULA 402</a></p>
+                <p class="class-pi">Comisión CM</p>
+                <p class="class-pi"><span class="students">15/15</span> <span class="inscribirse disabled">Inscribirse</span></p>
+            </div>
+        </section>
+         <section class="subject-ins">
+            <h3>Física I</h3>
+            <div class="class">
+            <p class="class-pi"><a class="class-i" href="#">AULA 153</a></p>
+                <p class="class-pi">Comisión CM</p>
+                <p class="class-pi"><span class="students">11/30</span> <span class="inscribirse active">Inscribirse</span></p>
+            </div>
+        </section>
     </main>
-
-    <section class="left-panel">
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Buscar...">
-        </div>
-        <div class="filters">
-            <select>
-                <option value="filter1">Filtro 1</option>
-                <option value="filter2">Filtro 2</option>
-            </select>
-        </div>
-    </section>
-
-    <section class="right-panel">
-        <div class="classrooms-container">
-            <div class="classroom">
-                <div class="classroom-image">
-                    <img src="img/classroom1.jpg" alt="Aula 1">
-                </div>
-                <div class="classroom-info">
-                    <p>Aula 1</p>
-                </div>
-            </div>
-            <div class="classroom">
-                <div class="classroom-image">
-                    <img src="img/classroom2.jpg" alt="Aula 2">
-                </div>
-                <div class="classroom-info">
-                    <p>Aula 2</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="top-left">
-            <button class="prof-body">Botón Footer</button>
-        </div>
-        <div class="top-corn">
-            <button class="div-start">Iniciar</button>
-        </div>
-        <div id="mid">
-            <p>Contenido del footer central</p>
-        </div>
-    </footer>
-</body>
 </html>
