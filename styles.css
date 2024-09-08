@@ -772,16 +772,6 @@ button a {
 
 }
 
-.logo-container-c {
-    display: flex;
-    align-items: center;
-}
-
-.logo-c {
-    width: 50px;
-    margin-right: 10px;
-}
-
 h1-c {
     margin: 0;
 }

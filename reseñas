@@ -7,23 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="SEVA Logo" class="logo">
-            <h1>SEVA</h1>
-        </div>
-    </header>
-
     <main>
-        <section class="calificaciones">
-            <h2>Calificaciones <span class="stars">★★★★☆</span></h2>
-            <div class="review">
-                <p class="reviewer">Anónimo <span class="stars">★★★★☆</span> <span class="check">✔</span></p>
+        <section class="calificaciones-c">
+            <h2 class="h2-c">Calificaciones <span class="stars-c">★★★★☆</span></h2>
+            <div class="review-c">
+                <p class="reviewer-c">Anónimo <span class="stars-c">★★★★☆</span> <span class="check-c">✔</span></p>
                 <p>El aula es muy amplia y moderna, hay una gran cantidad de computadoras y el aula se me encuentra cómoda.</p>
             </div>
 
-            <div class="review">
-                <p class="reviewer">Anónimo <span class="stars">★☆☆☆☆</span> <span class="check">✔</span></p>
+            <div class="review-c">
+                <p class="reviewer-c">Anónimo <span class="stars-c">★☆☆☆☆</span> <span class="check-c">✔</span></p>
                 <p>Aula muy mala, la calefacción es intoxicante y casi no se puede estar.</p>
             </div>
         </section>
