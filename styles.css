@@ -870,3 +870,71 @@ main {
     color: white;
     cursor: not-allowed;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+.container-miperfil {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-miperfil {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.subtitulo-miperfil {
+    margin-bottom: 15px;
+    color: #0056b3;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.form-miperfil {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.label-miperfil {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-miperfil {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.mis-reservas-miperfil, .mis-materias-miperfil {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.texto-miperfil {
+    color: #666;
+}
