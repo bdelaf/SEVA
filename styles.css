@@ -871,13 +871,13 @@ main {
     cursor: not-allowed;
 }
 
-* {
+*.-miperfil {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+.body-miperfil {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 20px;
@@ -924,7 +924,7 @@ body {
     font-size: 16px;
 }
 
-section {
+.section-miperfil {
     margin-bottom: 30px;
 }
 
