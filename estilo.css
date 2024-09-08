@@ -14,6 +14,32 @@ header {
     align-items: center;
 }
 
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  margin-left: auto;
+}
+
+#seva-img {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+#texto-nav,
+#perfil-nav {
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+
 .logo-container {
     display: flex;
     align-items: center;
