@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
- <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="es" />
     <title>SEVA</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
+    <style>
+        .review-form {
+            display: block;
+            margin-top: 20px;
+        }
+        .review-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .stars-container {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .star {
+            font-size: 20px;
+            color: gray;
+        }
+        .star.checked {
+            color: gold;
+        }
+    </style>
+</head>
 <body>
     <header>
-      <div class="left-section">
-        <a href="#">
-          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
-        </a>
-        <a href="index.html" id="texto-nav">SEVA</a>
-      </div>
-      <div class="right-section">
-        <a href="#" id="perfil-nav">Mi perfil</a>
-      </div>
+        <div class="left-section">
+            <a href="#" aria-label="Inicio">
+                <img src="./img/uca-logo.png" alt="Logo de SEVA" id="seva-img" />
+            </a>
+            <a href="index.html" id="texto-nav">SEVA</a>
+        </div>
+        <div class="right-section">
+            <a href="#" id="perfil-nav">Mi perfil</a>
+        </div>
     </header>
     <main>
         <section class="calificaciones-c">
@@ -30,6 +58,23 @@
                 <p class="reviewer-c">Anónimo <span class="stars-c">★☆☆☆☆</span> <span class="check-c">✔</span></p>
                 <p class="review-text">Aula muy mala, la calefacción es intoxicante y casi no se puede estar.</p>
             </div>
+
+            <button id="add-review-btn">Agregar nueva reseña</button>
+
+            <form class="review-form">
+                <label for="review-text">Escribe tu reseña:</label>
+                <textarea id="review-text" rows="4" cols="50"></textarea>
+                
+                <label>Calificación:</label>
+                <div class="stars-container">
+                    <span class="star checked">★★★★★</span>
+                    <span class="star checked">★★★★☆</span>
+                    <span class="star">★★★☆☆</span>
+                    <span class="star">★★☆☆☆</span>
+                    <span class="star">★☆☆☆☆</span>
+                </div>
+                <button type="submit">Enviar reseña</button>
+            </form>
         </section>
     </main>
 </body>
