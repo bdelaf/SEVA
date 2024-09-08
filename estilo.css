@@ -1,0 +1,92 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2c2c71;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.subject h3 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.class a {
+    text-decoration: none;
+    color: #2c2c71;
+    font-weight: bold;
+}
+
+.class p {
+    margin: 0;
+}
+
+.students {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.students::before {
+    content: '👤';
+    margin-right: 5px;
+}
+
+.inscribirse {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.inscribirse.active {
+    background-color: #6a5acd;
+    color: white;
+    cursor: pointer;
+}
+
+.inscribirse.disabled {
+    background-color: #d3d3d3;
+    color: white;
+    cursor: not-allowed;
+}
