@@ -76,7 +76,15 @@ header {
   margin-right: 10px;
 }
 
-#texto-nav,
+#texto-nav {
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
 #perfil-nav {
   position: relative;
   font-size: 20px;
