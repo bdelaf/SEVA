@@ -810,3 +810,9 @@ main {
     color: green;
     margin-left: 10px;
 }
+
+.review-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
