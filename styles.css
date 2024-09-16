@@ -937,7 +937,9 @@ main {
 .texto-miperfil {
     color: #666;
 }
-
+.hola{
+  white-space: nowrap
+}
 @media (max-width: 1268px){
   .prof-body{
     height: 150vh;
@@ -949,6 +951,7 @@ main {
   }
   .hola{
     font-size: 20px ;
+    white-space: nowrap
 
   }
   
@@ -968,3 +971,29 @@ main {
     width: 80%
   }
 }
+.cent{display:flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;}
+  
+  @media (max-width: 950px){
+    .cent{
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+  }
+    .can{
+      width:50%;
+    }
+    .top-left{
+      width: auto;
+      display:flex;
+      font-size: 10px;
+    }
+    .top-corn{
+      top: 177px;
+      font-size: 10px;
+      white-space: normal;
+    }
+  }
