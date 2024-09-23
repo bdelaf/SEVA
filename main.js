@@ -18,10 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, ingrese la contraseña correcta.");
       return;
     }
+    if (validatePassword(password)) {
+      console.log("La contraseña es válida");
+    } 
+    else {
+    console.log("La contraseña no es válida");
+
+    }
     if (password.length < 6) {
       alert("La contraseña debe tener al menos 6 caracteres.");
       return;
     }
+    
     if (legajo === "") {
       alert('El campo "Legajo" no puede estar vacío.');
       return;
@@ -43,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
   function validatePassword(password) {
-  // Expresión regular para validar múltiples criterios
-    const regex = /^[a-zA-Z0-9._-]&/;
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
   }
 });
