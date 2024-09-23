@@ -14,10 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, ingrese un correo electrónico válido.");
       return;
     }
-    if (!validatePassword(password)) {
-      alert("Por favor, ingrese la contraseña correcta.");
-      return;
-    }
+  
     if (validatePassword(password)) {
       console.log("La contraseña es válida");
     } 
