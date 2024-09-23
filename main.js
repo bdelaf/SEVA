@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, ingrese la contraseña correcta.");
       return
     }
-
+    if (password.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
     if (legajo === "") {
       alert('El campo "Legajo" no puede estar vacío.');
       return;
