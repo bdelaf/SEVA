@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
   function validatePassword(password) {
-    const re = /^[a-zA-Z0-9._-]/;
-    return re.test(String(password));
+  // Expresión regular para validar múltiples criterios
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  return regex.test(password);
   }
 });
