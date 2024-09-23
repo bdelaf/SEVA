@@ -14,10 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, ingrese un correo electrónico válido.");
       return;
     }
-
-    if (password.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres.");
-      return;
+    if (!validatePassword(password)) {
+      alert("Por favor, ingrese la contraseña correcta.");
+      return
     }
 
     if (legajo === "") {
@@ -39,5 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return re.test(String(email).toLowerCase());
+  }
+  function validatePassword(password) {
+    const re = /^[a-zA-Z0-9._-]$/;
+    return re.test(String(password).toLowerCase());
   }
 });
