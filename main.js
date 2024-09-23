@@ -33,7 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       alert("Inicio de sesión exitoso.");
       window.location.href = "paginaprincipal.html"; // Redirigir a la página principal
-    
+    } else {
+        alert("Credenciales incorrectas. Inténtelo de nuevo.");
+    }
   });
 
   // Función para validar el formato del email
