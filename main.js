@@ -26,10 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Simulación de validación exitosa
-    if (
-      email === "usuario@uca.edu.ar" &&
-      password === "123456" &&
-      legajo === "1234"
+    if (validateEmail(email)
     ) {
       alert("Inicio de sesión exitoso.");
       window.location.href = "paginaprincipal.html"; // Redirigir a la página principal
