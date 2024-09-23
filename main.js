@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    else if (password.length < 6) {
+    if (password.length < 6) {
       alert("La contraseña debe tener al menos 6 caracteres.");
       return;
     }
 
-    else if (legajo === "") {
+    if (legajo === "") {
       alert('El campo "Legajo" no puede estar vacío.');
       return;
     }
 
     // Simulación de validación exitosa
-    else if (
+    if (
       email === "usuario@uca.edu.ar" &&
       password === "123456" &&
       legajo === "1234"
