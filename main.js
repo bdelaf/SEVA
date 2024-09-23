@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (!validatePassword(password)) {
       alert("Por favor, ingrese la contraseña correcta.");
-      return
+      return;
     }
     if (password.length < 6) {
       alert("La contraseña debe tener al menos 6 caracteres.");
