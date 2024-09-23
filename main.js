@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para validar el formato del email
   function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
     return re.test(String(email).toLowerCase());
   }
   function validatePassword(password) {
