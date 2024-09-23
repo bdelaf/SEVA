@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
   function validatePassword(password) {
-    const re = /^[a-zA-Z0-9._-];
+    const re = /^[a-zA-Z0-9._-]/;
     return re.test(String(password));
   }
 });
