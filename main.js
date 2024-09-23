@@ -44,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function validatePassword(password) {
   // Expresión regular para validar múltiples criterios
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-  return regex.test(password);
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
   }
 });
