@@ -14,27 +14,24 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, ingrese un correo electrónico válido.");
       return;
     }
-  
+
     if (validatePassword(password)) {
       console.log("La contraseña es válida");
-    } 
-    else {
-    console.log("La contraseña no es válida");
-
+    } else {
+      console.log("La contraseña no es válida");
     }
     if (password.length < 6) {
       alert("La contraseña debe tener al menos 6 caracteres.");
       return;
     }
-    
+
     if (legajo === "") {
       alert('El campo "Legajo" no puede estar vacío.');
       return;
     }
 
     // Simulación de validación exitosa
-    if (validateEmail(email)
-    ) {
+    if (validateEmail(email)) {
       alert("Inicio de sesión exitoso.");
       window.location.href = "paginaprincipal.html"; // Redirigir a la página principal
     } else {
@@ -48,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email).toLowerCase());
   }
   function validatePassword(password) {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
   }
 });
