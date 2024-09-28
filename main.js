@@ -1,42 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
+  const forms = document.querySelectorAll("form");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+  forms.forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita que el formulario se envíe automáticamente
 
-    // Obtiene los valores de los inputs
-    const email = form.querySelector('input[type="email"]').value;
-    const password = form.querySelector('input[type="password"]').value;
-    const legajo = form.querySelector('input[type="text"]').value;
+      // Obtiene los valores de los inputs
+      const email = form.querySelector('input[type="email"]').value;
+      const password = form.querySelector('input[type="password"]').value;
+      const legajo = form.querySelector('input[type="text"]').value;
 
-    // Validaciones básicas
-    if (!validateEmail(email)) {
-      alert("Por favor, ingrese un correo electrónico válido.");
-      return;
-    }
+      // Validaciones básicas
+      if (!validateEmail(email)) {
+        alert("Por favor, ingrese un correo electrónico válido.");
+        return;
+      }
 
-    if (validatePassword(password)) {
-      console.log("La contraseña es válida");
-    } else {
-      console.log("La contraseña no es válida");
-    }
-    if (password.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres.");
-      return;
-    }
+      if (password.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres.");
+        return;
+      }
 
-    if (legajo === "") {
-      alert('El campo "Legajo" no puede estar vacío.');
-      return;
-    }
+      if (legajo === "") {
+        alert('El campo "Legajo" no puede estar vacío.');
+        return;
+      }
 
-    // Simulación de validación exitosa
-    if (validateEmail(email)) {
-      alert("Inicio de sesión exitoso.");
-      window.location.href = "paginaprincipal.html"; // Redirigir a la página principal
-    } else {
-      alert("Credenciales incorrectas. Inténtelo de nuevo.");
-    }
+      // Simulación de validación exitosa con ventana de confirmación
+      if (validateEmail(email)) {
+        const confirmLogin = confirm("¿Está seguro de que desea iniciar sesión?");
+        if (confirmLogin) {
+          // Redirigir según el formulario
+          if (form.id === "login-profe") {
+            window.location.href = "paginaprincipal-prof.html";
+          } else if (form.id === "login-a") {
+            window.location.href = "paginaprincipal.html";
+          } else if (form.id === "login-adm") {
+            window.location.href = "home-admin.html";
+          } else {
+            alert("Formulario desconocido.");
+          }
+        } else {
+          alert("Inicio de sesión cancelado.");
+        }
+      } else {
+        alert("Credenciales incorrectas. Inténtelo de nuevo.");
+      }
+    });
   });
 
   // Función para validar el formato del email
@@ -44,12 +54,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
     return re.test(String(email).toLowerCase());
   }
+
+  // Función para validar la contraseña
   function validatePassword(password) {
     const regex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
   }
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Eliminar aula
