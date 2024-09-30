@@ -909,6 +909,10 @@ main {
   margin-bottom: 15px; /* Espacio inferior */
 }
 
+.cerrarcesion {
+  color: red;
+  margin-bottom: 20px; /* Espacio entre secciones */
+}
 /* Estilos del formulario */
 .form-miperfil {
   display: flex;
