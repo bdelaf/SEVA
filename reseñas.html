@@ -28,9 +28,17 @@
         .star {
             font-size: 20px;
             color: gray;
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
         }
         .star.checked {
             color: gold;
+        }
+        .comments-container {
+            max-height: 200px; /* Ajusta la altura máxima según tus necesidades */
+            overflow-y: auto; /* Habilita el desplazamiento vertical */
+            border: 1px solid #ccc; /* Añade un borde para definir el área de comentarios */
+            padding: 10px; /* Añade algo de espacio interno */
+            margin-bottom: 20px; /* Espacio inferior */
         }
     </style>
 </head>
@@ -49,33 +57,32 @@
     <main>
         <section class="calificaciones-c">
             <h2 class="h2-c">Calificaciones <span class="stars-c">★★★★☆</span></h2>
-            <div class="review-c">
-                <p class="reviewer-c">Anónimo <span class="stars-c">★★★★☆</span> <span class="check-c">✔</span></p>
-                <p class="review-text">El aula es muy amplia y moderna, hay una gran cantidad de computadoras y el aula se me encuentra cómoda.</p>
+            <div class="comments-container" id="seccion">
+                <div class="review-c">
+                    <p class="reviewer-c">Anónimo <span class="stars-c">★★★★☆</span> <span class="check-c">✔</span></p>
+                    <p class="review-text">El aula es muy amplia y moderna, hay una gran cantidad de computadoras y el aula se me encuentra cómoda.</p>
+                </div>
+                <div class="review-c">
+                    <p class="reviewer-c">Anónimo <span class="stars-c">★☆☆☆☆</span> <span class="check-c">✔</span></p>
+                    <p class="review-text">Aula muy mala, la calefacción es intoxicante y casi no se puede estar.</p>
+                </div>
             </div>
-
-            <div class="review-c">
-                <p class="reviewer-c">Anónimo <span class="stars-c">★☆☆☆☆</span> <span class="check-c">✔</span></p>
-                <p class="review-text">Aula muy mala, la calefacción es intoxicante y casi no se puede estar.</p>
-            </div>
-
-            <button id="add-review-btn">Agregar nueva reseña</button>
-
             <form class="review-form">
                 <label for="review-text">Escribe tu reseña:</label>
                 <textarea id="review-text" rows="4" cols="50"></textarea>
                 
                 <label>Calificación:</label>
                 <div class="stars-container">
-                    <span class="star checked">★★★★★</span>
-                    <span class="star checked">★★★★☆</span>
-                    <span class="star checked">★★★☆☆</span>
-                    <span class="star checked">★★☆☆☆</span>
-                    <span class="star checked">★☆☆☆☆</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
                 </div>
                 <button type="submit">Enviar reseña</button>
             </form>
         </section>
     </main>
+    <script language="javascript" type="text/javascript" src="main.js"></script>
 </body>
 </html>
