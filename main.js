@@ -268,18 +268,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const materiasList = document.getElementById('materias-list');
   const materias = materiasList.getElementsByTagName('li');
 
+  // Mostrar solo las primeras 5 materias al cargar la página
+  Array.from(materias).forEach(function (materia, index) {
+    if (index < 5) {
+      materia.style.display = ''; // Muestra las primeras 5
+    } else {
+      materia.style.display = 'none'; // Oculta el resto
+    }
+  });
+
   // Evento para detectar cuando el usuario escribe en la barra de búsqueda
   searchInput.addEventListener('keyup', function () {
     const searchTerm = searchInput.value.toLowerCase();
 
-    // Itera sobre cada elemento de la lista y verifica si coincide con el término de búsqueda
-    Array.from(materias).forEach(function (materia) {
-      const materiaText = materia.textContent.toLowerCase();
-      if (materiaText.includes(searchTerm)) {
-        materia.style.display = ''; // Muestra el elemento si coincide
-      } else {
-        materia.style.display = 'none'; // Oculta el elemento si no coincide
-      }
-    });
+    // Si no hay término de búsqueda, muestra las primeras 5 materias y oculta el resto
+    if (searchTerm === '') {
+      Array.from(materias).forEach(function (materia, index) {
+        if (index < 5) {
+          materia.style.display = ''; // Muestra las primeras 5
+        } else {
+          materia.style.display = 'none'; // Oculta el resto
+        }
+      });
+    } else {
+      // Itera sobre cada elemento de la lista y verifica si coincide con el término de búsqueda
+      Array.from(materias).forEach(function (materia) {
+        const materiaText = materia.textContent.toLowerCase();
+        if (materiaText.includes(searchTerm)) {
+          materia.style.display = ''; // Muestra el elemento si coincide
+        } else {
+          materia.style.display = 'none'; // Oculta el elemento si no coincide
+        }
+      });
+    }
   });
 });
