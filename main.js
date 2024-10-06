@@ -262,3 +262,25 @@ document.addEventListener("DOMContentLoaded", () => {
       updateStarDisplay();
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('search-input');
+  const materiasList = document.getElementById('materias-list');
+  const materias = materiasList.getElementsByTagName('li');
+
+  // Evento para detectar cuando el usuario escribe en la barra de búsqueda
+  searchInput.addEventListener('keyup', function () {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Itera sobre cada elemento de la lista y verifica si coincide con el término de búsqueda
+    Array.from(materias).forEach(function (materia) {
+      const materiaText = materia.textContent.toLowerCase();
+      if (materiaText.includes(searchTerm)) {
+        materia.style.display = ''; // Muestra el elemento si coincide
+      } else {
+        materia.style.display = 'none'; // Oculta el elemento si no coincide
+      }
+    });
+  });
+});
+
