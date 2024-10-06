@@ -8,22 +8,17 @@
   </head>
   <body>
     <header>
-      <div class="left-section">
-        <a href="#">
-          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
-        </a>
-        <a href="paginaprincipal-prof.html" id="texto-nav">SEVA</a>
-      </div>
-      <div class="right-section">
-        <a href="miperfil-prof.html" id="perfil-nav">Mi perfil</a>
-      </div>
+      <a href="#">
+        <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+      </a>
+      <a href="paginaprincipal.html" id="texto-nav">SEVA</a>
     </header>
     <main>
       <section class="container-mat">
         <div class="search-bar">
-          <input type="text" placeholder="🔍 Buscar..." />
+          <input type="text" id="search-input" placeholder="🔍 Buscar..." />
         </div>
-        <ul>
+        <ul id="materias-list">
           <li>
             <label>
               Álgebra
@@ -54,16 +49,76 @@
               <input type="checkbox" class="checkbox-mat" />
             </label>
           </li>
+          <li>
+            <label>
+              Cálculo Elemental
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Informática General
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Introducción a la Ingeniería
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Introducción a la Filosofía
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Complementos de Matemáticas
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Cálculo Avanzado
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Probabilidad y Estadística
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Física II
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Introducción a la Teología
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
+          </li>
+          <li>
+            <label>
+              Programación Orientada a Infraestructura
+              <input type="checkbox" class="checkbox-mat" />
+            </label>
           </li>
         </ul>
       </section>
       <section class="main-content">
-        <p>Seleccione la materia respectiva a su labor.</p>
-        <button type="submit">
-          <a href="profe-sel.html">Siguiente</a>
+        <p>Seleccione sus materias correspondientes a su labor.</p>
+        <button type="button" onclick="location.href='profe-sel.html'">
+          siguiente
         </button>
       </section>
+
+      <script src="main.js"></script>
     </main>
-    <script language="javascript" type="text/javascript" src="main.js"></script>
   </body>
 </html>
