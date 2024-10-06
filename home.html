@@ -8,17 +8,17 @@
   </head>
   <body>
     <header>
-      <a href="#"
-        ><img src="./img/uca-logo.png" alt="seva-img" id="seva-img"
-      /></a>
+      <a href="#">
+        <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+      </a>
       <a href="paginaprincipal.html" id="texto-nav">SEVA</a>
     </header>
     <main>
       <section class="container-mat">
         <div class="search-bar">
-          <input type="text" placeholder="🔍 Buscar..." />
+          <input type="text" id="search-input" placeholder="🔍 Buscar..." />
         </div>
-        <ul>
+        <ul id="materias-list">
           <li>
             <label>
               Álgebra
@@ -49,15 +49,16 @@
               <input type="checkbox" class="checkbox-mat" />
             </label>
           </li>
-          </li>
         </ul>
       </section>
       <section class="main-content">
         <p>Seleccione sus materias correspondientes.</p>
-        <button type="submit">
-          <a href="inscribirse.html">Inscribirse</a>
+        <button type="button" onclick="location.href='inscribirse.html'">
+          Inscribirse
         </button>
       </section>
+
+      <script src="script.js"></script>
     </main>
   </body>
 </html>
