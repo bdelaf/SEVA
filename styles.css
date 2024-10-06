@@ -955,8 +955,6 @@ main {
     white-space: nowrap
 
   }
-  
-}
 
 @media (max-width: 1294px){
   .b{
@@ -998,5 +996,20 @@ main {
     top: 177px;
     font-size: 10px;
     white-space: normal;
+  }
+}
+
+@media (max-width: 1294px){
+  .b{
+    position: relative;
+    align-content: center;
+    padding: 10px;
+   width: 100%
+  }
+  .log-in{
+    width: 80%
+  }
+  .forgot-password{
+    width: 80%
   }
 }
