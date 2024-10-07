@@ -275,36 +275,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Seleccionar todos los botones de "Olvidé mi contraseña"
-  const forgotPasswordButtons = document.querySelectorAll(".forgot-password");
 
-  // Agregar un event listener a cada botón
-  forgotPasswordButtons.forEach(button => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault(); // Evita que el enlace recargue la página
-
-      // Encontrar el formulario más cercano
-      const form = button.previousElementSibling; // Asumiendo que el botón sigue a su formulario
-
-      const email = form.querySelector('input[type="email"]').value; // Obtener el valor del input de email
-
-      // Validaciones básicas
-      if (!validateEmail(email)) {
-        alert("Por favor, ingrese un correo electrónico válido.");
-        return;
-      }
-
-      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
-    });
-  });
-
-  // Función para validar el formato del email
-  function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/; // Expresión regular para validar el formato del email
-    return re.test(String(email));
-  }
-});
+//document.addEventListener("DOMContentLoaded", function () {
+//  // Seleccionar todos los botones de "Olvidé mi contraseña"
+//  const forgotPasswordButtons = document.querySelectorAll(".forgot-password");
+//
+//  // Agregar un event listener a cada botón
+//  forgotPasswordButtons.forEach(button => {
+//    button.addEventListener("click", function (event) {
+//      event.preventDefault(); // Evita que el enlace recargue la página
+//
+//      // Encontrar el formulario más cercano
+//      const form = button.previousElementSibling; // Asumiendo que el botón sigue a su formulario
+//
+//      const email = form.querySelector('input[type="email"]').value; // Obtener el valor del input de email
+//
+//      // Validaciones básicas
+//      if (!validateEmail(email)) {
+//        alert("Por favor, ingrese un correo electrónico válido.");
+//        return;
+//      }
+//
+//      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
+//    });
+//  });
+//
+//  // Función para validar el formato del email
+//  function validateEmail(email) {
+//    const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/; // Expresión regular para validar el formato del email
+//    return re.test(String(email));
+//  }
+//});
 
 
 
