@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         alert("Credenciales incorrectas. Inténtelo de nuevo.");
       }
+          // Opcional: Limpiar el formulario después de enviar
+    form.reset();
     });
   });
 
