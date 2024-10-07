@@ -273,42 +273,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.getElementById("search-input");
   const materiasList = document.getElementById("materias-list");
   const materias = materiasList.getElementsByTagName("li");
-
-  // Mostrar solo las primeras 5 materias al cargar la página
-  Array.from(materias).forEach(function (materia, index) {
-    if (index < 5) {
-      materia.style.display = ""; // Muestra las primeras 5
-    } else {
-      materia.style.display = "none"; // Oculta el resto
-    }
-  });
+  const noResultsMessage = document.getElementById("no-results-message");
 
   // Evento para detectar cuando el usuario escribe en la barra de búsqueda
   searchInput.addEventListener("keyup", function () {
     const searchTerm = searchInput.value.toLowerCase();
+    let found = false; // Variable para rastrear si se ha encontrado alguna coincidencia
 
-    // Si no hay término de búsqueda, muestra las primeras 5 materias y oculta el resto
+    // Si no hay término de búsqueda, muestra todas las materias
     if (searchTerm === "") {
-      Array.from(materias).forEach(function (materia, index) {
-        if (index < 5) {
-          materia.style.display = ""; // Muestra las primeras 5
-        } else {
-          materia.style.display = "none"; // Oculta el resto
-        }
+      Array.from(materias).forEach(function (materia) {
+        materia.style.display = ""; // Muestra todas las materias
       });
+      noResultsMessage.style.display = "none"; // Oculta el mensaje de "No se han encontrado resultados"
     } else {
       // Itera sobre cada elemento de la lista y verifica si coincide con el término de búsqueda
       Array.from(materias).forEach(function (materia) {
         const materiaText = materia.textContent.toLowerCase();
         if (materiaText.includes(searchTerm)) {
           materia.style.display = ""; // Muestra el elemento si coincide
+          found = true; // Se ha encontrado una coincidencia
         } else {
           materia.style.display = "none"; // Oculta el elemento si no coincide
         }
       });
+
+      // Si no se ha encontrado ninguna coincidencia, muestra el mensaje
+      if (!found) {
+        noResultsMessage.style.display = ""; // Muestra el mensaje
+      } else {
+        noResultsMessage.style.display = "none"; // Oculta el mensaje si hay coincidencias
+      }
     }
   });
 });
+
 
 document.querySelector(".forgot-password")
   .addEventListener("click", function (event) {
@@ -318,20 +317,23 @@ document.querySelector(".forgot-password")
     );
   });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Redirección para el botón de Alumno
-//   document.getElementById("btn-log_in-a").addEventListener("click", function () {
-//     window.location.href = "login-a.html";  // Redirige a login de Alumno
-//   });
+document.addEventListener("DOMContentLoaded", function () {
+  // Redirección para el botón de Alumno
+  document.getElementById("btn-log_in-a").addEventListener("click", function () {
+    window.location.href = "login-a.html";  // Redirige a login de Alumno
+  });
   
-//     // Redirección para el botón de Profesor
-//   document.getElementById("btn-log_in-prof").addEventListener("click", function () {
-//     window.location.href = "profe-login.html";  // Redirige a login de Profesor
-//   });
+    // Redirección para el botón de Profesor
+  document.getElementById("btn-log_in-prof").addEventListener("click", function () {
+    window.location.href = "profe-login.html";  // Redirige a login de Profesor
+  });
   
-//     // Redirección para el botón de Administrador
-//   document.getElementById("btn-log_in-adm").addEventListener("click", function () {
-//     window.location.href = "login-adm.html";  // Redirige a login de Administrador
-//   });
-// });
+    // Redirección para el botón de Administrador
+  document.getElementById("btn-log_in-adm").addEventListener("click", function () {
+    window.location.href = "login-adm.html";  // Redirige a login de Administrador
+  });
+});
   
+window.onload = function() {
+  console.log("El DOM está completamente cargado.");
+};
