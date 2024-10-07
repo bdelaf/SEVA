@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         alert("Credenciales incorrectas. Inténtelo de nuevo.");
       }
-          // Opcional: Limpiar el formulario después de enviar
     });
   });
 
@@ -57,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
     return re.test(String(email));
   }
+  // Opcional: Limpiar el formulario después de enviar
   form.reset();
 });
 
