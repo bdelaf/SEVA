@@ -67,52 +67,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Eliminar aula
-  var eliminarLinks = document.querySelectorAll(".aula a");
-  for (var i = 0; i < eliminarLinks.length; i++) {
-    eliminarLinks[i].addEventListener("click", function (event) {
+  const eliminarLinks = document.querySelectorAll(".aula a");
+  eliminarLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
       event.preventDefault();
-      var confirmacion = confirm(
+      const confirmacion = confirm(
         "¿Estás seguro de que deseas eliminar esta aula?"
       );
       if (confirmacion) {
-        var aula = this.parentElement;
+        const aula = this.parentElement;
         aula.remove(); // Elimina el aula del DOM
       }
     });
-  }
+  });
 
   // Editar aulas
-  var editLinks = document.querySelectorAll(".edit-link");
-  for (var j = 0; j < editLinks.length; j++) {
-    editLinks[j].addEventListener("click", function (event) {
+  const editLinks = document.querySelectorAll(".edit-link");
+  editLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
       event.preventDefault();
-      var columna = this.parentElement;
-      var aulas = columna.querySelectorAll(".aula p");
+      const columna = this.parentElement;
+      const aulas = columna.querySelectorAll(".aula p");
 
-      // Verifica si ya estamos en modo de edición
-      var isEditing = this.classList.contains("save-link");
+      aulas.forEach((aula) => {
+        const aulaTexto = aula.textContent;
+        aula.innerHTML = <input type="text" value="${aulaTexto}">;
+      });
 
-      if (isEditing) {
-        // Modo "Guardar"
-        for (var k = 0; k < aulas.length; k++) {
-          var input = aulas[k].querySelector("input");
-          aulas[k].textContent = input.value;
-        }
+      this.textContent = "Guardar";
+      this.classList.add("save-link");
+
+      this.addEventListener("click", function () {
+        aulas.forEach((aula) => {
+          const input = aula.querySelector("input");
+          aula.textContent = input.value;
+        });
 
         this.textContent = "Editar";
         this.classList.remove("save-link");
-      } else {
-        // Modo "Editar"
-        for (var l = 0; l < aulas.length; l++) {
-          var aulaTexto = aulas[l].textContent;
-          aulas[l].innerHTML = `<input type="text" value="${aulaTexto}">`;
-        }
-
-        this.textContent = "Guardar";
-        this.classList.add("save-link");
-      }
+      });
     });
-  }
+  });
 });
 
 
