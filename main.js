@@ -269,28 +269,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var searchInput = document.getElementById("search-input");
-  var materiasList = document.getElementById("materias-list");
-  var materias = materiasList.getElementsByTagName("li");
-  var noResultsMessage = document.getElementById("no-results-message");
-  var submitButton = document.getElementById("submit-button"); // Botón de enviar o continuar
+ocument.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("search-input");
+  const materiasList = document.getElementById("materias-list");
+  const materias = materiasList.getElementsByTagName("li");
+  const noResultsMessage = document.getElementById("no-results-message");
 
   // Evento para detectar cuando el usuario escribe en la barra de búsqueda
   searchInput.addEventListener("keyup", function () {
-    var searchTerm = searchInput.value.toLowerCase();
-    var found = false; // Variable para rastrear si se ha encontrado alguna coincidencia
+    const searchTerm = searchInput.value.toLowerCase();
+    let found = false; // Variable para rastrear si se ha encontrado alguna coincidencia
 
     // Si no hay término de búsqueda, muestra todas las materias
     if (searchTerm === "") {
-      Array.prototype.forEach.call(materias, function (materia) {
+      Array.from(materias).forEach(function (materia) {
         materia.style.display = ""; // Muestra todas las materias
       });
       noResultsMessage.style.display = "none"; // Oculta el mensaje de "No se han encontrado resultados"
     } else {
       // Itera sobre cada elemento de la lista y verifica si coincide con el término de búsqueda
-      Array.prototype.forEach.call(materias, function (materia) {
-        var materiaText = materia.textContent.toLowerCase();
+      Array.from(materias).forEach(function (materia) {
+        const materiaText = materia.textContent.toLowerCase();
         if (materiaText.includes(searchTerm)) {
           materia.style.display = ""; // Muestra el elemento si coincide
           found = true; // Se ha encontrado una coincidencia
@@ -307,29 +306,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+});
 
-  // Evento para verificar si al menos una materia está seleccionada al enviar
-  submitButton.addEventListener("click", function (e) {
-    e.preventDefault(); // Evita que el formulario se envíe por defecto
-
-    // Verificar si alguna materia está seleccionada (marcada como "checked")
-    var selectedMaterias = Array.prototype.filter.call(materias, function (materia) {
-      return materia.querySelector('input[type="checkbox"]').checked;
+  // Evento para el botón de "siguiente"
+  submitButton.addEventListener("click", function () {
+    var checkboxes = document.querySelectorAll(".checkbox-mat");
+    var selected = Array.prototype.some.call(checkboxes, function (checkbox) {
+      return checkbox.checked;
     });
 
-    if (selectedMaterias.length === 0) {
-      // Si no hay materias seleccionadas, muestra un mensaje de alerta
-      alert("No has seleccionado ninguna materia.");
+    if (!selected) {
+      alert("No has seleccionado ninguna materia");
     } else {
-      // Aquí podrías proceder con la lógica de envío, ya que hay materias seleccionadas
-      alert("Materias seleccionadas: " + selectedMaterias.map(function (materia) {
-        return materia.textContent.trim();
-      }).join(", "));
-      // O continuar con la lógica que necesites
+      location.href = 'profe-sel.html'; // Redirige si hay selección
     }
   });
 });
-
 
 
 document.querySelector(".forgot-password")
