@@ -274,19 +274,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-  
 document.addEventListener("DOMContentLoaded", function () {
   // Selecciona todos los formularios de inicio de sesión
   const loginForms = [
     document.getElementById("login-a"),        // Formulario para usuarios
     document.getElementById("login-adm"),      // Formulario para administradores
-    document.getElementById("login-profe")      // Formulario para profesores
+    document.getElementById("login-profe")      // Formulario para docentes
   ].filter(form => form !== null); // Filtra formularios que existen
 
   // Manejar el evento de "Olvidé mi contraseña" para todos los formularios
-  loginForms.forEach(form => handleForgotPassword(form));
-
-  function handleForgotPassword(form) {
+  loginForms.forEach(form => {
     const forgotPasswordButton = form.querySelector(".forgot-password");
 
     if (forgotPasswordButton) {
@@ -304,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
       });
     }
-  }
+  });
 
   // Función para validar el formato del email
   function validateEmail(email) {
@@ -312,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email));
   }
 });
+
 
 
       
