@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(String(email));
   }
   // Opcional: Limpiar el formulario después de enviar
-  form.reset();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
