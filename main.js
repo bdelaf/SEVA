@@ -277,9 +277,20 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".forgot-password")
   .addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el enlace recargue la página
-    alert(
+    // Validaciones básicas
+    if (!validateEmail(email)) {
+        alert("Por favor, ingrese un correo electrónico válido.");
+        return;
+     if (validateEmail(email)) {
+        alert(
       "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
     );
+    
+    // Función para validar el formato del email
+    function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
+      return re.test(String(email).toLowerCase());
+    }
   });
 
 document.addEventListener("DOMContentLoaded", function () {
