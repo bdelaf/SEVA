@@ -277,10 +277,15 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector(".forgot-password")
   .addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el enlace recargue la página
+
+    // Obtiene los valores de los inputs
+    const email = form.querySelector('input[type="email"]').value;
+    
     // Validaciones básicas
     if (!validateEmail(email)) {
         alert("Por favor, ingrese un correo electrónico válido.");
         return;
+      
      if (validateEmail(email)) {
         alert(
       "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
