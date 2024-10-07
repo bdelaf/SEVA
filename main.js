@@ -335,3 +335,50 @@ document.querySelector(".forgot-password")
 //   });
 // });
   
+
+
+// main.js
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const materiaTitle = document.querySelector(".top-left h1");
+    materiaTitle.textContent = "MATERIA: Programación Web";
+
+    // Iniciar la cuenta regresiva de tiempo
+    let tiempoRestante = 3600; 
+    function actualizarTiempo() {
+        const tiempoElement = document.querySelector(".top-corn h1");
+        const horas = Math.floor(tiempoRestante / 3600);
+        const minutos = Math.floor((tiempoRestante % 3600) / 60);
+        const segundos = tiempoRestante % 60;
+
+        tiempoElement.textContent = `Tiempo restante: ${horas}h ${minutos}m ${segundos}s`;
+
+        if (tiempoRestante > 0) {
+            tiempoRestante--;
+        } else {
+            clearInterval(intervalo);
+            tiempoElement.textContent = "Reserva expirada";
+        }
+    }
+
+    // Actualizar cada segundo
+    const intervalo = setInterval(actualizarTiempo, 1000);
+
+    // Añadir comportamiento a los botones
+    const alargarReserva = document.querySelector(".can a[href='#']");
+    alargarReserva.addEventListener("click", function (event) {
+        event.preventDefault();
+        tiempoRestante += 3600; // Añadir 1 hora
+        alert("Reserva alargada 1 hora");
+    });
+
+    const cancelarReserva = document.querySelectorAll(".can a")[1];
+    cancelarReserva.addEventListener("click", function (event) {
+        event.preventDefault();
+        clearInterval(intervalo);
+        tiempoRestante = 0;
+        alert("Reserva cancelada");
+        actualizarTiempo(); // Para forzar la actualización de "Tiempo restante"
+    });
+});
