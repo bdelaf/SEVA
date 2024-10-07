@@ -596,23 +596,19 @@ button a {
 /* Estilos para el contenedor de materias */
 .materias-container {
   display: flex;
-  justify-content: center; /* Centra el contenedor en la pantalla */
-  padding: 1rem;
-  width: 80%;
-  height: 50%;
+  justify-content: center;
+  padding: 20px;
 }
 
 .materias-column {
-  width: 80%; /* Ancho del 80% de la pantalla */
-  max-width: 1200px; /* Máximo ancho para pantallas grandes */
-  border: 1px solid #ddd;
+  width: 300px; /* Ancho fijo para la columna de materias */
+  max-height: 400px; /* Limita la altura */
+  overflow-y: auto; /* Agrega scroll vertical */
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 1rem;
-  background-color: #7e6db7bc;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para mayor profundidad */
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .materias-column h1 {
@@ -625,16 +621,18 @@ button a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-  color: white;
+  padding: 8px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.materia-item:last-child {
+  border-bottom: none; /* Quitar borde del último elemento */
 }
 
 .materia-actions {
   display: flex;
   font-weight: bold;
-  gap: 0.5rem;
+  gap: 10px; /* Espacio entre botones */
 }
 
 .materia-actions a {
@@ -650,7 +648,7 @@ button a {
 }
 
 .delete-button {
-  color: #ff4d4d;
+  background-color: #dc3545; /* Color rojo para eliminar */
 }
 
 .delete-button:hover {
@@ -658,7 +656,8 @@ button a {
 }
 
 .add-materia-button {
-  margin-top: auto;
+  display: block;
+  margin-top: 10px;
   text-align: center;
   text-decoration: none;
   color: #28a745;
