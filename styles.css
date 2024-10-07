@@ -1013,3 +1013,21 @@ main {
     width: 80%
   }
 }
+
+/* Limita la altura de la lista de materias y añade scroll si hay más elementos */
+#materias-list {
+  max-height: 300px; /* Ajusta el valor según tu preferencia */
+  overflow-y: auto; /* Añade scroll vertical si hay más materias */
+  padding: 10px;
+  border: 1px solid #ccc; /* Añade un borde para que la lista esté delimitada */
+}
+
+#materias-list li {
+  margin: 5px 0; /* Añade espacio entre los elementos */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
