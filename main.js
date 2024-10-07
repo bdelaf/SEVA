@@ -323,15 +323,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll("form");
 
-
-document.querySelector(".forgot-password")
-  .addEventListener("click", function (event) {
+  // Agregar el evento para "Olvidé mi contraseña"
+  document.querySelector(".forgot-password").addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el enlace recargue la página
+    
+    // Seleccionar el formulario adecuado (puedes adaptar esto según tu HTML)
+    const form = document.querySelector("form"); // Selecciona el primer formulario en la página
+    const email = form.querySelector('input[type="email"]').value; // Obtiene el valor del input de email
+
+    // Validaciones básicas
+    if (!validateEmail(email)) {
+      alert("Por favor, ingrese un correo electrónico válido.");
+      return;
+    }
+
+    // Simulación de validación exitosa con ventana de confirmación
     alert(
       "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
     );
   });
+
+  // Función para validar el email
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular básica para validar un correo
+    return regex.test(email);
+  }
+});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Redirección para el botón de Alumno
