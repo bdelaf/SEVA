@@ -54,9 +54,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Función para validar el formato del email
   function validateEmail(email) {
     const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
-    return re.test(String(email));
+    return re.test(String(email).toLowerCase());
   }
-  // Opcional: Limpiar el formulario después de enviar
+
+  // Función para validar la contraseña
+  function validatePassword(password) {
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return regex.test(password);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -179,6 +185,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostrar mensaje de éxito
     alert("Información guardada con éxito!");
+
+    // Opcional: Limpiar el formulario después de enviar
+    form.reset();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".form-miperfil");
+  const codigoadmInput = document.getElementById("codigoadm");
+
+  // Evento para validar el campo "Código de administrador"
+  codigoadmInput.addEventListener("input", () => {
+    const value = codigoadmInput.value;
+
+    // Eliminar caracteres no numéricos
+    const numericValue = value.replace(/[^0-9]/g, "");
+
+    // Limitar a 3 caracteres
+    if (numericValue.length > 3) {
+      codigoadmInput.value = numericValue.slice(0, 3);
+    } else {
+      codigoadmInput.value = numericValue;
+    }
+  });
+
+  // Validar el formulario al enviarlo
+  form.addEventListener("submit", (e) => {
+    const codigoadmValue = codigoadmInput.value;
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -283,41 +318,6 @@ document.querySelector(".forgot-password")
     );
   });
 
-//document.addEventListener("DOMContentLoaded", function () {
-//  // Seleccionar todos los botones de "Olvidé mi contraseña"
-//  const forgotPasswordButtons = document.querySelectorAll(".forgot-password");
-//
-//  // Agregar un event listener a cada botón
-//  forgotPasswordButtons.forEach(button => {
-//    button.addEventListener("click", function (event) {
-//      event.preventDefault(); // Evita que el enlace recargue la página
-//
-//      // Encontrar el formulario más cercano
-//      const form = button.previousElementSibling; // Asumiendo que el botón sigue a su formulario
-//
-//      const email = form.querySelector('input[type="email"]').value; // Obtener el valor del input de email
-//
-//      // Validaciones básicas
-//      if (!validateEmail(email)) {
-//        alert("Por favor, ingrese un correo electrónico válido.");
-//        return;
-//      }
-//
-//      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
-//    });
-//  });
-//
-//  // Función para validar el formato del email
-//  function validateEmail(email) {
-//    const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/; // Expresión regular para validar el formato del email
-//    return re.test(String(email));
-//  }
-//});
-
-
-
-
-      
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Redirección para el botón de Alumno
 //   document.getElementById("btn-log_in-a").addEventListener("click", function () {
@@ -334,3 +334,4 @@ document.querySelector(".forgot-password")
 //     window.location.href = "login-adm.html";  // Redirige a login de Administrador
 //   });
 // });
+  
