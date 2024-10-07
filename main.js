@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Simulación de validación exitosa con ventana de confirmación
       if (validateEmail(email)) {
-        const confirmLogin = confirm("¿Está seguro de que desea iniciar sesión?");
+        const confirmLogin = confirm(
+          "¿Está seguro de que desea iniciar sesión?"
+        );
         if (confirmLogin) {
           // Redirigir según el formulario
           if (form.id === "login-profe") {
@@ -63,15 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Eliminar aula
-  const eliminarLinks = document.querySelectorAll('.aula a');
-  eliminarLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
+  const eliminarLinks = document.querySelectorAll(".aula a");
+  eliminarLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
       event.preventDefault();
-      const confirmacion = confirm('¿Estás seguro de que deseas eliminar esta aula?');
+      const confirmacion = confirm(
+        "¿Estás seguro de que deseas eliminar esta aula?"
+      );
       if (confirmacion) {
         const aula = this.parentElement;
         aula.remove(); // Elimina el aula del DOM
@@ -80,29 +82,29 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Editar aulas
-  const editLinks = document.querySelectorAll('.edit-link');
-  editLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
+  const editLinks = document.querySelectorAll(".edit-link");
+  editLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
       event.preventDefault();
       const columna = this.parentElement;
-      const aulas = columna.querySelectorAll('.aula p');
+      const aulas = columna.querySelectorAll(".aula p");
 
-      aulas.forEach(aula => {
+      aulas.forEach((aula) => {
         const aulaTexto = aula.textContent;
         aula.innerHTML = `<input type="text" value="${aulaTexto}">`;
       });
 
-      this.textContent = 'Guardar';
-      this.classList.add('save-link');
+      this.textContent = "Guardar";
+      this.classList.add("save-link");
 
-      this.addEventListener('click', function() {
-        aulas.forEach(aula => {
-          const input = aula.querySelector('input');
+      this.addEventListener("click", function () {
+        aulas.forEach((aula) => {
+          const input = aula.querySelector("input");
           aula.textContent = input.value;
         });
 
-        this.textContent = 'Editar';
-        this.classList.remove('save-link');
+        this.textContent = "Editar";
+        this.classList.remove("save-link");
       });
     });
   });
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const materiaItem = event.target.closest(".materia-item");
       const materiaName = materiaItem.querySelector("p").innerText;
       const newMateriaName = prompt("Editar materia:", materiaName);
-      
+
       if (newMateriaName) {
         materiaItem.querySelector("p").innerText = newMateriaName;
       }
@@ -139,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   addMateriaButton.addEventListener("click", (event) => {
     event.preventDefault();
     const newMateriaName = prompt("Nombre de la nueva materia:");
-    
+
     if (newMateriaName) {
       const newMateriaItem = document.createElement("div");
       newMateriaItem.classList.add("materia-item");
@@ -189,28 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.form-miperfil');
-  const codigoadmInput = document.getElementById('codigoadm');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".form-miperfil");
+  const codigoadmInput = document.getElementById("codigoadm");
 
   // Evento para validar el campo "Código de administrador"
-  codigoadmInput.addEventListener('input', () => {
-      const value = codigoadmInput.value;
+  codigoadmInput.addEventListener("input", () => {
+    const value = codigoadmInput.value;
 
-      // Eliminar caracteres no numéricos
-      const numericValue = value.replace(/[^0-9]/g, '');
+    // Eliminar caracteres no numéricos
+    const numericValue = value.replace(/[^0-9]/g, "");
 
-      // Limitar a 3 caracteres
-      if (numericValue.length > 3) {
-          codigoadmInput.value = numericValue.slice(0, 3);
-      } else {
-          codigoadmInput.value = numericValue;
-      }
+    // Limitar a 3 caracteres
+    if (numericValue.length > 3) {
+      codigoadmInput.value = numericValue.slice(0, 3);
+    } else {
+      codigoadmInput.value = numericValue;
+    }
   });
 
   // Validar el formulario al enviarlo
-  form.addEventListener('submit', (e) => {
-      const codigoadmValue = codigoadmInput.value;
+  form.addEventListener("submit", (e) => {
+    const codigoadmValue = codigoadmInput.value;
   });
 });
 
@@ -223,71 +225,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para seleccionar la calificación
   stars.forEach((star, index) => {
-      star.addEventListener("click", () => {
-          selectedRating = index + 1; // La calificación seleccionada (1 a 5)
-          updateStarDisplay(); // Actualiza la visualización de estrellas
-      });
+    star.addEventListener("click", () => {
+      selectedRating = index + 1; // La calificación seleccionada (1 a 5)
+      updateStarDisplay(); // Actualiza la visualización de estrellas
+    });
   });
 
   // Actualiza el estilo de las estrellas según la calificación seleccionada
   function updateStarDisplay() {
-      stars.forEach((star, index) => {
-          star.classList.toggle("checked", index < selectedRating);
-      });
+    stars.forEach((star, index) => {
+      star.classList.toggle("checked", index < selectedRating);
+    });
   }
 
   // Manejar el envío del formulario
   form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Evita el envío del formulario
+    e.preventDefault(); // Evita el envío del formulario
 
-      if (reviewText.value.trim() === "" || selectedRating === 0) {
-          alert("Por favor, escribe tu reseña y selecciona una calificación.");
-          return; // Detiene la ejecución si no hay reseña o calificación
-      }
+    if (reviewText.value.trim() === "" || selectedRating === 0) {
+      alert("Por favor, escribe tu reseña y selecciona una calificación.");
+      return; // Detiene la ejecución si no hay reseña o calificación
+    }
 
-      // Crea un nuevo comentario
-      const newReview = document.createElement("div");
-      newReview.classList.add("review-c");
-      newReview.innerHTML = `
-          <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(selectedRating)}${"☆".repeat(5 - selectedRating)}</span> <span class="check-c">✔</span></p>
+    // Crea un nuevo comentario
+    const newReview = document.createElement("div");
+    newReview.classList.add("review-c");
+    newReview.innerHTML = `
+          <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(
+            selectedRating
+          )}${"☆".repeat(
+      5 - selectedRating
+    )}</span> <span class="check-c">✔</span></p>
           <p class="review-text">${reviewText.value}</p>
       `;
 
-      // Agrega el nuevo comentario a la sección de comentarios
-      commentsSection.appendChild(newReview);
+    // Agrega el nuevo comentario a la sección de comentarios
+    commentsSection.appendChild(newReview);
 
-      // Limpia el formulario
-      reviewText.value = "";
-      selectedRating = 0;
-      updateStarDisplay();
+    // Limpia el formulario
+    reviewText.value = "";
+    selectedRating = 0;
+    updateStarDisplay();
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const searchInput = document.getElementById('search-input');
-  const materiasList = document.getElementById('materias-list');
-  const materias = materiasList.getElementsByTagName('li');
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.getElementById("search-input");
+  const materiasList = document.getElementById("materias-list");
+  const materias = materiasList.getElementsByTagName("li");
 
   // Mostrar solo las primeras 5 materias al cargar la página
   Array.from(materias).forEach(function (materia, index) {
     if (index < 5) {
-      materia.style.display = ''; // Muestra las primeras 5
+      materia.style.display = ""; // Muestra las primeras 5
     } else {
-      materia.style.display = 'none'; // Oculta el resto
+      materia.style.display = "none"; // Oculta el resto
     }
   });
 
   // Evento para detectar cuando el usuario escribe en la barra de búsqueda
-  searchInput.addEventListener('keyup', function () {
+  searchInput.addEventListener("keyup", function () {
     const searchTerm = searchInput.value.toLowerCase();
 
     // Si no hay término de búsqueda, muestra las primeras 5 materias y oculta el resto
-    if (searchTerm === '') {
+    if (searchTerm === "") {
       Array.from(materias).forEach(function (materia, index) {
         if (index < 5) {
-          materia.style.display = ''; // Muestra las primeras 5
+          materia.style.display = ""; // Muestra las primeras 5
         } else {
-          materia.style.display = 'none'; // Oculta el resto
+          materia.style.display = "none"; // Oculta el resto
         }
       });
     } else {
@@ -295,17 +301,40 @@ document.addEventListener('DOMContentLoaded', function () {
       Array.from(materias).forEach(function (materia) {
         const materiaText = materia.textContent.toLowerCase();
         if (materiaText.includes(searchTerm)) {
-          materia.style.display = ''; // Muestra el elemento si coincide
+          materia.style.display = ""; // Muestra el elemento si coincide
         } else {
-          materia.style.display = 'none'; // Oculta el elemento si no coincide
+          materia.style.display = "none"; // Oculta el elemento si no coincide
         }
       });
     }
   });
 });
-document.querySelector('.forgot-password').addEventListener('click', function(event) {
-  event.preventDefault(); // Evita que el enlace recargue la página
-  alert('Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.');
+
+document.querySelector(".forgot-password")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    alert(
+      "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
+    );
+  });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Redirección para el botón de Alumno
+  document.getElementById("btn-log_in-a").addEventListener("click", function () {
+    window.location.href = "login-a.html";  // Redirige a login de Alumno
+  });
+  
+    // Redirección para el botón de Profesor
+  document.getElementById("btn-log_in-prof").addEventListener("click", function () {
+    window.location.href = "profe-login.html";  // Redirige a login de Profesor
+  });
+  
+    // Redirección para el botón de Administrador
+  document.getElementById("btn-log_in-adm").addEventListener("click", function () {
+    window.location.href = "login-adm.html";  // Redirige a login de Administrador
+  });
 });
-
-
+  
+window.onload = function() {
+  console.log("El DOM está completamente cargado.");
+};

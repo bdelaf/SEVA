@@ -365,10 +365,6 @@ button a {
   max-width: 300px;
 }
 
-.edificios-link {
-  text-decoration: none;
-  color: white;
-}
 .main-content {
   margin-top: 60px; /* Ajusta el margen superior para que no se solape con el header */
   display: flex;
