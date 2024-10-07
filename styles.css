@@ -673,10 +673,10 @@ button a {
   }
 }
 
-  .materias-container {
-    padding: 0.5rem;
-  }
+.materias-container {
+  padding: 0.5rem;
 }
+
 /*--*/
 
 @media (max-width: 480px) {
@@ -1025,4 +1025,8 @@ main {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.aulas-cont{
+  height: 120vh;
 }
