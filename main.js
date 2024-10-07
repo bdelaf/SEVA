@@ -56,13 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
     return re.test(String(email).toLowerCase());
   }
-
-  // Función para validar la contraseña
-  function validatePassword(password) {
-    const regex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return regex.test(password);
-  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -185,35 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostrar mensaje de éxito
     alert("Información guardada con éxito!");
-
-    // Opcional: Limpiar el formulario después de enviar
-    form.reset();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".form-miperfil");
-  const codigoadmInput = document.getElementById("codigoadm");
-
-  // Evento para validar el campo "Código de administrador"
-  codigoadmInput.addEventListener("input", () => {
-    const value = codigoadmInput.value;
-
-    // Eliminar caracteres no numéricos
-    const numericValue = value.replace(/[^0-9]/g, "");
-
-    // Limitar a 3 caracteres
-    if (numericValue.length > 3) {
-      codigoadmInput.value = numericValue.slice(0, 3);
-    } else {
-      codigoadmInput.value = numericValue;
-    }
-  });
-
-  // Validar el formulario al enviarlo
-  form.addEventListener("submit", (e) => {
-    const codigoadmValue = codigoadmInput.value;
-  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
