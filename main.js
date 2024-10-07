@@ -275,13 +275,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".password-reset-form"); // Asegúrate de que el selector coincida con tu HTML
-  
-  document.querySelector(".forgot-password").addEventListener("click", function (event) {
+ddocument.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("login-a"); // Selector del formulario
+  const forgotPasswordButton = document.querySelector(".forgot-password"); // Selector del botón "Olvidé mi contraseña"
+
+  forgotPasswordButton.addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el enlace recargue la página
 
-    const email = form.querySelector('input[type="email"]').value;
+    const email = form.querySelector('input[type="email"]').value; // Obtener el valor del input de email
 
     // Validaciones básicas
     if (!validateEmail(email)) {
@@ -289,9 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (validateEmail(email)) {
-      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
-    }
+    alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
 
     // Función para validar el formato del email
     function validateEmail(email) {
@@ -301,7 +300,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-});
       
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Redirección para el botón de Alumno
