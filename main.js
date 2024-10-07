@@ -276,29 +276,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".password-reset-form"); // Asegúrate de que el selector coincida con tu HTML
   
   document.querySelector(".forgot-password").addEventListener("click", function (event) {
     event.preventDefault(); // Evita que el enlace recargue la página
 
     const email = form.querySelector('input[type="email"]').value;
-      
+
     // Validaciones básicas
     if (!validateEmail(email)) {
       alert("Por favor, ingrese un correo electrónico válido.");
       return;
     }
-      
+
     if (validateEmail(email)) {
-      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
-      );
+      alert("Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada.");
     }
-        
+
     // Función para validar el formato del email
     function validateEmail(email) {
       const re = /^[a-zA-Z0-9._-]+@uca.edu.ar$/;
       return re.test(String(email));
     }
-    });
+  });
+});
+
 });
       
 // document.addEventListener("DOMContentLoaded", function () {
