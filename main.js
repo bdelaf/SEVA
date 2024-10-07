@@ -274,7 +274,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
+document.querySelector(".forgot-password")
+  .addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    alert(
+      "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
+    );
+  });
 
 //document.addEventListener("DOMContentLoaded", function () {
 //  // Seleccionar todos los botones de "Olvidé mi contraseña"
