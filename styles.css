@@ -1030,3 +1030,155 @@ main {
 .aulas-cont{
   height: 120vh;
 }
+
+
+
+/*cambiaso dl papu*/
+
+/* Evitar conflictos con otras reglas del body */
+.custom-body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url(img/img-fondo.jpg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: rgba(27, 27, 78, 0.8); /* Color de fondo ligeramente transparente */
+}
+
+.logo {
+  width: 50px;
+}
+
+.perfil {
+  color: white;
+  font-size: 18px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.content {
+  text-align: left;  /* Alinear el texto a la izquierda */
+  position: absolute; /* Posicionarlo en la parte superior izquierda */
+  top: 130px;  /* Margen desde la parte superior */
+  left: 30px; /* Margen desde el borde izquierdo */
+}
+
+.materia {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.tiempo {
+  font-size: 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: auto; /* Asegura que los botones estén en la parte inferior */
+  margin-bottom: 30px; /* Espaciado inferior */
+}
+
+button {
+  background-color: #7c6acb;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+button:hover {
+  background-color: #6a5db0;
+}
+
+@media (max-width: 900px) {
+  .header {
+      flex-direction: column; /* Coloca el logo y perfil en columnas */
+      align-items: flex-start; /* Alinea a la izquierda */
+      padding: 10px; /* Espaciado reducido */
+  }
+
+  .content {
+      position: relative; /* Quitar posicionamiento absoluto en pantallas más pequeñas */
+      top: 0; /* Reiniciar margen superior */
+      left: 0; /* Reiniciar margen izquierdo */
+      padding: 10px; /* Agregar algo de padding para más espacio */
+  }
+
+  .materia {
+      font-size: 2rem; /* Ajuste para fuentes en pantallas pequeñas */
+  }
+
+  .tiempo {
+      font-size: 1.8rem; /* Ajuste para fuentes en pantallas pequeñas */
+  }
+
+  .buttons {
+      flex-direction: column; /* Coloca los botones en columna en pantallas más pequeñas */
+      gap: 15px; /* Espaciado entre botones */
+      margin-top: 20px; /* Margen superior ajustado */
+  }
+
+  button {
+      font-size: 1.2rem; /* Ajuste adicional para botones en pantallas pequeñas */
+      padding: 10px; /* Ajuste de padding */
+  }
+}
+
+@media (max-width: 600px) {
+  .materia {
+      font-size: 1.5rem; /* Tamaño de fuente ajustado */
+  }
+
+  .tiempo {
+      font-size: 1.4rem; /* Tamaño de fuente ajustado */
+  }
+
+  button {
+      font-size: 1rem; /* Tamaño de fuente ajustado */
+      padding: 8px; /* Ajuste de padding */
+  }
+}
+
+
+
+
+
+#materia-y-tiempo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear a la izquierda */
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between; /* Espacio entre el texto y el tiempo */
+  width: 100%; /* Para que el h1 ocupe todo el ancho disponible */
+}
+
+#tiempo-restante {
+  margin-left: auto; /* Alinear a la derecha */
+}
+
+button {
+  margin-top: 10px; /* Espaciado superior para los botones */
+}
