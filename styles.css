@@ -1036,7 +1036,7 @@ main {
 /*cambiaso dl papu*/
 
 /* Evitar conflictos con otras reglas del body */
-#reservas .custom-body {
+.custom-body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -1047,29 +1047,19 @@ main {
   min-height: 100vh;
 }
 
-#reservas .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: rgba(27, 27, 78, 0.8); /* Color de fondo ligeramente transparente */
-}
 
-#reservas .logo {
+
+
+.logo {
   width: 50px;
 }
 
-#reservas .perfil {
+.perfil {
   color: white;
   font-size: 18px;
 }
 
-#reservas main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 30px 20px;
-}
+
 
 #reservas .content {
   text-align: left;  /* Alinear el texto a la izquierda */
@@ -1078,16 +1068,16 @@ main {
   left: 30px; /* Margen desde el borde izquierdo */
 }
 
-#reservas .materia {
+.materia {
   font-size: 36px;
   margin-bottom: 10px;
 }
 
-#reservas .tiempo {
+.tiempo {
   font-size: 28px;
 }
 
-#reservas .buttons {
+.botoness {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -1132,7 +1122,7 @@ main {
       font-size: 1.8rem; /* Ajuste para fuentes en pantallas pequeñas */
   }
 
-  #reservas .buttons {
+  #reservas .buttonss {
       flex-direction: column; /* Coloca los botones en columna en pantallas más pequeñas */
       gap: 15px; /* Espaciado entre botones */
       margin-top: 20px; /* Margen superior ajustado */
