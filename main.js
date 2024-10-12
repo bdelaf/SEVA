@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Materias seleccionadas: " + selectedMaterias.map(function (materia) {
         return materia.textContent.trim();
       }).join(", "));
-      // O continuar con la lógica que necesites
+      window.location.href = "inscribirse.html"
     }
   });
 });
