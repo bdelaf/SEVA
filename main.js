@@ -267,7 +267,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var materiasList = document.getElementById("materias-list");
   var materias = materiasList.getElementsByTagName("li");
   var noResultsMessage = document.getElementById("no-results-message");
-  var submitButton = document.getElementById("submit-button"); // Botón de enviar o continuar
+  var submitButtonP = document.getElementById("submit-buttonP"); // Botón de enviar o continuar
+  var submitButtonA = document.getElementById("submit-buttonA"); // Botón de enviar o continuar
 
   // Evento para detectar cuando el usuario escribe en la barra de búsqueda
   searchInput.addEventListener("keyup", function () {
@@ -302,7 +303,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Evento para verificar si al menos una materia está seleccionada al enviar
-  submitButton.addEventListener("click", function (e) {
+  if (submitButtonA){
+  submitButtonA.addEventListener("click", function (e) {
     e.preventDefault(); // Evita que el formulario se envíe por defecto
 
     // Verificar si alguna materia está seleccionada (marcada como "checked")
@@ -319,9 +321,32 @@ document.addEventListener("DOMContentLoaded", function () {
         return materia.textContent.trim();
       }).join(", "));
       window.location.href = "inscribirse.html"
+
     }
   });
+  }else{
+  submitButtonP.addEventListener("click", function (e) {
+    e.preventDefault(); // Evita que el formulario se envíe por defecto
+
+    // Verificar si alguna materia está seleccionada (marcada como "checked")
+    var selectedMaterias = Array.prototype.filter.call(materias, function (materia) {
+      return materia.querySelector('input[type="checkbox"]').checked;
+    });
+
+    if (selectedMaterias.length === 0) {
+      // Si no hay materias seleccionadas, muestra un mensaje de alerta
+      alert("No has seleccionado ninguna materia.");
+    } else {
+      // Aquí podrías proceder con la lógica de envío, ya que hay materias seleccionadas
+      alert("Materias seleccionadas: " + selectedMaterias.map(function (materia) {
+        return materia.textContent.trim();
+      }).join(", "));
+      window.location.href = "profe-sel.html"
+
+    }
+  })};
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const forms = document.querySelectorAll("form");
@@ -336,14 +361,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validaciones básicas
     if (!validateEmail(email)) {
-      alert("Por favor, ingrese un correo electrónico válido.");
+      alert(
+        "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
+      );
       return;
     }
-
-    // Simulación de validación exitosa con ventana de confirmación
-    alert(
-      "Se ha enviado un correo electrónico con las instrucciones para restablecer tu contraseña. Por favor, revisa tu bandeja de entrada."
-    );
+    
   });
 
   // Función para validar el email
