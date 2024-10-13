@@ -533,22 +533,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var projectorsValue = projectorsFilter.value;
     var hasResults = false;
 
-    console.log("Filtros aplicados:");
-    console.log("Buscar aula:", searchValue);
-    console.log("Tamaño:", sizeValue);
-    console.log("Computadoras:", computersValue);
-    console.log("Proyectores:", projectorsValue);
-
     classrooms.forEach(function(classroom) {
       var classroomName = classroom.querySelector(".classroom-info p").textContent.toLowerCase();
       var capacity = parseInt(classroom.querySelector(".details p:nth-child(1)").textContent.replace('Capacidad: ', ''));
       var hasComputers = classroom.querySelector(".details p:nth-child(3)").textContent.includes("Sí");
       var hasProjector = classroom.querySelector(".details p:nth-child(2)").textContent.includes("Sí");
-
-      console.log("Evaluando aula:", classroomName);
-      console.log("Capacidad:", capacity);
-      console.log("Tiene computadoras:", hasComputers);
-      console.log("Tiene proyector:", hasProjector);
 
       var matchesSearch = searchValue === "" || classroomName.includes(searchValue);
       var matchesSize = sizeValue === "" || 
@@ -561,28 +550,21 @@ document.addEventListener("DOMContentLoaded", function() {
       if (matchesSearch && matchesSize && matchesComputers && matchesProjectors) {
         classroom.style.display = "block";
         hasResults = true;
-        console.log("Aula visible:", classroomName);
       } else {
         classroom.style.display = "none";
-        console.log("Aula oculta:", classroomName);
       }
     });
 
-    // Mostrar mensaje si no hay resultados
+    // Mostrar u ocultar mensaje si no hay resultados
     if (!hasResults) {
-      noResultsMessage.textContent = "No se han encontrado resultados.";
       noResultsMessage.style.display = "block";
-      console.log("No se han encontrado resultados.");
     } else {
       noResultsMessage.style.display = "none";
     }
   }
 
-  // Agregar eventos para aplicar los filtros y búsqueda
-  searchInput.addEventListener("input", filterClassrooms);
-  sizeFilter.addEventListener("change", filterClassrooms);
-  computersFilter.addEventListener("change", filterClassrooms);
-  projectorsFilter.addEventListener("change", filterClassrooms);
+  // Agregar evento al botón de búsqueda
+  document.getElementById("search-button").addEventListener("click", filterClassrooms);
 });
 
 
