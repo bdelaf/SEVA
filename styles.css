@@ -1031,7 +1031,7 @@ main {
 }
 
 .aulas-cont{
-  height: 220vh;
+  height: 240vh;
   background-image: none;
   background: linear-gradient(180deg, #003b5c, #005b96);
 }
@@ -1365,4 +1365,26 @@ button:hover {
     padding: 10px;
     font-size: 16px;
   }
+}
+
+#search-button{
+  display: inline;
+  font-size: 20px;
+  margin: 30px;
+  padding: 10px 50px;
+  background-color: rgba(12, 8, 93, 0.75);
+  color: white;
+  border: none;
+  border-radius: 29px;
+  cursor: pointer;
+  align-items: center;
+  transition: background-color 0.6s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  width: auto;
+}
+
+#search-button:hover{
+  background-color: #6a5acd;
 }
