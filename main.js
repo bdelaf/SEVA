@@ -1,3 +1,6 @@
+
+// ADMINISTRADOR : ELIMINAR COMENTARIOS //
+
 document.addEventListener("DOMContentLoaded", function () {
   var checks = document.querySelectorAll('.check-c-adm');
   var deleteLinks = document.querySelectorAll('.elim-com');
@@ -23,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const forms = document.querySelectorAll("form");
 
+  
+  // VALIDAr EL EMAIL CONTRASEÑA Y LEGAJO AL INICIAR CESION //
+  
   forms.forEach(function (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // Evita que el formulario se envíe automáticamente
@@ -86,6 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return regex.test(password);
   }
 });
+
+
+// ADMINISTRADOR: ELIMINAR O EDITAR AULAS //
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Eliminar aula
@@ -179,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
+// ADMINISTRADOR: AGREGAR EDITAR O ELIMINAR MATERIAS //
 
 document.addEventListener("DOMContentLoaded", () => {
   const materiasColumn = document.querySelector(".materias-column");
@@ -227,6 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+// PERFIL ADMINISTRADOR //
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".form-miperfil");
@@ -280,6 +293,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// AGREGAR COMENTARIOS RESEÑAS //
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".review-form");
   const reviewText = document.getElementById("review-text");
@@ -332,6 +348,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStarDisplay();
   });
 });
+
+
+// BUSCADOR DE MATERIAS //
 
 document.addEventListener("DOMContentLoaded", function () {
   var searchInput = document.getElementById("search-input");
@@ -419,6 +438,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// OLVIVE MI CONTRASEÑA //
+
 document.addEventListener("DOMContentLoaded", function () {
   const forms = document.querySelectorAll("form");
 
@@ -464,6 +486,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
+
+// RESERVAR AULAS PROFESOR //
 
 var timer; // Variable para almacenar el temporizador
 var tiempoRestante; // Variable para el tiempo restante
