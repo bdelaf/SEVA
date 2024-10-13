@@ -1231,3 +1231,141 @@ button:hover {
   color: red;
   font-weight: bold;
 }
+
+
+
+
+/* CSS específico para la pantalla de materias */
+.container-mat {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenedor en el eje horizontal */
+  margin-top: 20px; /* Espacio en la parte superior */
+}
+
+.search-bar {
+  width: 100%; /* Asegúrate de que el campo de búsqueda ocupe el 100% del ancho */
+  max-width: 400px; /* Limitar el ancho máximo para una mejor apariencia */
+  margin-bottom: 20px; /* Espacio debajo de la barra de búsqueda */
+}
+
+#materias-list {
+  list-style-type: none; /* Quitar los puntos de la lista */
+  padding: 0;
+  margin: 20px 0; /* Margen arriba y abajo */
+  width: 100%; /* Asegura que ocupe el 100% del contenedor */
+  max-width: 500px; /* Limitar el ancho máximo para una mejor apariencia */
+}
+
+#materias-list li {
+  margin: 5px 0; /* Espacio entre elementos de la lista */
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+   /* Centra el contenido */
+  margin-top: 20px; /* Espacio superior */
+}
+
+#submit-buttonA {
+  margin-top: 10px; /* Espacio entre el texto y el botón */
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .search-bar, #materias-list, .main-content {
+      width: 90%; /* Ajusta el ancho en pantallas pequeñas */
+  }
+}
+
+/* Archivo styles.css */
+
+/* Estilos generales */
+.container-mat {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Para el contenido principal */
+.main-content {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Hacer la página responsive con media queries */
+@media (max-width: 768px) {
+  /* Ajusta la imagen en el header */
+  header img {
+    width: 100px;
+    height: auto;
+  }
+
+  /* Ajusta el layout de la lista */
+  .container-mat {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* La barra de búsqueda ocupa todo el ancho */
+  .search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* Ajustar los elementos de la lista */
+  #materias-list {
+    width: 100%;
+    padding: 0;
+  }
+
+  #materias-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  /* Botón de inscripción más grande */
+  #submit-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  /* Reordenar las secciones: materias arriba y botón abajo */
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Asegurar que el botón esté abajo */
+  .main-content {
+    order: 2;
+  }
+
+  /* Asegurar que las materias estén arriba */
+  .container-mat {
+    order: 1;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas (como móviles) */
+@media (max-width: 480px) {
+  /* Ajustar el tamaño del texto en móviles */
+  #materias-list li {
+    font-size: 14px;
+  }
+
+  /* Botón más ajustado para pantallas pequeñas */
+  #submit-button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
