@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
   var computersFilter = document.getElementById("computers-filter");
   var projectorsFilter = document.getElementById("projectors-filter");
   var classrooms = document.querySelectorAll(".classroom");
-  var classroomsContainer = document.querySelector(".classrooms-container");
   var noResultsMessage = document.getElementById("no-results-message");
 
   function filterClassrooms() {
-    var searchValue = searchInput.value.toLowerCase();
+    var searchValue = searchInput.value.toLowerCase().trim();
     var sizeValue = sizeFilter.value;
     var computersValue = computersFilter.value;
     var projectorsValue = projectorsFilter.value;
@@ -20,14 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
       var hasComputers = classroom.querySelector(".details p:nth-child(3)").textContent.includes("Sí");
       var hasProjector = classroom.querySelector(".details p:nth-child(2)").textContent.includes("Sí");
 
+      // Condiciones para filtrar
       var matchesSearch = searchValue === "" || classroomName.includes(searchValue);
       var matchesSize = sizeValue === "" || 
-        (sizeValue === "small" && capacity <= 50) ||
-        (sizeValue === "medium" && capacity > 50 && capacity <= 100) ||
-        (sizeValue === "large" && capacity > 100);
+        (sizeValue === "small" && capacity <= 30) || // capacidad de 30 o menor
+        (sizeValue === "medium" && capacity > 30 && capacity <= 50) || // capacidad de 30 a 50 incluido
+        (sizeValue === "large" && capacity > 50); // capacidad mas de 50
       var matchesComputers = computersValue === "" || (computersValue === "yes" && hasComputers) || (computersValue === "no" && !hasComputers);
       var matchesProjectors = projectorsValue === "" || (projectorsValue === "yes" && hasProjector) || (projectorsValue === "no" && !hasProjector);
 
+      // Mostrar u ocultar el aula según los criterios
       if (matchesSearch && matchesSize && matchesComputers && matchesProjectors) {
         classroom.style.display = "block";
         hasResults = true;
@@ -37,11 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Mostrar u ocultar mensaje si no hay resultados
-    if (!hasResults) {
-      noResultsMessage.style.display = "block";
-    } else {
-      noResultsMessage.style.display = "none";
-    }
+    noResultsMessage.style.display = hasResults ? "none" : "block";
   }
 
   // Agregar evento al botón de búsqueda
