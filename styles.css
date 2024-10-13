@@ -1209,3 +1209,9 @@ button:hover {
 #reservas button {
   margin-top: 10px; /* Espaciado superior para los botones */
 }
+
+@media (max-height: 1600px){
+  .aulas-cont {
+    height: 250vh;
+  }
+}
