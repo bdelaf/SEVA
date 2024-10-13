@@ -1210,7 +1210,7 @@ button:hover {
   margin-top: 10px; /* Espaciado superior para los botones */
 }
 
-@media (max-height: 1600px){
+@media (max-height: 791px){
   .aulas-cont {
     height: 250vh;
   }
