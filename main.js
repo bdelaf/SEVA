@@ -89,48 +89,97 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Eliminar aula
-  const eliminarLinks = document.querySelectorAll(".aula a");
-  eliminarLinks.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const confirmacion = confirm(
-        "¿Estás seguro de que deseas eliminar esta aula?"
-      );
-      if (confirmacion) {
-        const aula = this.parentElement;
-        aula.remove(); // Elimina el aula del DOM
-      }
-    });
-  });
+  var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
+  for (var i = 0; i < eliminarLinks.length; i++) {
+      eliminarLinks[i].addEventListener("click", function (event) {
+          event.preventDefault();
+          var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta aula?");
+          if (confirmacion) {
+              var aula = this.parentElement;
+              aula.remove(); // Elimina el aula del DOM
+          }
+      });
+  }
 
   // Editar aulas
-  const editLinks = document.querySelectorAll(".edit-link");
-  editLinks.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const columna = this.parentElement;
-      const aulas = columna.querySelectorAll(".aula p");
+  function habilitarEdicion(editLink) {
+      editLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          var aula = this.previousElementSibling;
+          var aulaTexto = aula.textContent;
+          var input = document.createElement("input");
+          input.type = "text";
+          input.value = aulaTexto;
+          aula.innerHTML = "";
+          aula.appendChild(input);
+          this.textContent = "Guardar";
+          this.classList.add("save-link");
 
-      aulas.forEach((aula) => {
-        const aulaTexto = aula.textContent;
-        aula.innerHTML = `<input type="text" value="${aulaTexto}">`;
+          input.addEventListener("keydown", function (event) {
+              if (event.key === "Enter") {
+                  aula.textContent = input.value;
+                  editLink.textContent = "Editar";
+                  editLink.classList.remove("save-link");
+              }
+          });
       });
+  }
 
-      this.textContent = "Guardar";
-      this.classList.add("save-link");
+  var editLinks = document.querySelectorAll(".edit-aula");
+  for (var j = 0; j < editLinks.length; j++) {
+      habilitarEdicion(editLinks[j]);
+  }
 
-      this.addEventListener("click", function () {
-        aulas.forEach((aula) => {
-          const input = aula.querySelector("input");
-          aula.textContent = input.value;
-        });
+  // Agregar aula
+  var addLinks = document.querySelectorAll(".edit-link");
+  for (var k = 0; k < addLinks.length; k++) {
+      addLinks[k].addEventListener("click", function (event) {
+          event.preventDefault();
+          var columna = this.parentElement;
+          var nuevaAula = document.createElement("div");
+          nuevaAula.classList.add("aula");
 
-        this.textContent = "Editar";
-        this.classList.remove("save-link");
+          var input = document.createElement("input");
+          input.type = "text";
+          input.placeholder = "Nombre del Aula";
+
+          var editAula = document.createElement("a");
+          editAula.href = "";
+          editAula.classList.add("edit-aula");
+          editAula.textContent = "Editar";
+
+          var eliminarAula = document.createElement("a");
+          eliminarAula.href = "";
+          eliminarAula.textContent = "Eliminar";
+
+          nuevaAula.appendChild(input);
+          nuevaAula.appendChild(editAula);
+          nuevaAula.appendChild(eliminarAula);
+          columna.insertBefore(nuevaAula, this);
+
+          input.addEventListener("keydown", function (event) {
+              if (event.key === "Enter") {
+                  var aulaTexto = input.value;
+                  nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
+                  
+                  var newEditAula = nuevaAula.querySelector(".edit-aula");
+                  var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
+
+                  habilitarEdicion(newEditAula);
+
+                  newEliminarAula.addEventListener("click", function (event) {
+                      event.preventDefault();
+                      if (confirm("¿Estás seguro de que deseas eliminar esta aula?")) {
+                          nuevaAula.remove();
+                      }
+                  });
+              }
+          });
       });
-    });
-  });
+  }
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const materiasColumn = document.querySelector(".materias-column");
