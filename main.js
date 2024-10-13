@@ -517,7 +517,6 @@ document.getElementById('cancelar-reserva').addEventListener('click', function (
 
 /*separador*/
 
-
 document.addEventListener("DOMContentLoaded", function() {
   var searchInput = document.getElementById("search-input-clases");
   var sizeFilter = document.getElementById("size-filter");
@@ -525,6 +524,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var projectorsFilter = document.getElementById("projectors-filter");
   var classrooms = document.querySelectorAll(".classroom");
   var classroomsContainer = document.querySelector(".classrooms-container");
+  var noResultsMessage = document.getElementById("no-results-message");
 
   function filterClassrooms() {
     var searchValue = searchInput.value.toLowerCase();
@@ -533,11 +533,22 @@ document.addEventListener("DOMContentLoaded", function() {
     var projectorsValue = projectorsFilter.value;
     var hasResults = false;
 
+    console.log("Filtros aplicados:");
+    console.log("Buscar aula:", searchValue);
+    console.log("Tamaño:", sizeValue);
+    console.log("Computadoras:", computersValue);
+    console.log("Proyectores:", projectorsValue);
+
     classrooms.forEach(function(classroom) {
       var classroomName = classroom.querySelector(".classroom-info p").textContent.toLowerCase();
       var capacity = parseInt(classroom.querySelector(".details p:nth-child(1)").textContent.replace('Capacidad: ', ''));
       var hasComputers = classroom.querySelector(".details p:nth-child(3)").textContent.includes("Sí");
       var hasProjector = classroom.querySelector(".details p:nth-child(2)").textContent.includes("Sí");
+
+      console.log("Evaluando aula:", classroomName);
+      console.log("Capacidad:", capacity);
+      console.log("Tiene computadoras:", hasComputers);
+      console.log("Tiene proyector:", hasProjector);
 
       var matchesSearch = searchValue === "" || classroomName.includes(searchValue);
       var matchesSize = sizeValue === "" || 
@@ -550,24 +561,20 @@ document.addEventListener("DOMContentLoaded", function() {
       if (matchesSearch && matchesSize && matchesComputers && matchesProjectors) {
         classroom.style.display = "block";
         hasResults = true;
+        console.log("Aula visible:", classroomName);
       } else {
         classroom.style.display = "none";
+        console.log("Aula oculta:", classroomName);
       }
     });
 
     // Mostrar mensaje si no hay resultados
-    var noResultsMessage = document.getElementById("no-results-message");
     if (!hasResults) {
-      if (!noResultsMessage) {
-        var messageElement = document.createElement("p");
-        messageElement.id = "no-results-message";
-        messageElement.textContent = "No se han encontrado resultados.";
-        classroomsContainer.appendChild(messageElement);
-      }
+      noResultsMessage.textContent = "No se han encontrado resultados.";
+      noResultsMessage.style.display = "block";
+      console.log("No se han encontrado resultados.");
     } else {
-      if (noResultsMessage) {
-        noResultsMessage.remove();
-      }
+      noResultsMessage.style.display = "none";
     }
   }
 
