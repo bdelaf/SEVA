@@ -20,7 +20,7 @@
     </header>
     <div class="main-content">
       <div class="left-panel">
-        <input type="text" id="search-input" placeholder="Buscar aula..." />
+        <input type="text" id="search-input-clases" placeholder="Buscar aula..." />
         <div class="filters">
           <select id="size-filter">
             <option value="">Tamaño</option>
@@ -42,7 +42,7 @@
       </div>
       <div class="right-panel">
         <div class="classrooms-container">
-          <div class="classroom">
+          <div class="classroom" id="classroom-sanjose">
             <div class="classroom-image">
               <img src="./img/uca-aula.jpg" alt="San Jose 126" />
               <div class="classroom-info">
@@ -51,20 +51,61 @@
             </div>
             <div class="classroom-details">
               <div class="rating">
-                <span class="star checked">★★★★★</span>
+                <span>★★★★★</span>
               </div>
               <div class="details">
                 <p>Capacidad: 30</p>
                 <p>Pantalla/Proyector: Sí</p>
                 <p>Computadoras: No</p>
                 <p><a href="profe-sel.html">Reservar</a></p>
-                
               </div>
             </div>
           </div>
-          <!-- Añadir más aulas aquí -->
+          <div class="classroom" id="classroom-magno">
+            <div class="classroom-image">
+              <img src="./img/uca-aula.jpg" alt="Aula Magno" />
+              <div class="classroom-info">
+                <p>Magno S-57</p>
+              </div>
+            </div>
+            <div class="classroom-details">
+              <div class="rating">
+                <span>★★★★☆</span>
+              </div>
+              <div class="details">
+                <p>Capacidad: 100</p>
+                <p>Pantalla/Proyector: Sí</p>
+                <p>Computadoras: Sí</p>
+                <p><a href="profe-sel.html">Reservar</a></p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Aula adicional 2 -->
+          <div class="classroom" id="classroom-moro">
+            <div class="classroom-image">
+              <img src="./img/uca-aula.jpg" alt="Aula 303" />
+              <div class="classroom-info">
+                <p>Moro 110</p>
+              </div>
+            </div>
+            <div class="classroom-details">
+              <div class="rating">
+                <span>★★★☆☆</span>
+              </div>
+              <div class="details">
+                <p>Capacidad: 50</p>
+                <p>Pantalla/Proyector: No</p>
+                <p>Computadoras: No</p>
+                <p><a href="profe-sel.html">Reservar</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
+    <script language="javascript" type="text/javascript" src="main.js"></script>
   </body>
 </html>
+
