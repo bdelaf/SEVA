@@ -1028,9 +1028,22 @@ main {
 }
 
 .aulas-cont{
-  height: 120vh;
+  height: 220vh;
+  background-image: none;
+  background: linear-gradient(180deg, #003b5c, #005b96);
 }
 
+@media (max-width: 600px){
+  .aulas-cont{
+    height: 210vh;
+  }
+}
+
+@media (max-width: 480px){
+  .aulas-cont{
+    height: 160vh;
+  }
+}
 
 
 /*cambiaso dl papu*/
