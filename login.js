@@ -34,11 +34,11 @@
         if (confirmLogin) {
           // Redirigir según el formulario
           if (form.id === "login-profe") {
-            window.location.href = "paginaprincipal-prof.html";
+            window.location.href = "inicio-profe.html";
           } else if (form.id === "login-a") {
-            window.location.href = "paginaprincipal.html";
+            window.location.href = "incio-alumno.html";
           } else if (form.id === "login-adm") {
-            window.location.href = "home-admin.html";
+            window.location.href = "inicio-admin.html";
           } else {
             alert("Formulario desconocido.");
           }
