@@ -69,62 +69,6 @@
 
 
 
-// PERFIL ADMINISTRADOR //
-
-document.addEventListener("DOMContentLoaded", function ()  {
-  const form = document.querySelector(".form-miperfil");
-
-  // Función para manejar el envío del formulario
-  form.addEventListener("submit", function (event)  {
-    event.preventDefault(); // Evita que la página se recargue
-
-    // Obtener los valores de los campos
-    const nombre = document.getElementById("nombre").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const telefono = document.getElementById("telefono").value.trim();
-    const codigoadm = document.getElementById("codigoadm").value.trim();
-
-    // Validación simple
-    if (!nombre || !email || !telefono || !codigoadm) {
-      alert("Por favor, completa todos los campos.");
-      return;
-    }
-    
-    // Mostrar mensaje de éxito
-    alert("Información guardada con éxito!");
-
-    // Opcional: Limpiar el formulario después de enviar
-    form.reset();
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".form-miperfil");
-  const codigoadmInput = document.getElementById("codigoadm");
-
-  // Evento para validar el campo "Código de administrador"
-  codigoadmInput.addEventListener("input", function () {
-    const value = codigoadmInput.value;
-
-    // Eliminar caracteres no numéricos
-    const numericValue = value.replace(/[^0-9]/g, "");
-
-    // Limitar a 3 caracteres
-    if (numericValue.length > 3) {
-      codigoadmInput.value = numericValue.slice(0, 3);
-    } else {
-      codigoadmInput.value = numericValue;
-    }
-  });
-
-  // Validar el formulario al enviarlo
-  form.addEventListener("submit", function (e) {
-    const codigoadmValue = codigoadmInput.value;
-  });
-});
-
-
-
 
 
 // OLVIVE MI CONTRASEÑA //
