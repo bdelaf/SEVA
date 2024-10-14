@@ -495,7 +495,7 @@ var tiempoRestante; // Variable para el tiempo restante
 
 // Función que inicia la cuenta regresiva
 function iniciarCuentaRegresiva(tiempo) {
-    tiempoRestante = tiempo * 60; // Convertir horas a segundos
+    tiempoRestante = tiempo * 60 * 60; // Convertir horas a segundos
     var display = document.getElementById('tiempo-restante');
 
     // Actualiza el temporizador cada segundo
