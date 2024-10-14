@@ -1,5 +1,6 @@
-
-// ADMINISTRADOR : ELIMINAR COMENTARIOS //
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // ADMINISTRADOR : ELIMINAR COMENTARIOS //
 
 document.addEventListener("DOMContentLoaded", function () {
   var checks = document.querySelectorAll('.check-c-adm');
@@ -542,5 +543,4 @@ document.getElementById('cancelar-reserva').addEventListener('click', function (
 
 /*separador*/
 
-
-// separador
+});
