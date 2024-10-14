@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ADMINISTRADOR: ELIMINAR O EDITAR AULAS //
 
-
 document.addEventListener("DOMContentLoaded", function () {
   // Eliminar aula
   var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
@@ -154,25 +153,23 @@ document.addEventListener("DOMContentLoaded", function () {
           input.type = "text";
           input.placeholder = "Nombre del Aula";
 
-          var editAula = document.createElement("a");
-          editAula.href = "";
-          editAula.classList.add("edit-aula");
-          editAula.textContent = "Editar";
-
-          var eliminarAula = document.createElement("a");
-          eliminarAula.href = "";
-          eliminarAula.textContent = "Eliminar";
+          var guardarAula = document.createElement("a");
+          guardarAula.href = "";
+          guardarAula.classList.add("save-link");
+          guardarAula.textContent = "Guardar";
 
           nuevaAula.appendChild(input);
-          nuevaAula.appendChild(editAula);
-          nuevaAula.appendChild(eliminarAula);
+          nuevaAula.appendChild(guardarAula);
           columna.insertBefore(nuevaAula, this);
 
-          input.addEventListener("keydown", function (event) {
-              if (event.key === "Enter") {
-                  var aulaTexto = input.value;
+          // Al hacer clic en "Guardar"
+          guardarAula.addEventListener("click", function (event) {
+              event.preventDefault();
+              var aulaTexto = input.value;
+              
+              if (aulaTexto.trim() !== "") {  // Verificar que el nombre no esté vacío
                   nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
-                  
+
                   var newEditAula = nuevaAula.querySelector(".edit-aula");
                   var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
 
@@ -184,11 +181,14 @@ document.addEventListener("DOMContentLoaded", function () {
                           nuevaAula.remove();
                       }
                   });
+              } else {
+                  alert("El nombre del aula no puede estar vacío");
               }
           });
       });
   }
 });
+
 
 // ADMINISTRADOR: AGREGAR EDITAR O ELIMINAR MATERIAS //
 
