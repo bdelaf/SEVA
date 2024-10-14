@@ -191,11 +191,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ADMINISTRADOR: AGREGAR EDITAR O ELIMINAR MATERIAS //
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const materiasColumn = document.querySelector(".materias-column");
 
   // Función para editar una materia
-  materiasColumn.addEventListener("click", (event) => {
+  materiasColumn.addEventListener("click", function (event) {
     if (event.target.classList.contains("edit-button")) {
       event.preventDefault();
       const materiaItem = event.target.closest(".materia-item");
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".form-miperfil");
 
   // Función para manejar el envío del formulario
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", function (event)  {
     event.preventDefault(); // Evita que la página se recargue
 
     // Obtener los valores de los campos
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form-miperfil");
   const codigoadmInput = document.getElementById("codigoadm");
 
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Validar el formulario al enviarlo
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", function (e) {
     const codigoadmValue = codigoadmInput.value;
   });
 });
@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // AGREGAR COMENTARIOS RESEÑAS //
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".review-form");
   const reviewText = document.getElementById("review-text");
   const commentsSection = document.getElementById("seccion");
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Manejar el envío del formulario
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", function (e) {
     e.preventDefault(); // Evita el envío del formulario
 
     if (reviewText.value.trim() === "" || selectedRating === 0) {
