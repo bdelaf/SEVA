@@ -114,22 +114,24 @@ document.addEventListener("DOMContentLoaded", function () {
   function habilitarEdicion(editLink) {
       editLink.addEventListener("click", function (event) {
           event.preventDefault();
+
           var aula = this.previousElementSibling;
           var aulaTexto = aula.textContent;
+
           var input = document.createElement("input");
           input.type = "text";
           input.value = aulaTexto;
           aula.innerHTML = "";
           aula.appendChild(input);
+
           this.textContent = "Guardar";
           this.classList.add("save-link");
 
-          input.addEventListener("keydown", function (event) {
-              if (event.key === "Enter") {
-                  aula.textContent = input.value;
-                  editLink.textContent = "Editar";
-                  editLink.classList.remove("save-link");
-              }
+          // Evento para guardar al hacer clic en "Guardar"
+          this.addEventListener("click", function () {
+              aula.textContent = input.value;  // Guardar el valor del input como texto en el aula
+              this.textContent = "Editar";  // Cambiar el botón de nuevo a "Editar"
+              this.classList.remove("save-link");
           });
       });
   }
