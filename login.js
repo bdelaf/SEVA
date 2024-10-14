@@ -1,6 +1,6 @@
 
-document.addEventListener("DOMContentLoaded", verificacion);
-document.addEventListener("DOMContentLoaded", olvidarContra);
+document.addEventListener("DOMContentLoaded", verificacion() );
+document.addEventListener("DOMContentLoaded", olvidarContra() );
 
 // VALIDAr EL EMAIL CONTRASEÑA Y LEGAJO AL INICIAR CESION A//
 
