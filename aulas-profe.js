@@ -1,110 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscar Aulas</title>
-    <link rel="stylesheet" href="AAA-styles.css" />
-  </head>
-  <body class="aulas-cont">
-    <header>
-      <div class="left-section">
-        <a href="#">
-          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
-        </a>
-        <a href="inicio-profe.html" id="texto-nav">SEVA</a>
-      </div>
-      <div class="right-section">
-        <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
-      </div>
-    </header>
-    <div class="main-content">
-      <div class="left-panel">
-        <input type="text" id="search-input-clases" placeholder="Buscar aula..." />
-        <div class="filters">
-          <select id="size-filter">
-            <option value="">Tamaño</option>
-            <option value="small">Pequeño</option>
-            <option value="medium">Medio</option>
-            <option value="large">Grande</option>
-          </select>
-          <select id="computers-filter">
-            <option value="">Computadoras</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-          <select id="projectors-filter">
-            <option value="">Proyectores</option>
-            <option value="yes">Sí</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-      </div>
-      <div class="right-panel">
-        <div class="classrooms-container">
-          <div class="classroom" id="classroom-sanjose">
-            <div class="classroom-image">
-              <img src="./img/uca-aula.jpg" alt="San Jose 126" />
-              <div class="classroom-info">
-                <p>San Jose 126</p>
-              </div>
-            </div>
-            <div class="classroom-details">
-              <div class="rating">
-                <span>★★★★★</span>
-              </div>
-              <div class="details">
-                <p>Capacidad: 30</p>
-                <p>Pantalla/Proyector: Sí</p>
-                <p>Computadoras: No</p>
-                <p><a href="profe-sel.html">Reservar</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="classroom" id="classroom-magno">
-            <div class="classroom-image">
-              <img src="./img/uca-aula.jpg" alt="Aula Magno" />
-              <div class="classroom-info">
-                <p>Magno S-57</p>
-              </div>
-            </div>
-            <div class="classroom-details">
-              <div class="rating">
-                <span>★★★★☆</span>
-              </div>
-              <div class="details">
-                <p>Capacidad: 100</p>
-                <p>Pantalla/Proyector: Sí</p>
-                <p>Computadoras: Sí</p>
-                <p><a href="profe-sel.html">Reservar</a></p>
-              </div>
-            </div>
-          </div>
-        
-          <!-- Aula adicional 2 -->
-          <div class="classroom" id="classroom-moro">
-            <div class="classroom-image">
-              <img src="./img/uca-aula.jpg" alt="Aula 303" />
-              <div class="classroom-info">
-                <p>Moro 110</p>
-              </div>
-            </div>
-            <div class="classroom-details">
-              <div class="rating">
-                <span>★★★☆☆</span>
-              </div>
-              <div class="details">
-                <p>Capacidad: 50</p>
-                <p>Pantalla/Proyector: No</p>
-                <p>Computadoras: No</p>
-                <p><a href="profe-sel.html">Reservar</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <script language="javascript" type="text/javascript" src="aulas-profe.js"></script>
-  </body>
-</html>
+document.addEventListener("DOMContentLoaded", function() {
+  var searchInput = document.getElementById("search-input-clases");
+  var sizeFilter = document.getElementById("size-filter");
+  var computersFilter = document.getElementById("computers-filter");
+  var projectorsFilter = document.getElementById("projectors-filter");
+  var classrooms = document.querySelectorAll(".classroom");
+  var noResultsMessage = document.getElementById("no-results-message");
+
+  function filterClassrooms() {
+    var searchValue = searchInput.value.toLowerCase().trim();
+    var sizeValue = sizeFilter.value;
+    var computersValue = computersFilter.value;
+    var projectorsValue = projectorsFilter.value;
+    var hasResults = false;
+
+    classrooms.forEach(function(classroom) {
+      var classroomName = classroom.querySelector(".classroom-info p").textContent.toLowerCase();
+      var capacity = parseInt(classroom.querySelector(".details p:nth-child(1)").textContent.replace('Capacidad: ', ''));
+      var hasComputers = classroom.querySelector(".details p:nth-child(3)").textContent.includes("Sí");
+      var hasProjector = classroom.querySelector(".details p:nth-child(2)").textContent.includes("Sí");
+
+      // Condiciones para filtrar
+      var matchesSearch = searchValue === "" || classroomName.includes(searchValue);
+      var matchesSize = sizeValue === "" || 
+        (sizeValue === "small" && capacity <= 30) || // capacidad de 30 o menor
+        (sizeValue === "medium" && capacity > 30 && capacity <= 50) || // capacidad de 30 a 50 incluido
+        (sizeValue === "large" && capacity > 50); // capacidad mas de 50
+      var matchesComputers = computersValue === "" || (computersValue === "yes" && hasComputers) || (computersValue === "no" && !hasComputers);
+      var matchesProjectors = projectorsValue === "" || (projectorsValue === "yes" && hasProjector) || (projectorsValue === "no" && !hasProjector);
+
+      // Mostrar u ocultar el aula según los criterios
+      if (matchesSearch && matchesSize && matchesComputers && matchesProjectors) {
+        classroom.style.display = "block";
+        hasResults = true;
+      } else {
+        classroom.style.display = "none";
+      }
+    });
+
+    // Mostrar u ocultar mensaje si no hay resultados
+    noResultsMessage.style.display = hasResults ? "none" : "block";
+  }
+
+  // Agregar evento al botón de búsqueda
+  document.getElementById("search-button").addEventListener("click", filterClassrooms);
+});
