@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (var i = 0; i < checks.length; i++) {
       checks[i].addEventListener('click', function() {
-          if (confirm('¿Quieres marcar esta calificación?')) {
+          if (confirm('¿Quieres verificar este comentario?')) {
               this.classList.toggle('active');
           }
       });
