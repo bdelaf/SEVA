@@ -1042,12 +1042,6 @@ main {
   }
 }
 
-@media (max-width: 480px){
-  .aulas-cont{
-    height: 160vh;
-  }
-}
-
 
 /*cambiaso dl papu*/
 
@@ -1215,8 +1209,18 @@ button:hover {
 
 @media (max-height: 791px){
   .aulas-cont {
-    height: 250vh;
+    height: 270vh;
   }
+  .left-panel {
+    width: 50%;
+    padding: 20px;
+  }
+}
+@media screen and (max-height: 700px) {
+  .aulas-cont {
+    height: 200vh;
+  }
+  
 }
 
 .edit-aula{
