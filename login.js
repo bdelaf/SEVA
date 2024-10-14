@@ -1,4 +1,4 @@
-  // VALIDAr EL EMAIL CONTRASEÑA Y LEGAJO AL INICIAR CESION //
+  // VALIDAr EL EMAIL CONTRASEÑA Y LEGAJO AL INICIAR CESION A//
   
   const forms = document.querySelectorAll("form");
   forms.forEach(function (form) {
