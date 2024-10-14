@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", buscador() )
 
+
 function buscador() {
   var searchInput = document.getElementById("search-input-clases");
   var sizeFilter = document.getElementById("size-filter");
@@ -9,8 +10,8 @@ function buscador() {
   var noResultsMessage = document.getElementById("no-results-message");
   filterClassrooms();
   document.getElementById("search-button").addEventListener("click", filterClassrooms);  // Agregar evento al botón de búsqueda
-  
 }
+
 
 function filterClassrooms() {
   var searchValue = searchInput.value.toLowerCase().trim();
@@ -18,8 +19,13 @@ function filterClassrooms() {
   var computersValue = computersFilter.value;
   var projectorsValue = projectorsFilter.value;
   var hasResults = false;
+  classrooms.forEach(buscar(classroom))
+  // Mostrar u ocultar mensaje si no hay resultados
+  noResultsMessage.style.display = hasResults ? "none" : "block";
+}
 
-  classrooms.forEach(function(classroom) {
+
+function buscar() {
     var classroomName = classroom.querySelector(".classroom-info p").textContent.toLowerCase();
     var capacity = parseInt(classroom.querySelector(".details p:nth-child(1)").textContent.replace('Capacidad: ', ''));
     var hasComputers = classroom.querySelector(".details p:nth-child(3)").textContent.includes("Sí");
@@ -41,8 +47,4 @@ function filterClassrooms() {
     } else {
       classroom.style.display = "none";
     }
-  });
-
-  // Mostrar u ocultar mensaje si no hay resultados
-  noResultsMessage.style.display = hasResults ? "none" : "block";
-}
+  }
