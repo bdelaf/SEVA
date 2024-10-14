@@ -24,11 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
           }
       });
   }
-  const forms = document.querySelectorAll("form");
-
   
   // VALIDAr EL EMAIL CONTRASEÑA Y LEGAJO AL INICIAR CESION //
   
+  const forms = document.querySelectorAll("form");
   forms.forEach(function (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault(); // Evita que el formulario se envíe automáticamente
