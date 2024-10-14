@@ -1,4 +1,4 @@
-
+// por cada evento asociarlo a una funcion en vez de poner function (), simplificar el codigo, 
 // ADMINISTRADOR : ELIMINAR COMENTARIOS //
 
 document.addEventListener("DOMContentLoaded", function () {
