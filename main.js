@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para agregar una nueva materia
   const addMateriaButton = document.querySelector(".add-materia-button");
-  addMateriaButton.addEventListener("click", (event) => {
+  addMateriaButton.addEventListener("click", function (event)  {
     event.preventDefault();
     const newMateriaName = prompt("Nombre de la nueva materia:");
 
@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // PERFIL ADMINISTRADOR //
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function ()  {
   const form = document.querySelector(".form-miperfil");
 
   // Función para manejar el envío del formulario
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const codigoadmInput = document.getElementById("codigoadm");
 
   // Evento para validar el campo "Código de administrador"
-  codigoadmInput.addEventListener("input", () => {
+  codigoadmInput.addEventListener("input", function () {
     const value = codigoadmInput.value;
 
     // Eliminar caracteres no numéricos
@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Función para seleccionar la calificación
   stars.forEach((star, index) => {
-    star.addEventListener("click", () => {
+    star.addEventListener("click", function ()  {
       selectedRating = index + 1; // La calificación seleccionada (1 a 5)
       updateStarDisplay(); // Actualiza la visualización de estrellas
     });
