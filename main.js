@@ -303,10 +303,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const stars = document.querySelectorAll(".stars-container .star");
   let selectedRating = 0;
 
-  // Función para seleccionar la calificación
+  // Función para  la calificación
   stars.forEach((star, index) => {
     star.addEventListener("click", function ()  {
-      selectedRating = index + 1; // La calificación seleccionada (1 a 5)
+      selectedRating = index + 1; 
       updateStarDisplay(); // Actualiza la visualización de estrellas
     });
   });
