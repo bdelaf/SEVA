@@ -111,7 +111,11 @@ button {
   transition: background-color 0.6s ease, box-shadow 0.3s ease,
     transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 40%;
+}
+
+.btn-index{
+  min-width: 40%;
+  height: 7%;
 }
 
 .in-btn {
@@ -362,6 +366,7 @@ button a {
   cursor: pointer;
   box-sizing: border-box;
   max-width: 300px;
+  width: 40%;
 }
 
 .main-content {
@@ -878,7 +883,8 @@ main {
 .body-miperfil {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    padding: 20px; /* Cambié a padding para espacio alrededor del contenido */
+    padding: 20px;
+    height: 120vh;
 }
 
 .container-miperfil {
@@ -946,7 +952,10 @@ main {
 
 .texto-miperfil {
     color: #666; /* Color del texto */
-    text-align: center; /* Centrado del texto */
+}
+
+.mis-materias-miperfil .texto-miperfil{
+  display: inline-flex;
 }
 
   .hola{
