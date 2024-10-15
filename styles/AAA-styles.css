@@ -464,7 +464,8 @@ button a {
 
 .container-edificios {
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 @media (max-width: 768px) {
@@ -534,67 +535,101 @@ button a {
 /* Aulas admin */
 .container-edificios {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem;
 }
 
 .column {
-  flex: 1;
-  min-width: 500px; /* Asegura que las columnas no sean demasiado estrechas en pantallas pequeñas */
-  min-height: 250px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 1rem;
-  background-color: #7e6db7;
-  font-size: 1.2rem; /* Tamaño de fuente más grande */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 35%;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Asegura que las columnas ocupen toda la altura disponible */
+  justify-content: space-between;
 }
 
 .column h1 {
-  text-align: center;
-  font-size: 1.9rem; /* Tamaño de fuente más grande para el título */
-  margin-bottom: 1rem;
-  color: white;
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 10px;
 }
 
 .aula {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 10px 0;
 }
 
 .aula p {
-  color: white;
   margin: 0;
+  font-size: 16px;
+}
+
+.aula a {
+  color: #003366;
+  text-decoration: none;
+  margin-left: 10px;
 }
 
 .edit-link {
-  margin-top: auto; /* Empuja el enlace de editar al final de la columna */
+  display: block;
   text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #003366;
+  color: white;
+  border-radius: 5px;
   text-decoration: none;
-  color: #28a745;
-  font-weight: bold;
-  
 }
 
 .edit-link:hover {
-  text-decoration: underline;
+  background-color: #0055a5;
 }
 
 @media (max-width: 768px) {
-  .column {
-    font-size: 1rem; /* Reducir el tamaño de la fuente en pantallas más pequeñas */
-  }
-
   .container-edificios {
-    flex-direction: column;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .column {
+      width: 80%;
   }
 }
-/*--*/
+
+@media (max-width: 480px) {
+  header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  header a {
+      margin: 5px 0;
+  }
+
+  .column {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .column h1 {
+      font-size: 20px;
+  }
+  
+  .aula p {
+      font-size: 14px;
+  }
+
+  .edit-link {
+      padding: 8px;
+      font-size: 14px;
+  }
+}
 
 /* Estilos para el contenedor de materias */
 .materias-container {
@@ -1261,16 +1296,12 @@ button:hover {
   
 }
 
-.edit-aula{
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
+.edit-aula, .elim-com {
+  cursor: pointer;
 }
 
-.elim-aula{
-  text-decoration: none;
-  color: red;
-  font-weight: bold;
+.edit-aula:hover, .elim-com:hover {
+  text-decoration: underline;
 }
 
 /* CSS específico para la pantalla de materias */
