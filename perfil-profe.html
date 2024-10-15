@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEVA</title>
-    <link rel="stylesheet" href="AAA-styles.css" />
+    <link rel="stylesheet" href="./styles/AAA-styles.css" />
   </head>
   <body class="body-miperfil">
     <header>
@@ -38,11 +38,18 @@
 
         <!-- Mis Reservas -->
         <section class="mis-reservas-miperfil">
-            <h2 class="subtitulo-miperfil">Mis Reservas</h2>
-            <p class="texto-miperfil">Lunes: Fisica 10:00 AM</p>
-            <p class="texto-miperfil">Miercoles: Programacion Web 08:00 AM</p>
-            <p class="texto-miperfil">Jueves: Informatica General</p>
-        </section>
+          <h2 class="subtitulo-miperfil">Mis Reservas</h2>
+          <div class="reserva">
+              <p class="texto-miperfil">Lunes: Fisica 10:00 AM</p> <button class="cancelar-reserva">❌</button>
+          </div>
+          <div class="reserva">
+              <p class="texto-miperfil">Miércoles: Programación Web 08:00 AM</p> <button class="cancelar-reserva">❌</button>
+          </div>
+          <div class="reserva">
+              <p class="texto-miperfil">Jueves: Informática General 13:30 PM</p> <button class="cancelar-reserva">❌</button>
+          </div>
+      </section>
+      
 
         <!-- Mis Materias -->
         <section class="mis-materias-miperfil">
@@ -55,5 +62,6 @@
 
         <a href="index.html" class="cerrarcesion">Cerrar Sesión</a>
     </div>
+    <script src="./script/perfil.js" defer></script>
 </body>
 </html>
