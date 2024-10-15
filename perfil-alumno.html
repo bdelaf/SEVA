@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
-</head>
-<body class="body-miperfil">
+  </head>
+  <body class="body-miperfil">
     <header>
-        <div class="left-section">
-            <a href="#">
-                <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
-            </a>
-            <a href="inicio-alumno.html" id="texto-nav">SEVA</a>
-        </div>
-        <div class="right-section">
-            <a href="perfil-alumno.html" id="perfil-nav">Mi perfil</a>
-        </div>
+      <div class="left-section">
+        <a href="#">
+          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+        </a>
+        <a href="inicio-profe.html" id="texto-nav">SEVA</a>
+      </div>
+      <div class="right-section">
+        <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
+      </div>
     </header>
     <div class="container-miperfil">
         <h1 class="titulo-miperfil">Mi Perfil</h1>
@@ -38,19 +38,26 @@
 
         <!-- Mis Reservas -->
         <section class="mis-reservas-miperfil">
-            <h2 class="subtitulo-miperfil">Mis Reservas</h2>
-            <p class="texto-miperfil">Aquí irán tus reservas realizadas.</p>
-        </section>
+          <h2 class="subtitulo-miperfil">Mis Reservas</h2>
+          <div class="reserva">
+              <p class="texto-miperfil">Aula 110 Moro: 11:00-12:00</p> <button class="cancelar-reserva">❌</button>
+          </div>
+          <div class="reserva">
+              <p class="texto-miperfil">Aula 310 Magno (Mañana: 17:00-18:00)</p> <button class="cancelar-reserva">❌</button>
+          </div>
+      </section>
+      
 
-        <!-- Mis Materias -->
         <section class="mis-materias-miperfil">
             <h2 class="subtitulo-miperfil">Mis Materias</h2>
-            <p class="texto-miperfil">Aquí irán tus materias registradas.</p>
+            <p class="texto-miperfil">.Álgebra</p>
+            <p class="texto-miperfil">.Física</p>
+            <p class="texto-miperfil">.Complementos de la Matematica</p>
+            <p class="texto-miperfil">.Programación Web</p>
         </section>
-        
+
         <a href="index.html" class="cerrarcesion">Cerrar Sesión</a>
     </div>
-    <script  src="./script/perfil.js"></script>
+    <script src="./script/perfil.js" defer></script>
 </body>
 </html>
-
