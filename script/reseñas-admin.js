@@ -1,4 +1,4 @@
-// ADMINISTRADOR : ELIMINAR COMENTARIOS //
+// ADMINISTRADOR COMENTARIOS //
 
 document.addEventListener("DOMContentLoaded", comentarios);
 
