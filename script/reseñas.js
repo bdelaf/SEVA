@@ -1,54 +1,60 @@
-// AGREGAR COMENTARIOS RESEÑAS //
+document.addEventListener("DOMContentLoaded", reseñas);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".review-form");
-  const reviewText = document.getElementById("review-text");
-  const commentsSection = document.getElementById("seccion");
-  const stars = document.querySelectorAll(".stars-container .star");
-  let selectedRating = 0;
+let calificacionSeleccionada = 0;
 
-  // Función para  la calificación
-  stars.forEach((star, index) => {
-    star.addEventListener("click", function ()  {
-      selectedRating = index + 1; 
-      updateStarDisplay(); // Actualiza la visualización de estrellas
-    });
+function reseñas() {
+  const formulario = document.querySelector(".review-form");
+  const textoResena = document.getElementById("review-text");
+  const seccionComentarios = document.getElementById("seccion");
+  const estrellas = document.querySelectorAll(".stars-container .star");
+  
+  estrellas.forEach(asignarEventoEstrella)
+  formulario.addEventListener("submit", enviarFormulario);
+}
+
+function asignarEventoEstrella(estrella, index) {
+  estrella.addEventListener("click", function() {
+    sumarEstrella(index, estrellas);
   });
+}
 
-  // Actualiza el estilo de las estrellas según la calificación seleccionada
-  function updateStarDisplay() {
-    stars.forEach((star, index) => {
-      star.classList.toggle("checked", index < selectedRating);
-    });
+function sumarEstrella(index, estrellas) {
+  calificacionSeleccionada = index + 1;
+  actualizarEstiloEstrellas(estrellas, calificacionSeleccionada);
+}
+
+function actualizarEstiloEstrellas(estrellas, calificacionSeleccionada) {
+  estrellas.forEach(actualizarEstrella);
+}
+
+function actualizarEstrella(estrella, index) {
+  estrella.classList.toggle("checked", index < calificacionSeleccionada);
+}
+
+function enviarFormulario(evento) {
+  evento.preventDefault();
+
+  const textoReseña = document.getElementById("review-text");
+  const seccionComentarios = document.getElementById("seccion");
+  const estrellas = document.querySelectorAll(".stars-container .star");
+
+  if (textoReseña.value.trim() === "" || calificacionSeleccionada === 0) {
+    alert("Por favor, escribe tu reseña y selecciona una calificación.");
+    return;
   }
 
-  // Manejar el envío del formulario
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Evita el envío del formulario
+  const nuevaReseña = document.createElement("div");
+  nuevaReseña.classList.add("review-c");
+  nuevaReseña.innerHTML = `
+    <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(
+      calificacionSeleccionada
+    )}${"☆".repeat(5 - calificacionSeleccionada)}</span> <span class="check-c">✔</span></p>
+    <p class="review-text">${textoReseña.value}</p>
+  `;
 
-    if (reviewText.value.trim() === "" || selectedRating === 0) {
-      alert("Por favor, escribe tu reseña y selecciona una calificación.");
-      return; // Detiene la ejecución si no hay reseña o calificación
-    }
+  seccionComentarios.appendChild(nuevaReseña);
 
-    // Crea un nuevo comentario
-    const newReview = document.createElement("div");
-    newReview.classList.add("review-c");
-    newReview.innerHTML = `
-          <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(
-            selectedRating
-          )}${"☆".repeat(
-      5 - selectedRating
-    )}</span> <span class="check-c">✔</span></p>
-          <p class="review-text">${reviewText.value}</p>
-      `;
-
-    // Agrega el nuevo comentario a la sección de comentarios
-    commentsSection.appendChild(newReview);
-
-    // Limpia el formulario
-    reviewText.value = "";
-    selectedRating = 0;
-    updateStarDisplay();
-  });
-});
+  textoReseña.value = "";
+  calificacionSeleccionada = 0;
+  actualizarEstiloEstrellas(estrellas, calificacionSeleccionada);
+}
