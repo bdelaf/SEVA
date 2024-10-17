@@ -1057,7 +1057,7 @@ main {
   padding: 0;
   font-family: Arial, sans-serif;
   background: url(/img/img-fondo.jpg);
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
