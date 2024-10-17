@@ -378,19 +378,6 @@ button a {
   padding: 20px;
 }
 
-#search-input-clases {
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  max-width: 300px;
-}
-
-.filters {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-}
 
 .filters select {
   padding: 10px;
@@ -403,59 +390,11 @@ button a {
   overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
 }
 
-.classrooms-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.classroom {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
 .classroom-image {
   position: relative;
   width: 100%;
   height: 300px;
-}
-
-.classroom-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.classroom-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
-.classroom-details {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.rating {
-  margin-bottom: 10px;
-}
-
-.details p {
-  margin-bottom: 5px;
-}
-
-.details a {
-  color: #007bff;
-  text-decoration: none;
 }
 
 .details a:hover {
@@ -1103,15 +1042,9 @@ main {
   margin-bottom: 10px;
 }
 
-.aulas-cont{
-  height: 240vh;
-  background-image: none;
-  background: linear-gradient(180deg, #003b5c, #005b96);
-}
-
-@media (max-width: 600px){
-  .aulas-cont{
-    height: 210vh;
+@media (max-width: 600px) {
+  .aulas-cont {
+      min-height: 100vh;
   }
 }
 
@@ -1454,7 +1387,6 @@ button:hover {
   align-items: center;
   transition: background-color 0.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 100px;
   width: auto;
 }
 
@@ -1462,15 +1394,203 @@ button:hover {
   background-color: #6a5acd;
 }
 
-
-.search-button-container{
-  display: flex;
-  justify-content: center;
-}
-
 @media (max-width: 600px) {
   #search-button {
       font-size: 16px; /* Ajusta el tamaño del texto para dispositivos pequeños */
       padding: 8px 30px; /* Reduce el padding para que el botón se ajuste mejor */
   }
+}
+
+.aulas-cont {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #003b5c, #005b96);
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-main-alumnos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.filter-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-input-clases {
+  margin-top: 50px;
+  margin-bottom: 16px;
+  padding: 10px;
+  font-size: 16px;
+  width: 200px; /* Ajustar el ancho al igual que los otros filtros */
+  height: 40px; /* Ajustar la altura al igual que los otros filtros */
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px; /* Ajustar el ancho al igual que el campo de búsqueda */
+  height: 40px; /* Ajustar la altura al igual que el campo de búsqueda */
+}
+
+.search-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#search-button {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  font-size: 20px;
+  padding: 10px 50px;
+  background-color: rgba(12, 8, 93, 0.75);
+  color: white;
+  border: none;
+  border-radius: 29px;
+  cursor: pointer;
+  transition: background-color 0.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: auto;
+  height: 40px;
+}
+
+.container-clases {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.classrooms-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.classroom {
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.classroom-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.classroom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.classroom-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.classroom-details {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin-bottom: 5px;
+}
+
+.details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .filters {
+      flex-direction: column;
+  }
+
+  #search-input-clases, select, #search-button {
+      width: 100%;
+      max-width: none;
+      height: 40px;
+      margin-top: 10px;
+  }
+
+  .classroom {
+      flex: 1 1 100%;
+  }
+
+  .container-main-alumnos {
+      margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #search-input-clases, select, #search-button {
+      width: 100%;
+      max-width: none;
+      height: 40px;
+      margin-top: 10px;
+  }
+
+  .classroom {
+      flex: 1 1 100%;
+  }
+
+  .container-main-alumnos {
+      margin-top: 0;
+  }
+}
+
+#no-results-message{
+  color: white;
+  font-weight:bold ;
+  font-size: 36px;
+  margin-top: 30px;
+  text-align: center;
 }
