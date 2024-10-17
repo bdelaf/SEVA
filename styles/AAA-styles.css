@@ -1594,3 +1594,87 @@ select {
   margin-top: 30px;
   text-align: center;
 }
+
+
+
+
+.contenttt {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profe-content {
+  width: 80%;
+}
+
+.main-lipmio{
+  width: 80%;
+}
+
+.botones-prof{
+  display: flex;
+}
+
+.main-prof {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido en el eje transversal */
+  padding: 30px 20px;
+  width: 90%;
+}
+
+.body-prof {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.mi-bloque {
+  background-color: #f9f9f9; /* Color de fondo */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interno */
+  margin: 20px 0; /* Espacio externo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 300px;
+  height: 300px;
+  
+}
+
+.btn-prf{
+  padding: 10px 20px;
+}
+
+@media (max-width: 600px) {
+  .mi-bloque {
+      width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+      padding: 15px; /* Reduce un poco el relleno interno para pantallas pequeñas */
+  }
+  .contenttt{
+    width: 100%;
+    display: flex;
+  }
+}
+
+/* Media Query para pantallas grandes (escritorios y tabletas grandes) */
+@media (min-width: 1200px) {
+  .mi-bloque {
+      padding: 40px; /* Aumenta el relleno interno en pantallas grandes */
+  }
+  .contenttt{
+    width: 100%;
+    display: flex;
+  }
+}
+
+.info-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.inline{
+  display: inline;
+  padding: 15px;
+}
