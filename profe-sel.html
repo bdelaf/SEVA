@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
-    <style>
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 30px 20px;
-        }   
-    </style>
 </head>
 <body class="custom-body">
     <header>
@@ -24,19 +16,27 @@
             <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
         </div>
     </header>
-    <main id="reservas">
+    
+    <main class="main-prof">
         <div class="contenttt">
-            <h1 class="materia">MATERIA:</h1>
-            <h2 class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></h2>
+            <section class="mi-bloque">
+           
             
-        
+            </section>
+            <div class="info-container">    
+                <div class="inline">
+                    <div class="materia">MATERIA:</div>
+                    <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
+                </div>
+            </div>
+    
         </div>
-        
+            
         <div class="botoness">
-            <button id="alargar-reserva">Alargar reserva</button>
-            <button id="cancelar-reserva">Cancelar reserva</button>
+            <button class="btn-prf">Alargar reserva</button>
+            <button class="btn-prf">Cancelar reserva</button>
             <button>
-                <a class="hola"">Reservar</a>
+                <a class="btm-prf">Reservar</a>
             </button>
         </div>
         <div id="selector-horas" style="display: none;">
