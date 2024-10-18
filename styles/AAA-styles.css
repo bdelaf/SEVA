@@ -1097,8 +1097,9 @@ main {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: auto; /* Asegura que los botones estén en la parte inferior */
-  margin-bottom: 30px; /* Espaciado inferior */
+  margin-bottom: 30px; 
+  gap: 15px;
+  margin-top: 20px;
 }
 
 #reservas button {
@@ -1632,8 +1633,8 @@ select {
   background-color: white;
   width: 45%;
   height: 450px; 
-  border-radius: 10px
-  margin-top: 40px
+  border-radius: 10px;
+  margin-top: 40px;
 }
 
 .end {
@@ -1644,7 +1645,7 @@ select {
 
 
 .materia {
-  colour: white;
+  color: white;
   font-size: 1.7rem; 
 }
 
@@ -1652,7 +1653,7 @@ select {
 .tiempo {
     font-size: 1.7rem; 
     margin-bottom: 10px;
-    colour: white;
+    color: white;
 }
 
 
