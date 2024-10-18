@@ -1641,6 +1641,7 @@ select {
   display: flex;
   flex-direction: column;
   width: 45%;
+  margin-top: 40px;
 }
 
 
