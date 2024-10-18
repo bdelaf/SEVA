@@ -1678,3 +1678,7 @@ select {
   display: inline;
   padding: 15px;
 }
+
+#selector-horas {
+  display: none;
+}
