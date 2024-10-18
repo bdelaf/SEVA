@@ -40,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url(/img/img-fondo.jpg);
+  background: url(../img/img-fondo.jpg);
 }
 
 a {
@@ -1056,7 +1056,7 @@ main {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: url(/img/img-fondo.jpg);
+  background: url(../img/img-fondo.jpg);
   color: black;
   display: flex;
   flex-direction: column;
