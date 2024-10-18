@@ -1629,7 +1629,8 @@ select {
 .mi-bloque {
   background-color: lightblue;
   width: 45%;
-  height: 500px; /* Ajusta según tu necesidad */
+  height: 500px; 
+  border-radius: 10px
 }
 
 .end {
