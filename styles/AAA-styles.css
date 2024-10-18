@@ -1627,10 +1627,11 @@ select {
 }
 
 .mi-bloque {
-  background-color: lightblue;
+  background-color: white;
   width: 45%;
-  height: 500px; 
+  height: 450px; 
   border-radius: 10px
+  margin-top: 40px
 }
 
 .end {
