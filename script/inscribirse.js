@@ -6,7 +6,7 @@ function checkInscri() {
         if (boton.innerHTML === "Inscribirse") {
           var confirmacion = confirm("¿Estás seguro que quieres inscribirte a esta comisión?");
           if (confirmacion) {
-            boton.innerHTML = "❌ Darse de baja";
+            boton.innerHTML = "❌ Dar de baja";
             boton.style.color = "white";
             boton.style.backgroundColor = "red";
             alert("Te has inscrito exitosamente.");
@@ -21,7 +21,7 @@ function checkInscri() {
               estudiantes.innerText = inscritos + "/" + total;
             }
           }
-        } else if (boton.innerHTML === "❌ Darse de baja") {
+        } else if (boton.innerHTML === "❌ Dar de baja") {
           var confirmacionBaja = confirm("¿Estás seguro que quieres darte de baja de esta comisión?");
           if (confirmacionBaja) {
             boton.innerHTML = "Inscribirse";
