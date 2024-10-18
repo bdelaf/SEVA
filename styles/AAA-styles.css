@@ -1598,88 +1598,149 @@ select {
 
 
 
-.contenttt {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.profe-content {
-  width: 80%;
-}
-
-.main-lipmio{
-  width: 80%;
-}
-
-.botones-prof{
-  display: flex;
-}
-
 .main-prof {
-  flex: 1;
+  
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el contenido en el eje transversal */
+  align-items: center; 
   padding: 30px 20px;
   width: 90%;
 }
 
-.body-prof {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+.container-prof {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 600px;
+}
+
+.contenttt {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .mi-bloque {
-  background-color: #f9f9f9; /* Color de fondo */
-  border: 1px solid #ccc; /* Borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 20px; /* Espacio interno */
-  margin: 20px 0; /* Espacio externo */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
-  width: 300px;
-  height: 300px;
-  
+  background-color: lightblue;
+  width: 45%;
+  height: 500px; /* Ajusta según tu necesidad */
 }
 
-.btn-prf{
-  padding: 10px 20px;
-}
-
-@media (max-width: 600px) {
-  .mi-bloque {
-      width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
-      padding: 15px; /* Reduce un poco el relleno interno para pantallas pequeñas */
-  }
-  .contenttt{
-    width: 100%;
-    display: flex;
-  }
-}
-
-/* Media Query para pantallas grandes (escritorios y tabletas grandes) */
-@media (min-width: 1200px) {
-  .mi-bloque {
-      padding: 40px; /* Aumenta el relleno interno en pantallas grandes */
-  }
-  .contenttt{
-    width: 100%;
-    display: flex;
-  }
-}
-
-.info-container{
+.end {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  width: 45%;
 }
 
-.inline{
-  display: inline;
-  padding: 15px;
+
+.materia {
+  font-size: 1.7rem; 
+}
+
+.tiempo {
+    font-size: 1.7rem; 
+    margin-bottom: 10px;
+}
+
+
+.botoness {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+.botoness button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 71%;
+  white-space: nowrap;
+}
+
+.botoness button a {
+  color: white;
+  text-decoration: none;
 }
 
 #selector-horas {
+  margin-top: 20px;
   display: none;
 }
 
+#selector-horas label {
+  margin-right: 10px;
+}
+
+#selector-horas button {
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .materia {
+    font-size: 1rem; 
+}
+
+.tiempo {
+    font-size: 1rem; 
+}
+  .main-prof {
+    margin-top: 100px;
+  }
+  .container-prof {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+  .custom-body {
+    margin-top: -100px;
+  }
+  .mi-bloque {
+    width: 100%;
+    height: 280px; 
+  }
+
+  .info-container {
+    flex-direction: column; /* Alineación vertical en pantallas pequeñas */
+  }
+
+  .botoness {
+    margin-left: 0; /* Elimina el margen a la izquierda en pantallas pequeñas */
+    align-items: center; /* Centra los botones */
+  }
+
+  .botoness button {
+    width: 90%; /* Ajusta el ancho de los botones en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .botoness button {
+    width: 100%; /* Botones ocupan el ancho completo en pantallas muy pequeñas */
+  }
+  .botoness button {
+    margin-top: 10px;
+  }
+  .main-prof {
+    margin-top: 120px;
+  }
+  .materia {
+    font-size: 1rem; 
+}
+
+.tiempo {
+    font-size: 0.77rem; 
+}
+}
