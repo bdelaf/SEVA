@@ -1640,12 +1640,15 @@ select {
 
 
 .materia {
+  colour: white;
   font-size: 1.7rem; 
 }
+
 
 .tiempo {
     font-size: 1.7rem; 
     margin-bottom: 10px;
+    colour: white;
 }
 
 
