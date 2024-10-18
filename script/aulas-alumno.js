@@ -61,12 +61,6 @@ function mostrarMensajeSiNoHayResultados() {
     }
 }
 
-
-
-
-
-
-
 // document.addEventListener("DOMContentLoaded", buscador() )
 
 
