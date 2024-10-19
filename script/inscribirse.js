@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    checkInscri();
-});
+document.addEventListener("DOMContentLoaded", checkInscri)
 
 function checkInscri() {
     var botones_inscri = document.querySelectorAll(".inscribirse.active");
@@ -8,6 +6,7 @@ function checkInscri() {
         asignarEvento(boton);
     });
 }
+
 
 function asignarEvento(boton) {
     boton.addEventListener("click", function () {
@@ -18,6 +17,7 @@ function asignarEvento(boton) {
         }
     });
 }
+
 
 function inscribirse(boton) {
     if (confirm("¿Estás seguro que quieres inscribirte a esta comisión?")) {
@@ -31,6 +31,7 @@ function inscribirse(boton) {
     }
 }
 
+
 function darseDeBaja(boton) {
     if (confirm("¿Estás seguro que quieres darte de baja de esta comisión?")) {
         boton.innerHTML = "Inscribirse";
@@ -43,6 +44,7 @@ function darseDeBaja(boton) {
     }
 }
 
+
 function actualizarEstudiantes(boton, cambio) {
     var estudiantes = boton.parentElement.querySelector('.students');
     var inscritos_total = estudiantes.innerText.split('/');
@@ -52,6 +54,7 @@ function actualizarEstudiantes(boton, cambio) {
     estudiantes.innerText = inscritos + "/" + total;
 }
 
+
 function obtenerComisionInscrita(inscripciones) {
     let comisionInscrita = null;
 
@@ -60,9 +63,9 @@ function obtenerComisionInscrita(inscripciones) {
             comisionInscrita = inscripcion;
         }
     });
-
     return comisionInscrita;
 }
+
 
 function verificarCapacidad(inscripcion) {
     var estudiantes = inscripcion.parentElement.querySelector('.students');
@@ -83,6 +86,7 @@ function verificarCapacidad(inscripcion) {
     }
 }
 
+
 function deshabilitarOtrasComisiones(inscripciones, comisionInscrita) {
     inscripciones.forEach(function(inscripcion) {
         if (inscripcion !== comisionInscrita && !inscripcion.classList.contains("dar-de-baja")) {
@@ -93,6 +97,7 @@ function deshabilitarOtrasComisiones(inscripciones, comisionInscrita) {
         }
     });
 }
+
 
 function verificarInscripcion() {
     var materias = document.querySelectorAll(".subject");
