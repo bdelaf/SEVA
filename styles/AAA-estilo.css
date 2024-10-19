@@ -182,6 +182,12 @@ h2 {
 
 }
 
+@media screen and (max-height: 900px) {
+  .container-inscribirse{
+    height: 120vh;
+  }
+}
+
 .txt-inscribirse{
   color: white;
 }
