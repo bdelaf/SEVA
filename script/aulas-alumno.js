@@ -1,5 +1,6 @@
 document.getElementById("search-button").addEventListener("click", buscador);
 
+
 function buscador() {
     var nombreFiltro = document.getElementById("search-input-clases").value.toLowerCase();
     var filtroTamaño = document.getElementById("size-filter").value.toLowerCase();
@@ -17,6 +18,7 @@ function buscador() {
 
     mostrarMensajeSiNoHayResultados();
 }
+
 
 function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroProyectores) {
     var nombreAula = aula.querySelector(".classroom-info p").textContent.toLowerCase();
@@ -47,6 +49,8 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
         proyectoresValido
     );
 }
+
+
 
 function mostrarMensajeSiNoHayResultados() {
     var aulasVisibles = Array.from(document.querySelectorAll(".classroom")).filter(function(aula) {
