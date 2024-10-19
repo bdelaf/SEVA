@@ -1481,6 +1481,7 @@ select {
   justify-content: center;
   gap: 20px;
   flex: 1;
+  max-height: 60vh; /* Ajustar la altura máxima */
 }
 
 .classrooms-container {
@@ -1488,6 +1489,7 @@ select {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  overflow-y: auto;
 }
 
 .classroom {
@@ -1497,7 +1499,7 @@ select {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 20px; /* Para evitar que se amontonen en dispositivos móviles */
+  margin-bottom: 20px;
 }
 
 .classroom-image {
@@ -1548,20 +1550,54 @@ select {
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+      flex-direction: column;
+  }
+
+  #search-input-clases, select, #search-button {
+      width: 100%;
+      max-width: none;
+      height: 40px;
+      margin-top: 10px;
+  }
+
+  .classroom {
+      flex: 1 1 100%;
+  }
+
+  .container-main-alumnos {
+      margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #search-input-clases, select, #search-button {
+      width: 100%;
+      max-width: none;
+      height: 40px;
+      margin-top: 10px;
+  }
+
+  .classroom {
+      flex: 1 1 100%;
+  }
+
+  .container-main-alumnos {
+      margin-top: 0;
+  }
+}
+
+/* Responsive Design */
 @media screen and (max-height:928px){
   .aulas-cont{
-    height: 240vh;
+    height: 130vh;
   }
 }
-@media screen and (max-height:740px){
-  .aulas-cont{
-    height: 270vh;
-  }
-  
-}
+
 @media screen and (max-height:667px){
   .aulas-cont{
-    height: 300vh;
+    height: 150vh;
   }
   
 }
