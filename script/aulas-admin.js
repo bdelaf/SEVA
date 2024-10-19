@@ -1,95 +1,124 @@
 // ADMINISTRADOR: ELIMINAR O EDITAR AULAS //
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Eliminar aula
-  var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
-  for (var i = 0; i < eliminarLinks.length; i++) {
-      eliminarLinks[i].addEventListener("click", function (event) {
-          event.preventDefault();
-          var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta aula?");
-          if (confirmacion) {
-              var aula = this.parentElement;
-              aula.remove(); // Elimina el aula del DOM
-          }
-      });
-  }
+document.addEventListener("DOMContentLoaded", inicio);
 
-  // Editar aulas
-  function habilitarEdicion(editLink) {
-      editLink.addEventListener("click", function (event) {
-          event.preventDefault();
+function inicio() {
+    var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
+    var editLinks = document.querySelectorAll(".edit-aula");
+    var addLinks = document.querySelectorAll(".edit-link");
 
-          var aula = this.previousElementSibling;
-          var aulaTexto = aula.textContent;
+    asignarEventosEliminar(eliminarLinks);
+    asignarEventosEdicion(editLinks);
+    asignarEventosAgregar(addLinks);
+}
 
-          var input = document.createElement("input");
-          input.type = "text";
-          input.value = aulaTexto;
-          aula.innerHTML = "";
-          aula.appendChild(input);
 
-          this.textContent = "Guardar";
-          this.classList.add("save-link");
 
-          // Evento para guardar al hacer clic en "Guardar"
-          this.addEventListener("click", function () {
-              aula.textContent = input.value;  // Guardar el valor del input como texto en el aula
-              this.textContent = "Editar";  // Cambiar el botón de nuevo a "Editar"
-              this.classList.remove("save-link");
-          });
-      });
-  }
+// Función para asignar eventos de eliminación
+function asignarEventosEliminar(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", eliminarAula);
+    }
+}
 
-  var editLinks = document.querySelectorAll(".edit-aula");
-  for (var j = 0; j < editLinks.length; j++) {
-      habilitarEdicion(editLinks[j]);
-  }
 
-  // Agregar aula
-  var addLinks = document.querySelectorAll(".edit-link");
-  for (var k = 0; k < addLinks.length; k++) {
-      addLinks[k].addEventListener("click", function (event) {
-          event.preventDefault();
-          var columna = this.parentElement;
-          var nuevaAula = document.createElement("div");
-          nuevaAula.classList.add("aula");
 
-          var input = document.createElement("input");
-          input.type = "text";
-          input.placeholder = "Nombre del Aula";
+function eliminarAula(event) {
+    event.preventDefault();
+    var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta aula?");
+    if (confirmacion) {
+        var aula = event.target.parentElement;
+        aula.remove();
+    }
+}
 
-          var guardarAula = document.createElement("a");
-          guardarAula.href = "";
-          guardarAula.classList.add("save-link");
-          guardarAula.textContent = "Guardar";
 
-          nuevaAula.appendChild(input);
-          nuevaAula.appendChild(guardarAula);
-          columna.insertBefore(nuevaAula, this);
 
-          // Al hacer clic en "Guardar"
-          guardarAula.addEventListener("click", function (event) {
-              event.preventDefault();
-              var aulaTexto = input.value;
-              
-              if (aulaTexto.trim() !== "") {  // Verificar que el nombre no esté vacío
-                  nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
+// Función para asignar eventos de edición
+function asignarEventosEdicion(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", habilitarEdicion);
+    }
+}
 
-                  var newEditAula = nuevaAula.querySelector(".edit-aula");
-                  var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
 
-                  habilitarEdicion(newEditAula);
 
-                  newEliminarAula.addEventListener("click", function (event) {
-                      event.preventDefault();
-                      if (confirm("¿Estás seguro de que deseas eliminar esta aula?")) {
-                          nuevaAula.remove();
-                      }
-                  });
-              } else {
-                  alert("El nombre del aula no puede estar vacío");
-              }
-          });
-      });
-  }
-});
+function habilitarEdicion(event) {
+    event.preventDefault();
+    var editLink = event.target;
+    var aula = editLink.previousElementSibling;
+    var aulaTexto = aula.textContent;
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.value = aulaTexto;
+    aula.innerHTML = "";
+    aula.appendChild(input);
+
+    editLink.textContent = "Guardar";
+    editLink.classList.add("save-link");
+
+    editLink.removeEventListener("click", habilitarEdicion);
+    editLink.addEventListener("click", function () {
+        guardarAula(aula, input, editLink);
+    });
+}
+
+
+
+function guardarAula(aula, input, editLink) {
+    aula.textContent = input.value;
+    editLink.textContent = "Editar";
+    editLink.classList.remove("save-link");
+
+    editLink.addEventListener("click", habilitarEdicion);
+}
+
+
+
+// Función para asignar eventos de agregar aulas
+function asignarEventosAgregar(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", agregarAula);
+    }
+}
+
+
+
+function agregarAula(event) {
+    event.preventDefault();
+    var columna = event.target.parentElement;
+    var nuevaAula = document.createElement("div");
+    nuevaAula.classList.add("aula");
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Nombre del Aula";
+
+    var guardarAulaLink = document.createElement("a");
+    guardarAulaLink.href = "";
+    guardarAulaLink.classList.add("save-link");
+    guardarAulaLink.textContent = "Guardar";
+
+    nuevaAula.appendChild(input);
+    nuevaAula.appendChild(guardarAulaLink);
+    columna.insertBefore(nuevaAula, event.target);
+
+  
+    guardarAulaLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        var aulaTexto = input.value;
+
+        if (aulaTexto.trim() !== "") {
+            nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
+
+            var newEditAula = nuevaAula.querySelector(".edit-aula");
+            var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
+
+            asignarEventosEdicion([newEditAula]);
+            asignarEventosEliminar([newEliminarAula]);
+        } else {
+            alert("El nombre del aula no puede estar vacío");
+        }
+    });
+}
