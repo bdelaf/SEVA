@@ -1215,19 +1215,10 @@ button:hover {
 }
 
 @media (max-height: 791px){
-  .aulas-cont {
-    height: 270vh;
-  }
   .left-panel {
     width: 50%;
     padding: 20px;
   }
-}
-@media screen and (max-height: 700px) {
-  .aulas-cont {
-    height: 200vh;
-  }
-  
 }
 
 .edit-aula, .elim-com {
@@ -1442,15 +1433,15 @@ button:hover {
   margin-bottom: 16px;
   padding: 10px;
   font-size: 16px;
-  width: 200px; /* Ajustar el ancho al igual que los otros filtros */
-  height: 40px; /* Ajustar la altura al igual que los otros filtros */
+  width: 200px;
+  height: 40px;
 }
 
 select {
   padding: 10px;
   font-size: 16px;
-  width: 200px; /* Ajustar el ancho al igual que el campo de búsqueda */
-  height: 40px; /* Ajustar la altura al igual que el campo de búsqueda */
+  width: 200px;
+  height: 40px;
 }
 
 .search-button-container {
@@ -1501,6 +1492,7 @@ select {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px; /* Para evitar que se amontonen en dispositivos móviles */
 }
 
 .classroom-image {
@@ -1550,7 +1542,27 @@ select {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media screen and (max-height:928px){
+  .aulas-cont{
+    height: 240vh;
+  }
+}
+@media screen and (max-height:740px){
+  .aulas-cont{
+    height: 270vh;
+  }
+  
+}
+@media screen and (max-height:667px){
+  .aulas-cont{
+    height: 300vh;
+  }
+  
+}
+
+
+@media (max-width: 768px){
   .filters {
       flex-direction: column;
   }
@@ -1566,26 +1578,6 @@ select {
       flex: 1 1 100%;
   }
 
-  .container-main-alumnos {
-      margin-top: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  #search-input-clases, select, #search-button {
-      width: 100%;
-      max-width: none;
-      height: 40px;
-      margin-top: 10px;
-  }
-
-  .classroom {
-      flex: 1 1 100%;
-  }
-
-  .container-main-alumnos {
-      margin-top: 0;
-  }
 }
 
 #no-results-message{
