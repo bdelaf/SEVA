@@ -787,6 +787,11 @@ main {
     margin-left: 10px;
 }
 
+.check-g {
+  color: grey;
+  margin-left: 10px;
+}
+
 .review-text {
     color: #333;
     font-size: 16px;
