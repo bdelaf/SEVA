@@ -44,7 +44,7 @@ function enviarFormulario(evento) {
     var nuevaReseña = document.createElement("div");
     nuevaReseña.classList.add("review-c");
     nuevaReseña.innerHTML = `
-        <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(calificacionSeleccionada)}${"☆".repeat(5 - calificacionSeleccionada)}</span> <span class="check-c">✔</span></p>
+        <p class="reviewer-c">Anónimo <span class="stars-c">${"★".repeat(calificacionSeleccionada)}${"☆".repeat(5 - calificacionSeleccionada)}</span> <span class="check-g">✔</span></p>
         <p class="review-text">${textoReseña.value}</p>
     `;
     seccionComentarios.appendChild(nuevaReseña);
