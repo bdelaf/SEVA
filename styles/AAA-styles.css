@@ -1790,12 +1790,6 @@ select {
 }
 }
 
-/* Definir la fuente sans-serif */
-.sans-serif-font {
-    font-family: 'Arial', sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
-}
-
-/* Asegúrate de que este estilo no afecte otros HTML */
 .body-profe-sel {
     margin: 0;
     padding: 20px;
@@ -1812,8 +1806,3 @@ select {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-    box-sizing: border-box;
-}
-
-
