@@ -2,7 +2,7 @@ document.AddEventListener("DOMContentLoaded",incializar)
 
 function inicializar() {
   document.getElementById("search-button").addEventListener("click", buscador);
-
+  initReservaEnlaces()
 }
 
 
@@ -69,3 +69,29 @@ function mostrarMensajeSiNoHayResultados() {
     }
 }
 
+
+function initReservaEnlaces() {
+    // Obtener todos los enlaces de "Confirmar Reserva"
+    var confirmarReservaLinks = document.querySelectorAll('.confirmar-reserva');
+
+    confirmarReservaLinks.forEach(asignarEventoReserva);
+}
+
+
+function asignarEventoReserva(link) {
+    link.addEventListener('click', manejarClickReserva);
+}
+
+
+function manejarClickReserva(event) {
+    event.preventDefault(); // Evita que el enlace redirija inmediatamente
+    confirmarReserva();
+}
+
+
+function confirmarReserva() {
+    var confirmacion = confirm("La reserva ha sido exitosa. ¿Deseas continuar?");
+    if (confirmacion) {
+        window.location.href = 'profe-sel.html';
+    }
+}
