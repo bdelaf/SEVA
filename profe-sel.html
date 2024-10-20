@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
 </head>
-<body class="custom-body">
+<body class="custom-body-profe-sel">
     <header>
         <a href="#">
             <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
@@ -16,28 +17,27 @@
             <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
         </div>
     </header>
-    
+
     <main class="main-prof">
         <div class="container-prof">
             <div class="contenttt">
                 <div class="info-container">  
                     <section class="mi-bloque">
-                        <label for="materia-select">Selecciona una materia:</label>
-                        <select id="materia-select">
-                            <option value="">--Seleccionar--</option>
-                            <option value="Informática General">Informática General</option>
-                            <option value="Programación Web">Programación Web</option>
-                            <option value="Programación Orientada a Infraestructura">Programación Orientada a Infraestructura</option>
-                        </select>
+                        <h2>Selecciona una Materia:</h2>
+                        <div class="materias-list-profe-sel">
+                            <label><input type="checkbox" value="Informática General" class="materia-checkbox"> Informática General</label><br>
+                            <label><input type="checkbox" value="Programación Web" class="materia-checkbox"> Programación Web</label><br>
+                            <label><input type="checkbox" value="Programación Orientada a Infraestructura" class="materia-checkbox"> Programación Orientada a Infraestructura</label><br>
+                        </div>
                     </section>  
                     <div class="end">
-                        <div class="materia">Materia: <span id="materia-nombre">Ninguna</span></div>
+                        <div class="materia">Materia: <span id="materia-seleccionada"></span></div>
                         <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
                     </div>
                 </div>
             </div>
             <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf">Tiempo de reserva</button>
+                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
                 <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
                 <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
             </div>
