@@ -894,16 +894,24 @@ main {
 }
 
 .cerrarcesion {
-    display: block; /* Para centrar el enlace */
+    display: inline; 
     text-align: center;
+    background-color: #e6e6e6;
     color: red;
-    font-weight: bold; /* Resaltar el texto */
-    margin-top: 20px; /* Espacio superior */
-    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; 
+    margin-top: 20px;
+    text-decoration: none;
 }
 
 .cerrarcesion:hover {
-    text-decoration: underline; /* Subrayar al pasar el ratón */
+    text-decoration: solid; /* Subrayar al pasar el ratón */
+    background-color: red;
+    color: white;
+}
+
+.btn-container-mp{
+  display: flex;
+  flex-direction: column;
 }
 
 .form-miperfil {
