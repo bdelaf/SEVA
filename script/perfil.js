@@ -12,3 +12,10 @@ function cancelar_reserva() {
     }
 }
 document.addEventListener("DOMContentLoaded", cancelar_reserva);
+document.addEventListener("click", cerrarcesion)
+
+function cerrarcesion()
+    var confirmacion = confirm("¿Seguro que quieres cerrar cesión?");
+    if (confirmacion) {
+        
+        
