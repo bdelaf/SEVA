@@ -1790,7 +1790,6 @@ select {
 }
 }
 
-
 /* Definir la fuente sans-serif */
 .sans-serif-font {
     font-family: 'Arial', sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
@@ -1802,12 +1801,12 @@ select {
     padding: 20px;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Color de fondo de la página */
 }
 
 .container-prof-profe-sel {
-    max-width: 800px;
-    margin: auto;
+    max-width: 600px; /* Limitar el ancho del contenedor */
+    margin: 20px auto; /* Centrar el contenedor y agregar margen superior e inferior */
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -1830,4 +1829,5 @@ select {
     padding: 0;
     box-sizing: border-box;
 }
+
 
