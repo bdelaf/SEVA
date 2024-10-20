@@ -19,7 +19,7 @@ function cerrarcesion() {
     botoncs.addEventListener("click", confirmacion)
 }
 
-function cerrarcesion() {
+function confirmacion() {
     var confirmacion = confirm("¿Seguro que quieres cerrar cesión?");
     if (confirmacion) {
         window.location.href = "index.html"
