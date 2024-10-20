@@ -1,6 +1,5 @@
 document.getElementById("search-button").addEventListener("click", buscador);
 
-
 function buscador() {
     var nombreFiltro = document.getElementById("search-input-clases").value.toLowerCase();
     var filtroTamaño = document.getElementById("size-filter").value.toLowerCase();
@@ -17,8 +16,8 @@ function buscador() {
     });
 
     mostrarMensajeSiNoHayResultados();
+    agregarEventosReservar(); // Llama a la función para agregar eventos después de la búsqueda
 }
-
 
 function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroProyectores) {
     var nombreAula = aula.querySelector(".classroom-info p").textContent.toLowerCase();
@@ -50,8 +49,6 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
     );
 }
 
-
-
 function mostrarMensajeSiNoHayResultados() {
     var aulasVisibles = Array.from(document.querySelectorAll(".classroom")).filter(function(aula) {
         return aula.style.display !== "none";
@@ -63,4 +60,14 @@ function mostrarMensajeSiNoHayResultados() {
     } else {
         mensaje.style.display = "none";
     }
+}
+
+function agregarEventosReservar() {
+    document.querySelectorAll(".classroom .details a:last-of-type").forEach(function(reservarLink) {
+        reservarLink.addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que el enlace se siga
+            alert("Reserva exitosa");
+            window.location.href = "profe-sel.html"; // Redirige a la página de reservas
+        });
+    });
 }
