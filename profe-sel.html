@@ -6,59 +6,51 @@
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
 </head>
-<body class="custom-body sans-serif-font"> <!-- Aplicar la fuente aquí -->
+<body class="custom-body">
     <header>
         <a href="#">
             <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
         </a>
-        <a href="inicio-profe.html" id="texto-nav" class="sans-serif-font">SEVA</a> <!-- Aplicar la fuente aquí -->
+        <a href="inicio-profe.html" id="texto-nav">SEVA</a>
         <div class="right-section">
-            <a href="perfil-profe.html" id="perfil-nav" class="sans-serif-font">Mi perfil</a> <!-- Aplicar la fuente aquí -->
+            <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
         </div>
     </header>
     
     <main class="main-prof">
         <div class="container-prof">
+            
             <div class="contenttt">
-                <div class="info-container">  
-                    <section class="mi-bloque">
-                        <div>
-                            <input type="checkbox" id="materia1" name="materia" value="Informática General">
-                            <label for="materia1" class="sans-serif-font">Informática General</label> <!-- Aplicar la fuente aquí -->
-                        </div>
-                        <div>
-                            <input type="checkbox" id="materia2" name="materia" value="Programación Web">
-                            <label for="materia2" class="sans-serif-font">Programación Web</label> <!-- Aplicar la fuente aquí -->
-                        </div>
-                        <div>
-                            <input type="checkbox" id="materia3" name="materia" value="Programación Orientada a Infraestructura">
-                            <label for="materia3" class="sans-serif-font">Programación Orientada a Infraestructura</label> <!-- Aplicar la fuente aquí -->
-                        </div>
-                    </section>  
+               <div class="info-container">  
+                    <section class="mi-bloque"></section>  
                     <div class="end">
-                        <div class="materia sans-serif-font">Materia:</div> <!-- Aplicar la fuente aquí -->
-                        <div class="tiempo sans-serif-font">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div> <!-- Aplicar la fuente aquí -->
+                        <div class="materia">Materia:</div>
+                        <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
                     </div>
                 </div>
             </div>
             <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf sans-serif-font">Alargar reserva</button> <!-- Aplicar la fuente aquí -->
-                <button id="cancelar-reserva" class="btn-prf sans-serif-font">Cancelar reserva</button> <!-- Aplicar la fuente aquí -->
-                <button class="btm-prf sans-serif-font"><a href="aulas-profe.html">Reservar</a></button> <!-- Aplicar la fuente aquí -->
+                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
+                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
+                <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
             </div>
-            <div id="selector-horas" class="sans-serif-font"> <!-- Aplicar la fuente aquí -->
+            <div id="selector-horas">
                 <label for="horas">Selecciona horas para alargar reserva:</label>
-                <select id="horas" class="sans-serif-font"> <!-- Aplicar la fuente aquí -->
+                <select id="horas">
                     <option value="1">1 hora</option>
                     <option value="2">2 horas</option>
                     <option value="3">3 horas</option>
                     <option value="4">4 horas</option>
                     <option value="5">5 horas</option>
                 </select>
-                <button id="confirmar-alargue" class="sans-serif-font">Confirmar Alargue</button> <!-- Aplicar la fuente aquí -->
+                <button id="confirmar-alargue">Confirmar Alargue</button>
             </div>
         </div>
     </main>
+    <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
+</body>
+</html>
+
     <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
 </body>
 </html>
