@@ -1,39 +1,31 @@
 var tiemporestante;
 var contador;
-
-document.getElementById("materia-select").addEventListener("change", mostrarMateria);
-document.getElementById("alargar-reserva").addEventListener("click", mostrarSelectorHoras);
-document.getElementById("confirmar-alargue").addEventListener("click", confirmarAlargue);
-document.getElementById("cancelar-reserva").addEventListener("click", cancelarReserva);
+var timer;
 
 function ContFin() {
     alert("El tiempo ha terminado");
 }
 
 function temporizador(tiempo) {
-    tiemporestante = tiempo * 60; // Convertir horas a segundos
+    tiempoRestante = tiempo * 60; // Convertir horas a segundos
     var contenedor = document.getElementById('tiempo-restante');
-    actualizar(contenedor);
-}
+    
+    actualizar();
 
-function actualizar(contenedor) {
-    if (tiemporestante <= 0) {
-        return ContFin();
+    function actualizar() {
+        if (tiempoRestante <= 0) {
+            ContFin();
+            return;
+        }
+        var minutos = Math.floor(tiempoRestante / 60);
+        var segundos = tiempoRestante % 60;
+
+        contenedor.innerText = minutos + " : " + (segundos < 10 ? '0' : '') + segundos;
+        
+        tiempoRestante--;
+        
+        timer = setTimeout(actualizar, 1000);
     }
-    var minutos = Math.floor(tiemporestante / 60);
-    var segundos = tiemporestante % 60;
-
-    contenedor.innerText = minutos + " : " + (segundos < 10 ? '0' : '') + segundos;
-    
-    tiemporestante--;
-    
-    timer = setTimeout(function() { actualizar(contenedor); }, 1000);
-}
-
-function mostrarMateria() {
-    var select = document.getElementById("materia-select");
-    var materiaNombre = document.getElementById("materia-nombre");
-    materiaNombre.textContent = select.value ? select.value : "Ninguna";
 }
 
 function mostrarSelectorHoras() {
@@ -42,7 +34,7 @@ function mostrarSelectorHoras() {
 
 function confirmarAlargue() {
     var horasSeleccionadas = parseInt(document.getElementById("horas").value);
-    temporizador(horasSeleccionadas); 
+    temporizador(horasSeleccionadas);
     document.getElementById("selector-horas").style.display = "none"; 
 }
 
@@ -52,3 +44,22 @@ function cancelarReserva() {
     alert('Reserva cancelada'); 
 }
 
+function desactivarCheckboxes() {
+    var checkboxes = document.querySelectorAll('input[name="materia"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                checkboxes.forEach(function(cb) {
+                    if (cb !== checkbox) cb.checked = false; // Desmarcar otros checkboxes
+                });
+                document.querySelector('.materia').innerText = "Materia: " + this.value; // Mostrar la materia seleccionada
+            }
+        });
+    });
+}
+
+// Agregar los event listeners
+document.getElementById("alargar-reserva").addEventListener("click", mostrarSelectorHoras);
+document.getElementById("confirmar-alargue").addEventListener("click", confirmarAlargue);
+document.getElementById("cancelar-reserva").addEventListener("click", cancelarReserva);
+desactivarCheckboxes();
