@@ -19,20 +19,20 @@
     
     <main class="main-prof">
         <div class="container-prof">
-            
             <div class="contenttt">
-               <div class="info-container">  
-                    <section class="mi-bloque"></section>  
+                <div class="info-container">  
+                    <section class="mi-bloque">
+                        <div class="materia-selector">
+                            <label><input type="checkbox" name="materia" value="Informática General"> Informática General</label><br>
+                            <label><input type="checkbox" name="materia" value="Programación Web"> Programación Web</label><br>
+                            <label><input type="checkbox" name="materia" value="Programación Orientada a la Estructura"> Programación Orientada a la Estructura</label>
+                        </div>
+                    </section>  
                     <div class="end">
-                        <div class="materia">Materia:</div>
+                        <div class="materia">Materia: <span id="materia-seleccionada"></span></div>
                         <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
                     </div>
                 </div>
-            </div>
-            <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
-                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
-                <button class="btm-prf"><a href="aulas-profe-reserva.html">Reservar</a></button>
             </div>
             <div id="selector-horas">
                 <label for="horas">Selecciona horas para alargar reserva:</label>
