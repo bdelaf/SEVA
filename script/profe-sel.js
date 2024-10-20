@@ -59,5 +59,5 @@ document.getElementById("cancelar-reserva").addEventListener("click", function()
 //     });
 // }
 
-// document.getElementById("cancelar-reserva").addEventListener("click", cancelarReserva);
+
 // desactivarCheckboxes();
