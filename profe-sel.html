@@ -19,12 +19,19 @@
     
     <main class="main-prof">
         <div class="container-prof">
-            
             <div class="contenttt">
-               <div class="info-container">  
-                    <section class="mi-bloque"></section>  
+                <div class="info-container">  
+                    <section class="mi-bloque">
+                        <label for="materia-select">Selecciona una materia:</label>
+                        <select id="materia-select">
+                            <option value="">--Seleccionar--</option>
+                            <option value="Informática General">Informática General</option>
+                            <option value="Programación Web">Programación Web</option>
+                            <option value="Programación Orientada a Infraestructura">Programación Orientada a Infraestructura</option>
+                        </select>
+                    </section>  
                     <div class="end">
-                        <div class="materia">Materia:</div>
+                        <div class="materia">Materia: <span id="materia-nombre">Ninguna</span></div>
                         <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
                     </div>
                 </div>
@@ -34,7 +41,7 @@
                 <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
                 <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
             </div>
-            <div id="selector-horas">
+            <div id="selector-horas" style="display: none;">
                 <label for="horas">Selecciona horas para alargar reserva:</label>
                 <select id="horas">
                     <option value="1">1 hora</option>
