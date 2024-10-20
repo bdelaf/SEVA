@@ -1848,3 +1848,38 @@ select {
     cursor: pointer; 
    
  
+
+
+.calificaciones-c-profe-alumno .review-form {
+    display: block;
+    margin-top: 20px;
+}
+.calificaciones-c-profe-alumno .review-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+.calificaciones-c-profe-alumno .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.calificaciones-c-profe-alumno .stars-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.calificaciones-c-profe-alumno .star {
+    font-size: 20px;
+    color: gray;
+    cursor: pointer; 
+}
+.calificaciones-c-profe-alumno .star.checked {
+    color: gold;
+}
+.calificaciones-c-profe-alumno .comments-container {
+    max-height: 200px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+}
