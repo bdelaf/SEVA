@@ -1805,7 +1805,7 @@ select {
 }
 
 .container-prof-profe-sel {
-    max-width: 600px; /* Limitar el ancho del contenedor */
+    max-width: 200px; /* Limitar el ancho del contenedor */
     margin: 20px auto; /* Centrar el contenedor y agregar margen superior e inferior */
     background-color: white;
     padding: 20px;
