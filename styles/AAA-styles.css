@@ -1789,3 +1789,12 @@ select {
     font-size: 0.77rem; 
 }
 }
+
+
+.custom-body-profe-sel {
+    font-family: 'Roboto', sans-serif;
+}
+
+.materias-list-profe-sel {
+    margin: 10px 0;
+}
