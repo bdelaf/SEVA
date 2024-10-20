@@ -6,6 +6,7 @@ function ContFin() {
     alert("El tiempo ha terminado");
 }
 
+
 function temporizador(tiempo) {
     tiempoRestante = tiempo * 60; // Convertir horas a segundos
     var contenedor = document.getElementById('tiempo-restante');
