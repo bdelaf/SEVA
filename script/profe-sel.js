@@ -44,18 +44,23 @@ document.getElementById("cancelar-reserva").addEventListener("click", function (
 });
 
 
-// Obtener todos los checkboxes
 var checkboxes;
 var materiaSeleccionada = document.getElementById('materia-seleccionada');
+var alargarReservaBtn = document.getElementById('alargar-reserva');
+var cancelarReservaBtn = document.getElementById('cancelar-reserva');
+var reservarBtn = document.querySelector('.btm-prf');
 
-// Función para manejar el cambio de selección
+
+
 function manejarCambio(event) {
     var checkbox = event.target;
     desmarcarOtros(checkbox);
     actualizarMateria(checkbox);
+    controlarVisibilidadBotones();
 }
 
-// Función para desmarcar las otras opciones
+
+
 function desmarcarOtros(checkboxSeleccionado) {
     checkboxes.forEach(function(box) {
         if (box !== checkboxSeleccionado) {
@@ -64,12 +69,31 @@ function desmarcarOtros(checkboxSeleccionado) {
     });
 }
 
-// Función para actualizar la materia seleccionada
+
+// materia :
 function actualizarMateria(checkbox) {
     materiaSeleccionada.textContent = checkbox.checked ? checkbox.value : '';
 }
 
-// Función para añadir el evento 'change' a cada checkbox
+
+
+function controlarVisibilidadBotones() {
+    var hayMateriaSeleccionada = Array.from(checkboxes).some(function(checkbox) {
+        return checkbox.checked;
+    });
+
+    if (hayMateriaSeleccionada) {
+        alargarReservaBtn.style.display = 'block';
+        cancelarReservaBtn.style.display = 'block';
+        reservarBtn.style.display = 'block';
+    } else {
+        alargarReservaBtn.style.display = 'none';
+        cancelarReservaBtn.style.display = 'none';
+        reservarBtn.style.display = 'none';
+    }
+}
+
+
 function inicializarCheckboxes() {
     checkboxes = document.querySelectorAll('.materia-selector input[type="checkbox"]');
     checkboxes.forEach(function(checkbox) {
@@ -78,4 +102,10 @@ function inicializarCheckboxes() {
 }
 
 
-document.addEventListener('DOMContentLoaded', inicializarCheckboxes )
+function inicializar() {
+    inicializarCheckboxes();
+    controlarVisibilidadBotones();
+}
+
+
+document.addEventListener('DOMContentLoaded', inicializar);
