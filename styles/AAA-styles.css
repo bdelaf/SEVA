@@ -1874,3 +1874,23 @@ select {
     color: red; 
     cursor: pointer; 
 }
+
+.materia-selector {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-left: 15px; /* Espaciado para evitar que quede pegada al borde */
+    margin-top: 10px;
+}
+
+.materia-selector label {
+    margin-bottom: 10px;
+    display: block; /* Asegura que cada checkbox esté en una nueva línea */
+}
+
+.materia-selector input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.materia-selector input[type="checkbox"]:not(:checked) + label {
+    font-weight: normal;
+}
