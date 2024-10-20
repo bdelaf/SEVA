@@ -1,47 +1,59 @@
-var tiempoRestante; // Corrige el nombre de la variable
-var timer; // Mover la declaración de timer aquí para hacerlo accesible
+var tiempoRestante;
+var timer;
 
 function ContFin() {
     alert("El tiempo ha terminado");
 }
 
+
 function temporizador(tiempo) {
-    tiempoRestante = tiempo * 60; // Convertir horas a segundos
+    tiempoRestante = tiempo * 60; 
     var contenedor = document.getElementById('tiempo-restante');
-
-    function actualizar() {
-        if (tiempoRestante <= 0) {
-            ContFin(); // Llama a ContFin sin return
-            return; // Asegúrate de salir de la función
-        }
-
-        var minutos = Math.floor(tiempoRestante / 60);
-        var segundos = tiempoRestante % 60;
-
-        contenedor.innerText = minutos + " : " + (segundos < 10 ? '0' : '') + segundos;
-
-        tiempoRestante--;
-        timer = setTimeout(actualizar, 1000);
-    }
-    actualizar();
+    actualizar(contenedor); // inicia temporizador
 }
 
-document.getElementById("alargar-reserva").addEventListener("click", function () {
+
+function actualizar(contenedor) {
+    if (tiempoRestante <= 0) {
+        ContFin();
+        return;
+    }
+
+    var minutos = Math.floor(tiempoRestante / 60);
+    var segundos = tiempoRestante % 60;
+
+    contenedor.innerText = minutos + " : " + (segundos < 10 ? '0' : '') + segundos;
+
+    tiempoRestante--;
+    timer = setTimeout(function() {
+        actualizar(contenedor); // Llama a actualizar de nuevo
+    }, 1000);
+}
+
+
+function mostrarSelectorHoras() {
     document.getElementById("selector-horas").style.display = "block";
-});
+}
 
-document.getElementById("confirmar-alargue").addEventListener("click", function () {
+
+function confirmarAlargue() {
     var horasSeleccionadas = parseInt(document.getElementById("horas").value);
-
     temporizador(horasSeleccionadas);
     document.getElementById("selector-horas").style.display = "none";
-});
+}
 
-document.getElementById("cancelar-reserva").addEventListener("click", function () {
-    clearTimeout(timer);
-    document.getElementById('tiempo-restante').innerText = "00 : 00";
+
+function cancelarReserva() {
+    clearTimeout(timer); // Detener el temporizador
+    tiempoRestante = 0; // Reiniciar tiempoRestante a 0
+    document.getElementById('tiempo-restante').innerText = "00 : 00"; // Mostrar "00 : 00"
     alert('Reserva cancelada');
-});
+}
+
+
+document.getElementById("alargar-reserva").addEventListener("click", mostrarSelectorHoras);
+document.getElementById("confirmar-alargue").addEventListener("click", confirmarAlargue);
+document.getElementById("cancelar-reserva").addEventListener("click", cancelarReserva);
 
 
 var checkboxes;
