@@ -17,5 +17,5 @@ document.addEventListener("click", cerrarcesion)
 function cerrarcesion()
     var confirmacion = confirm("¿Seguro que quieres cerrar cesión?");
     if (confirmacion) {
-        
-        
+        window.location.href = "index.html"
+    }
