@@ -12,10 +12,16 @@ function cancelar_reserva() {
     }
 }
 document.addEventListener("DOMContentLoaded", cancelar_reserva);
-document.addEventListener("click", cerrarcesion)
+document.addEventListener("DOMContentLoaded", cerrarcesion);
 
-function cerrarcesion()
+function cerrarcesion() {
+    let botoncs = getElementById("cerrarcesion")
+    botoncs.addEventListener("click", confirmacion)
+}
+
+function cerrarcesion() {
     var confirmacion = confirm("¿Seguro que quieres cerrar cesión?");
     if (confirmacion) {
         window.location.href = "index.html"
     }
+}
