@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", cancelar_reserva);
 document.addEventListener("DOMContentLoaded", cerrarcesion);
 
 function cerrarcesion() {
-    let botoncs = getElementById("cerrarcesion")
+    let botoncs = document.getElementById("cerrarcesion")
     botoncs.addEventListener("click", confirmacion)
 }
 
