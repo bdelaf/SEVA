@@ -5,56 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
 </head>
-<body class="custom-body-profe-sel">
+<body class="custom-body sans-serif-font"> <!-- Aplicar la fuente aquí -->
     <header>
         <a href="#">
             <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
         </a>
-        <a href="inicio-profe.html" id="texto-nav">SEVA</a>
+        <a href="inicio-profe.html" id="texto-nav" class="sans-serif-font">SEVA</a> <!-- Aplicar la fuente aquí -->
         <div class="right-section">
-            <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
+            <a href="perfil-profe.html" id="perfil-nav" class="sans-serif-font">Mi perfil</a> <!-- Aplicar la fuente aquí -->
         </div>
     </header>
-
+    
     <main class="main-prof">
         <div class="container-prof">
             <div class="contenttt">
                 <div class="info-container">  
                     <section class="mi-bloque">
-                        <h2>Selecciona una Materia:</h2>
-                        <div class="materias-list-profe-sel">
-                            <label><input type="checkbox" value="Informática General" class="materia-checkbox"> Informática General</label><br>
-                            <label><input type="checkbox" value="Programación Web" class="materia-checkbox"> Programación Web</label><br>
-                            <label><input type="checkbox" value="Programación Orientada a Infraestructura" class="materia-checkbox"> Programación Orientada a Infraestructura</label><br>
+                        <div>
+                            <input type="checkbox" id="materia1" name="materia" value="Informática General">
+                            <label for="materia1" class="sans-serif-font">Informática General</label> <!-- Aplicar la fuente aquí -->
+                        </div>
+                        <div>
+                            <input type="checkbox" id="materia2" name="materia" value="Programación Web">
+                            <label for="materia2" class="sans-serif-font">Programación Web</label> <!-- Aplicar la fuente aquí -->
+                        </div>
+                        <div>
+                            <input type="checkbox" id="materia3" name="materia" value="Programación Orientada a Infraestructura">
+                            <label for="materia3" class="sans-serif-font">Programación Orientada a Infraestructura</label> <!-- Aplicar la fuente aquí -->
                         </div>
                     </section>  
                     <div class="end">
-                        <div class="materia">Materia: <span id="materia-seleccionada"></span></div>
-                        <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
+                        <div class="materia sans-serif-font">Materia:</div> <!-- Aplicar la fuente aquí -->
+                        <div class="tiempo sans-serif-font">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div> <!-- Aplicar la fuente aquí -->
                     </div>
                 </div>
             </div>
             <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
-                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
-                <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
+                <button id="alargar-reserva" class="btn-prf sans-serif-font">Alargar reserva</button> <!-- Aplicar la fuente aquí -->
+                <button id="cancelar-reserva" class="btn-prf sans-serif-font">Cancelar reserva</button> <!-- Aplicar la fuente aquí -->
+                <button class="btm-prf sans-serif-font"><a href="aulas-profe.html">Reservar</a></button> <!-- Aplicar la fuente aquí -->
             </div>
-            <div id="selector-horas" style="display: none;">
+            <div id="selector-horas" class="sans-serif-font"> <!-- Aplicar la fuente aquí -->
                 <label for="horas">Selecciona horas para alargar reserva:</label>
-                <select id="horas">
+                <select id="horas" class="sans-serif-font"> <!-- Aplicar la fuente aquí -->
                     <option value="1">1 hora</option>
                     <option value="2">2 horas</option>
                     <option value="3">3 horas</option>
                     <option value="4">4 horas</option>
                     <option value="5">5 horas</option>
                 </select>
-                <button id="confirmar-alargue">Confirmar Alargue</button>
+                <button id="confirmar-alargue" class="sans-serif-font">Confirmar Alargue</button> <!-- Aplicar la fuente aquí -->
             </div>
         </div>
     </main>
     <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
 </body>
 </html>
-
