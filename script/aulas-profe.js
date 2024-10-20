@@ -16,7 +16,6 @@ function buscador() {
     });
 
     mostrarMensajeSiNoHayResultados();
-    agregarEventosReservar(); // Llama a la función para agregar eventos después de la búsqueda
 }
 
 function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroProyectores) {
@@ -61,6 +60,8 @@ function mostrarMensajeSiNoHayResultados() {
         mensaje.style.display = "none";
     }
 }
+
+document.AddEventListener("DOMContentLoaded", agregarEventosReservar)
 
 function agregarEventosReservar() {
     document.querySelectorAll(".classroom .details a:last-of-type").forEach(function(reservarLink) {
