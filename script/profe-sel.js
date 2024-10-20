@@ -44,19 +44,38 @@ document.getElementById("cancelar-reserva").addEventListener("click", function (
 });
 
 
-// function desactivarCheckboxes() {
-//     var checkboxes = document.querySelectorAll('input[name="materia"]');
-//     checkboxes.forEach(function(checkbox) {
-//         checkbox.addEventListener('change', function() {
-//             if (this.checked) {
-//                 checkboxes.forEach(function(cb) {
-//                     if (cb !== checkbox) cb.checked = false; // Desmarcar otros checkboxes
-//                 });
-//                 document.querySelector('.materia').innerText = "Materia: " + this.value; // Mostrar la materia seleccionada
-//             }
-//         });
-//     });
-// }
+// Obtener todos los checkboxes
+var checkboxes;
+var materiaSeleccionada = document.getElementById('materia-seleccionada');
+
+// Función para manejar el cambio de selección
+function manejarCambio(event) {
+    var checkbox = event.target;
+    desmarcarOtros(checkbox);
+    actualizarMateria(checkbox);
+}
+
+// Función para desmarcar las otras opciones
+function desmarcarOtros(checkboxSeleccionado) {
+    checkboxes.forEach(function(box) {
+        if (box !== checkboxSeleccionado) {
+            box.checked = false; // Desmarca las otras opciones
+        }
+    });
+}
+
+// Función para actualizar la materia seleccionada
+function actualizarMateria(checkbox) {
+    materiaSeleccionada.textContent = checkbox.checked ? checkbox.value : '';
+}
+
+// Función para añadir el evento 'change' a cada checkbox
+function inicializarCheckboxes() {
+    checkboxes = document.querySelectorAll('.materia-selector input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', manejarCambio);
+    });
+}
 
 
-// desactivarCheckboxes();
+document.addEventListener('DOMContentLoaded', inicializarCheckboxes )
