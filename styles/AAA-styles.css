@@ -1791,10 +1791,6 @@ select {
 }
 
 
-.custom-body-profe-sel {
-    font-family: 'Roboto', sans-serif;
-}
-
-.materias-list-profe-sel {
-    margin: 10px 0;
+.sans-serif-font {
+    font-family: 'Arial', sans-serif;
 }
