@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
-  </head>
-  <body class="body-miperfil">
+</head>
+<body class="custom-body">
     <header>
-      <div class="left-section">
         <a href="#">
-          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+            <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
         </a>
         <a href="inicio-profe.html" id="texto-nav">SEVA</a>
-      </div>
-      <div class="right-section">
-        <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
-      </div>
+        <div class="right-section">
+            <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
+        </div>
     </header>
-    <div class="container-miperfil">
-        <h1 class="titulo-miperfil">Mi Perfil</h1>
-        
-        <!-- Información Personal -->
-        <section class="personal-info-miperfil">
-            <h2 class="subtitulo-miperfil">Información Personal</h2>
-            <form class="form-miperfil">
-                <label for="nombre" class="label-miperfil">Nombre y apellido:</label>
-                <input type="text" id="nombre" name="nombre" class="input-miperfil">
-
-                <label for="email" class="label-miperfil">Mail:</label>
-                <input type="email" id="email" name="email" class="input-miperfil">
-
-                <label for="telefono" class="label-miperfil">Teléfono Celular:</label>
-                <input type="tel" id="telefono" name="telefono" class="input-miperfil">
-            </form>
-        </section>
-
-        <!-- Mis Reservas -->
-        <section class="mis-reservas-miperfil">
-          <h2 class="subtitulo-miperfil">Mis Reservas</h2>
-          <div class="reserva">
-              <p class="texto-miperfil">Lunes: Física 10:00 AM</p> <button class="cancelar-reserva">❌</button>
-          </div>
-          <div class="reserva">
-              <p class="texto-miperfil">Miércoles: Programación Web 08:00 AM</p> <button class="cancelar-reserva">❌</button>
-          </div>
-          <div class="reserva">
-              <p class="texto-miperfil">Jueves: Informática General 13:30 PM</p> <button class="cancelar-reserva">❌</button>
-          </div>
-      </section>
-      
-
-        <section class="mis-materias-miperfil">
-            <h2 class="subtitulo-miperfil">Mis Materias</h2>
-            <p class="texto-miperfil">.Álgebra</p>
-            <p class="texto-miperfil">.Física</p>
-            <p class="texto-miperfil">.Complementos de la Matematica</p>
-            <p class="texto-miperfil">.Programación Web</p>
-        </section>
-
-        <button class="cerrarcesion">Cerrar Sesión</button>
-    </div>
-    <script src="./script/perfil.js" defer></script>
+    
+    <main class="main-prof">
+        <div class="container-prof">
+            
+            <div class="contenttt">
+               <div class="info-container">  
+                    <section class="mi-bloque">
+                        <form id="materia-form">
+                            <label>
+                                <input type="radio" name="materia" value="Informática General"> Informática General
+                            </label><br>
+                            <label>
+                                <input type="radio" name="materia" value="Programación Web"> Programación Web
+                            </label><br>
+                            <label>
+                                <input type="radio" name="materia" value="Programación Orientada a Infraestructura"> Programación Orientada a Infraestructura
+                            </label>
+                        </form>
+                    </section>  
+                    <div class="end">
+                        <div class="materia">Materia:</div>
+                        <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="botoness">
+                <button id="alargar-reserva" class="btn-prf">Tiempo de la reserva</button>
+                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
+                <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
+            </div>
+            <div id="selector-horas">
+                <label for="horas">Selecciona horas para alargar reserva:</label>
+                <select id="horas">
+                    <option value="1">1 hora</option>
+                    <option value="2">2 horas</option>
+                    <option value="3">3 horas</option>
+                    <option value="4">4 horas</option>
+                    <option value="5">5 horas</option>
+                </select>
+                <button id="confirmar-alargue">Confirmar Alargue</button>
+            </div>
+        </div>
+    </main>
+    <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
 </body>
 </html>
