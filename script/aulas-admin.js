@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", inicio);
 
+
 function inicio() {
     var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
     var editLinks = document.querySelectorAll(".edit-aula");
@@ -11,13 +12,11 @@ function inicio() {
 }
 
 
-
 function asignarEventosEliminar(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", eliminarAula);
     }
 }
-
 
 
 function eliminarAula(event) {
@@ -26,13 +25,10 @@ function eliminarAula(event) {
     if (confirmacion) {
         var aula = event.target.parentElement;
         aula.remove();
+    } else {
+        alert("Acción cancelada");
     }
-    else {
-        alert("Acción cancelada")
-    }
-    
 }
-
 
 
 function asignarEventosEdicion(links) {
@@ -40,7 +36,6 @@ function asignarEventosEdicion(links) {
         links[i].addEventListener("click", habilitarEdicion);
     }
 }
-
 
 
 function habilitarEdicion(event) {
@@ -59,21 +54,32 @@ function habilitarEdicion(event) {
     editLink.classList.add("save-link");
 
     editLink.removeEventListener("click", habilitarEdicion);
-    editLink.addEventListener("click", function () {
-        guardarAula(aula, input, editLink);
-    });
+    editLink.addEventListener("click", functionGuardarAula);
 }
 
+
+function functionGuardarAula(event) {
+    event.preventDefault();
+    var editLink = event.target;
+    var input = editLink.previousElementSibling.querySelector("input");
+    var aula = editLink.previousElementSibling;
+
+    guardarAula(aula, input, editLink);
+}
 
 
 function guardarAula(aula, input, editLink) {
-    aula.textContent = input.value;
-    editLink.textContent = "Editar";
-    editLink.classList.remove("save-link");
+    if (input.value.trim() !== "") {
+        aula.textContent = input.value;
+        editLink.textContent = "Editar";
+        editLink.classList.remove("save-link");
 
-    editLink.addEventListener("click", habilitarEdicion);
+        editLink.removeEventListener("click", functionGuardarAula);
+        editLink.addEventListener("click", habilitarEdicion);
+    } else {
+        alert("El nombre del aula no puede estar vacío");
+    }
 }
-
 
 
 function asignarEventosAgregar(links) {
@@ -81,7 +87,6 @@ function asignarEventosAgregar(links) {
         links[i].addEventListener("click", agregarAula);
     }
 }
-
 
 
 function agregarAula(event) {
@@ -103,21 +108,26 @@ function agregarAula(event) {
     nuevaAula.appendChild(guardarAulaLink);
     columna.insertBefore(nuevaAula, event.target);
 
-  
-    guardarAulaLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        var aulaTexto = input.value;
+    guardarAulaLink.addEventListener("click", functionGuardarNuevaAula);
+}
 
-        if (aulaTexto.trim() !== "") {
-            nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
 
-            var newEditAula = nuevaAula.querySelector(".edit-aula");
-            var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
+function functionGuardarNuevaAula(event) {
+    event.preventDefault();
+    var guardarAulaLink = event.target;
+    var nuevaAula = guardarAulaLink.parentElement;
+    var input = nuevaAula.querySelector("input");
+    var aulaTexto = input.value;
 
-            asignarEventosEdicion([newEditAula]);
-            asignarEventosEliminar([newEliminarAula]);
-        } else {
-            alert("El nombre del aula no puede estar vacío");
-        }
-    });
+    if (aulaTexto.trim() !== "") {
+        nuevaAula.innerHTML = '<p>' + aulaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
+
+        var newEditAula = nuevaAula.querySelector(".edit-aula");
+        var newEliminarAula = nuevaAula.querySelector("a:not(.edit-aula)");
+
+        asignarEventosEdicion([newEditAula]);
+        asignarEventosEliminar([newEliminarAula]);
+    } else {
+        alert("El nombre del aula no puede estar vacío");
+    }
 }
