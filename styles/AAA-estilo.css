@@ -182,9 +182,93 @@ h2 {
 
 }
 
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 932px) {
   .container-inscribirse{
     height: 120vh;
+  }
+  p,  h3{
+    font-size: 14px;
+  }
+  .students{
+    font-size: 12px;
+  }
+  .inscribirse{
+    font-size: 12px;
+  }
+  .dar-de-baja{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 896px) {
+  .container-inscribirse{
+    height: 120vh;
+  }
+  p,  h3{
+    font-size: 14px;
+  }
+  .students{
+    font-size: 12px;
+  }
+  .inscribirse{
+    font-size: 12px;
+  }
+  .dar-de-baja{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 844px) {
+  .container-inscribirse{
+    height: 130vh;
+  }
+  p,  h3{
+    font-size: 12px;
+  }
+  .students{
+    font-size: 12px;
+  }
+  .inscribirse{
+    font-size: 12px;
+  }
+  .dar-de-baja{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 740px) {
+  .container-inscribirse{
+    height: 140vh;
+  }
+  p,  h3{
+    font-size: 12px;
+  }
+  .students{
+    font-size: 10px;
+  }
+  .inscribirse{
+    font-size: 10px;
+  }
+  .dar-de-baja{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-height: 667px) {
+  .container-inscribirse{
+    height: 170vh;
+  }
+  p,  h3{
+    font-size: 12px;
+  }
+  .students{
+    font-size: 12px;
+  }
+  .inscribirse{
+    font-size: 12px;
+  }
+  .dar-de-baja{
+    font-size: 10px;
   }
 }
 
