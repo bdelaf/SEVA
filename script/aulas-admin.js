@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", inicio);
 
-
 function inicio() {
     var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
     var editLinks = document.querySelectorAll(".edit-aula");
@@ -11,13 +10,11 @@ function inicio() {
     asignarEventosAgregar(addLinks);
 }
 
-
 function asignarEventosEliminar(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", eliminarAula);
     }
 }
-
 
 function eliminarAula(event) {
     event.preventDefault();
@@ -30,13 +27,11 @@ function eliminarAula(event) {
     }
 }
 
-
 function asignarEventosEdicion(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", habilitarEdicion);
     }
 }
-
 
 function habilitarEdicion(event) {
     event.preventDefault();
@@ -47,7 +42,7 @@ function habilitarEdicion(event) {
     var input = document.createElement("input");
     input.type = "text";
     input.value = aulaTexto;
-    aula.innerHTML = "";
+    aula.innerHTML = "";  
     aula.appendChild(input);
 
     editLink.textContent = "Guardar";
@@ -57,37 +52,30 @@ function habilitarEdicion(event) {
     editLink.addEventListener("click", functionGuardarAula);
 }
 
-
 function functionGuardarAula(event) {
     event.preventDefault();
     var editLink = event.target;
-    var input = editLink.previousElementSibling.querySelector("input");
     var aula = editLink.previousElementSibling;
+    var input = aula.querySelector("input");
 
-    guardarAula(aula, input, editLink);
-}
-
-
-function guardarAula(aula, input, editLink) {
-    if (input.value.trim() !== "") {
+    if (input && input.value.trim() !== "") {
         aula.textContent = input.value;
+
         editLink.textContent = "Editar";
         editLink.classList.remove("save-link");
 
         editLink.removeEventListener("click", functionGuardarAula);
         editLink.addEventListener("click", habilitarEdicion);
     } else {
-        alert("El nombre del aula no puede estar vacío");
+        alert("El nombre del aula no puede estar vacío.");
     }
 }
-
 
 function asignarEventosAgregar(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", agregarAula);
     }
 }
-
 
 function agregarAula(event) {
     event.preventDefault();
@@ -110,7 +98,6 @@ function agregarAula(event) {
 
     guardarAulaLink.addEventListener("click", functionGuardarNuevaAula);
 }
-
 
 function functionGuardarNuevaAula(event) {
     event.preventDefault();
