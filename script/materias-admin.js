@@ -64,13 +64,6 @@ function functionGuardarMateria(event) {
         editLink.textContent = "Editar";
         editLink.classList.remove("save-link");
 
-        var eliminarLink = document.createElement("a");
-        eliminarLink.href = "";
-        eliminarLink.textContent = "Eliminar";
-        aula.appendChild(eliminarLink);
-
-        eliminarLink.addEventListener("click", eliminarMateria);
-
         editLink.removeEventListener("click", functionGuardarMateria);
         editLink.addEventListener("click", habilitarEdicion);
     } else {
@@ -88,19 +81,19 @@ function agregarMateria(event) {
     event.preventDefault();
     var columna = event.target.parentElement;
     var nuevaMateria = document.createElement("div");
-    nuevaAula.classList.add("aula");
+    nuevaMateria.classList.add("aula");
 
     var input = document.createElement("input");
     input.type = "text";
     input.placeholder = "Nombre de la materia";
 
-    var guardarAulaLink = document.createElement("a");
+    var guardarMateriaLink = document.createElement("a");
     guardarMateriaLink.href = "";
     guardarMateriaLink.classList.add("save-link");
     guardarMateriaLink.textContent = "Guardar";
 
     nuevaMateria.appendChild(input);
-    nuevaMateria.appendChild(guardarAulaLink);
+    nuevaMateria.appendChild(guardarMateriaLink);
     columna.insertBefore(nuevaMateria, event.target);
 
     guardarMateriaLink.addEventListener("click", functionGuardarNuevaMateria);
@@ -116,12 +109,12 @@ function functionGuardarNuevaMateria(event) {
     if (materiaTexto.trim() !== "") {
         nuevaMateria.innerHTML = '<p>' + materiaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
 
-        var newEditMateria = nuevaAula.querySelector(".edit-aula");
-        var newEliminarMateria = nuevaAula.querySelector("a:not(.edit-aula)");
+        var newEditMateria = nuevaMateria.querySelector(".edit-aula");
+        var newEliminarMateria = nuevaMateria.querySelector("a:not(.edit-aula)");
 
         asignarEventosEdicion([newEditMateria]);
         asignarEventosEliminar([newEliminarMateria]);
     } else {
-        alert("El nombre de la materia no puede estar vacío");
+        alert("El nombre de la materia no puede estar vacío.");
     }
 }
