@@ -1819,11 +1819,6 @@ select {
     font-family: Arial, sans-serif; 
 }
 
-#alargar-reserva, 
-#cancelar-reserva, 
-.btm-prf {
-    display: none; /* Oculta los botones por defecto */
-}
 
 
 
