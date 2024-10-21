@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", inicio);
+document.addEventListener("DOMContentLoaded", function() {
+    inicio();
+    initReservaEnlaces(); // Asegurarse de inicializar también los enlaces de reserva
+});
 
 function inicio() {
     document.getElementById("search-button").addEventListener("click", buscador);
@@ -22,7 +25,6 @@ function buscador() {
     mostrarMensajeSiNoHayResultados();
 }
 
-
 function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroProyectores) {
     var nombreAula = aula.querySelector(".classroom-info p").textContent.toLowerCase();
     var tamañoAula = parseInt(aula.querySelector(".details p:nth-of-type(1)").textContent.split(': ')[1]);
@@ -34,12 +36,12 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
         (filtroTamaño === "small" && tamañoAula <= 30) ||
         (filtroTamaño === "medium" && tamañoAula > 30 && tamañoAula <= 50) ||
         (filtroTamaño === "large" && tamañoAula > 50));
-
+    
     var computadorasValido = 
         (filtroComputadoras === "" ||
         (filtroComputadoras === "yes" && computadorasAula.includes("sí")) ||
         (filtroComputadoras === "no" && computadorasAula.includes("no")));
-
+    
     var proyectoresValido = 
         (filtroProyectores === "" ||
         (filtroProyectores === "yes" && proyectoresAula.includes("sí")) ||
@@ -52,8 +54,6 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
         proyectoresValido
     );
 }
-
-
 
 function mostrarMensajeSiNoHayResultados() {
     var aulasVisibles = Array.from(document.querySelectorAll(".classroom")).filter(function(aula) {
@@ -68,24 +68,19 @@ function mostrarMensajeSiNoHayResultados() {
     }
 }
 
-
 function initReservaEnlaces() {
     var confirmarReservaLinks = document.querySelectorAll('.confirmar-reserva');
-
     confirmarReservaLinks.forEach(asignarEventoReserva);
 }
-
 
 function asignarEventoReserva(link) {
     link.addEventListener('click', manejarClickReserva);
 }
 
-
 function manejarClickReserva(event) {
     event.preventDefault();
     confirmarReserva();
 }
-
 
 function confirmarReserva() {
     var confirmacion = confirm("La reserva ha sido exitosa. ¿Deseas continuar?");
