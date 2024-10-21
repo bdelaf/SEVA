@@ -1,10 +1,8 @@
-document.AddEventListener("DOMContentLoaded",inicializar)
+document.addEventListener("DOMContentLoaded", inicio);
 
-function inicializar() {
-  document.getElementById("search-button").addEventListener("click", buscador);
-  initReservaEnlaces()
+function inicio() {
+    document.getElementById("search-button").addEventListener("click", buscador);
 }
-
 
 function buscador() {
     var nombreFiltro = document.getElementById("search-input-clases").value.toLowerCase();
@@ -36,12 +34,12 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
         (filtroTamaño === "small" && tamañoAula <= 30) ||
         (filtroTamaño === "medium" && tamañoAula > 30 && tamañoAula <= 50) ||
         (filtroTamaño === "large" && tamañoAula > 50));
-    
+
     var computadorasValido = 
         (filtroComputadoras === "" ||
         (filtroComputadoras === "yes" && computadorasAula.includes("sí")) ||
         (filtroComputadoras === "no" && computadorasAula.includes("no")));
-    
+
     var proyectoresValido = 
         (filtroProyectores === "" ||
         (filtroProyectores === "yes" && proyectoresAula.includes("sí")) ||
@@ -54,6 +52,7 @@ function filtrado(aula, nombreFiltro, filtroTamaño, filtroComputadoras, filtroP
         proyectoresValido
     );
 }
+
 
 
 function mostrarMensajeSiNoHayResultados() {
@@ -71,7 +70,6 @@ function mostrarMensajeSiNoHayResultados() {
 
 
 function initReservaEnlaces() {
-    // Obtener todos los enlaces de "Confirmar Reserva"
     var confirmarReservaLinks = document.querySelectorAll('.confirmar-reserva');
 
     confirmarReservaLinks.forEach(asignarEventoReserva);
@@ -84,7 +82,7 @@ function asignarEventoReserva(link) {
 
 
 function manejarClickReserva(event) {
-    event.preventDefault(); // Evita que el enlace redirija inmediatamente
+    event.preventDefault();
     confirmarReserva();
 }
 
