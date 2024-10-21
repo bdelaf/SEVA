@@ -1,4 +1,6 @@
-console.log("Script perfil.js cargado correctamente");
+document.addEventListener("DOMContentLoaded", cancelar_reserva);
+document.addEventListener("DOMContentLoaded", cerrarcesion);
+
 function cancelar_reserva() {
     var btn_cancelar = document.getElementsByClassName("cancelar-reserva");
     for (var i = 0; i < btn_cancelar.length; i++) {
@@ -11,8 +13,7 @@ function cancelar_reserva() {
         });
     }
 }
-document.addEventListener("DOMContentLoaded", cancelar_reserva);
-document.addEventListener("DOMContentLoaded", cerrarcesion);
+
 
 function cerrarcesion() {
     let botoncs = document.querySelector(".cerrarcesion")

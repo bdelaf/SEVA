@@ -1922,6 +1922,7 @@ select {
   object-fit: cover;
 }
 
-#profe-perfil{
+#profe-perfil, #alumno-perfil{
   height: 160vh;
 }
+
