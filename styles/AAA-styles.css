@@ -144,16 +144,17 @@ form {
   position: relative;
 }
 
+select,
 input[type="email"],
 input[type="password"],
-input[type="text"],
-input[type="Nombre"]{
+input[type="text"] {
   width: 60%;
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 16px;
 }
+
 
 .forgot-password-container {
   position: absolute;
