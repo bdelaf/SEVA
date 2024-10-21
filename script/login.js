@@ -32,7 +32,6 @@ function validar(event) {
 
   var confirmLogin = confirm("¿Está seguro de que desea iniciar sesión?");
   if (confirmLogin) {
-    // Redirigir según el formulario
     if (form.id === "login-profe") {
       window.location.href = "inicio-profe.html";
     } else if (form.id === "login-a") {

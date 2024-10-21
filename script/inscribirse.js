@@ -27,7 +27,7 @@ function inscribirse(boton) {
         boton.classList.add("dar-de-baja");
         alert("Te has inscrito exitosamente.");
         actualizarEstudiantes(boton, 1);
-        verificarInscripcion(); // Verificar inscripción después de inscribirse
+        verificarInscripcion();
     }
 }
 
@@ -40,7 +40,7 @@ function darseDeBaja(boton) {
         boton.classList.remove("dar-de-baja");
         alert("Se ha dado de baja exitosamente.");
         actualizarEstudiantes(boton, -1);
-        verificarInscripcion(); // Verificar inscripción después de darse de baja
+        verificarInscripcion();
     }
 }
 

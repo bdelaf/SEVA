@@ -1,5 +1,3 @@
-// ADMINISTRADOR: ELIMINAR O EDITAR AULAS //
-
 document.addEventListener("DOMContentLoaded", inicio);
 
 function inicio() {
@@ -14,7 +12,6 @@ function inicio() {
 
 
 
-// Función para asignar eventos de eliminación
 function asignarEventosEliminar(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", eliminarAula);
@@ -34,7 +31,6 @@ function eliminarAula(event) {
 
 
 
-// Función para asignar eventos de edición
 function asignarEventosEdicion(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", habilitarEdicion);
@@ -76,7 +72,6 @@ function guardarAula(aula, input, editLink) {
 
 
 
-// Función para asignar eventos de agregar aulas
 function asignarEventosAgregar(links) {
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", agregarAula);

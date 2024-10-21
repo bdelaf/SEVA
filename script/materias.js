@@ -1,4 +1,3 @@
-// BUSCADOR DE MATERIAS //
 document.addEventListener("DOMContentLoaded", inicializarBuscador);
 
 
@@ -26,7 +25,6 @@ function inicializarBuscador() {
 }
 
 
-// Función para buscar materias
 function buscarMaterias(searchInput, materias, noResultsMessage) {
   var searchTerm = searchInput.value.toLowerCase();
   var found = false;
@@ -56,7 +54,6 @@ function buscarMaterias(searchInput, materias, noResultsMessage) {
 }
 
 
-// Función para manejar el envío de materias seleccionadas
 function manejarEnvioMaterias(evento, materias, redireccionarUrl) {
   evento.preventDefault();
 

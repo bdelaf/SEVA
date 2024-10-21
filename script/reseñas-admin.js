@@ -5,7 +5,7 @@ function comentarios() {
     var EliminarCom = document.querySelectorAll('.elim-com');
     asignarEventosChecks(checks);
     asignarEventosEliminar(EliminarCom);
-    mostrarMensajeSiNoHayResultados(); // Aseguramos de mostrar el mensaje al cargar la página
+    mostrarMensajeSiNoHayResultados();
 }
 
 function asignarEventosChecks(checks) {
@@ -32,7 +32,7 @@ function eliminarComentario(event) {
         var review = this.closest('.review-c');
         if (review) {
             review.remove();
-            mostrarMensajeSiNoHayResultados(); // Llamamos a la función después de eliminar un comentario
+            mostrarMensajeSiNoHayResultados();
         }
     }
 }

@@ -9,7 +9,7 @@ function ContFin() {
 function temporizador(tiempo) {
     tiempoRestante = tiempo * 60; 
     var contenedor = document.getElementById('tiempo-restante');
-    actualizar(contenedor); // inicia temporizador
+    actualizar(contenedor);
 }
 
 
@@ -26,7 +26,7 @@ function actualizar(contenedor) {
 
     tiempoRestante--;
     timer = setTimeout(function() {
-        actualizar(contenedor); // Llama a actualizar de nuevo
+        actualizar(contenedor);
     }, 1000);
 }
 
@@ -44,9 +44,9 @@ function confirmarAlargue() {
 
 
 function cancelarReserva() {
-    clearTimeout(timer); // Detener el temporizador
-    tiempoRestante = 0; // Reiniciar tiempoRestante a 0
-    document.getElementById('tiempo-restante').innerText = "00 : 00"; // Mostrar "00 : 00"
+    clearTimeout(timer);
+    tiempoRestante = 0;
+    document.getElementById('tiempo-restante').innerText = "00 : 00";
     alert('Reserva cancelada');
 }
 
@@ -76,13 +76,12 @@ function manejarCambio(event) {
 function desmarcarOtros(checkboxSeleccionado) {
     checkboxes.forEach(function(box) {
         if (box !== checkboxSeleccionado) {
-            box.checked = false; // Desmarca las otras opciones
+            box.checked = false;
         }
     });
 }
 
 
-// materia :
 function actualizarMateria(checkbox) {
     materiaSeleccionada.textContent = checkbox.checked ? checkbox.value : '';
 }

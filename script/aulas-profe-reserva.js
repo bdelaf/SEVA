@@ -1,4 +1,4 @@
-document.AddEventListener("DOMContentLoaded",incializar)
+document.AddEventListener("DOMContentLoaded",inicializar)
 
 function inicializar() {
   document.getElementById("search-button").addEventListener("click", buscador);

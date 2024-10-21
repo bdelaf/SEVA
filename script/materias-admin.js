@@ -12,7 +12,6 @@ function inicializar() {
 }
 
 
-// Función para manejar el clic en las materias (editar o eliminar)
 function manejarClickMateria(event) {
   if (event.target.classList.contains("edit-button")) {
     editarMateria(event);
@@ -22,7 +21,6 @@ function manejarClickMateria(event) {
 }
 
 
-// Función para editar una materia
 function editarMateria(event) {
   event.preventDefault();
   const materiaItem = event.target.closest(".materia-item");
@@ -35,7 +33,6 @@ function editarMateria(event) {
 }
 
 
-// Función para eliminar una materia
 function eliminarMateria(event) {
   event.preventDefault();
   const materiaItem = event.target.closest(".materia-item");
@@ -48,7 +45,6 @@ function eliminarMateria(event) {
 }
 
 
-// Función para agregar una nueva materia
 function agregarMateria(event) {
   event.preventDefault();
   const newMateriaName = prompt("Nombre de la nueva materia:");
