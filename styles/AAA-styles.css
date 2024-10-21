@@ -147,7 +147,7 @@ form {
 input[type="email"],
 input[type="password"],
 input[type="text"]
-input[type="Nombre y Apellido"]{
+input[type="Nombre"]{
   width: 60%;
   padding: 10px;
   border: 1px solid #cccccc;
