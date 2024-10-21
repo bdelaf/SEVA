@@ -1921,3 +1921,7 @@ select {
   height: 80%;
   object-fit: cover;
 }
+
+#profe-perfil{
+  height: 160vh;
+}
