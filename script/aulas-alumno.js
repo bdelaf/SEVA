@@ -1,4 +1,9 @@
-document.getElementById("search-button").addEventListener("click", buscador);
+document.AddEventListener("DOMContentLoaded", inicio)
+
+
+function inicio() {
+    document.getElementById("search-button").addEventListener("click", buscador);
+}
 
 
 function buscador() {
