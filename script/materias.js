@@ -15,11 +15,11 @@ function inicializarBuscador() {
 
   if (submitButtonA) {
     submitButtonA.addEventListener("click", function (e) {
-      manejarEnvioMaterias(e, materias, "inscribirse.html");
+      manejarEnvioMaterias(e, materias, "inscribirse-alumno.html");
     });
   } else {
     submitButtonP.addEventListener("click", function (e) {
-      manejarEnvioMaterias(e, materias, "profe-sel.html");
+      manejarEnvioMaterias(e, materias, "inscribirse-profe.html");
     });
   }
 }
