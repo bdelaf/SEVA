@@ -27,6 +27,10 @@ function eliminarAula(event) {
         var aula = event.target.parentElement;
         aula.remove();
     }
+    else {
+        alert("Acción cancelada")
+    }
+    
 }
 
 
