@@ -19,39 +19,36 @@
     
     <main class="main-prof">
         <div class="container-prof">
+            
             <div class="contenttt">
-                <div class="info-container">  
-                    <section class="mi-bloque">
-                        <div class="materia-selector">
-                            <label><input type="checkbox" name="materia" value="Informática General"> Informática General</label><br>
-                            <label><input type="checkbox" name="materia" value="Programación Web"> Programación Web</label><br>
-                            <label><input type="checkbox" name="materia" value="Programación Orientada a Infraestructura"> Programación Orientada a Infraestructura</label>
-                        </div>
-                    </section>  
+               <div class="info-container">  
+                    <section class="mi-bloque"></section>  
                     <div class="end">
-                        <div class="materia">Materia: <span id="materia-seleccionada"></span></div>
+                        <div class="materia">Materia:</div>
                         <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
                     </div>
                 </div>
             </div>
-            <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf">Tiempo de reserva</button>
-                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
-                <button class="btm-prf"><a href="aulas-profe-reserva.html">Reservar</a></button>
-            </div>
             <div id="selector-horas">
                 <label for="horas">Selecciona horas para alargar reserva:</label>
                 <select id="horas">
-                    <option value="1">1 hora</option>
-                    <option value="2">2 horas</option>
-                    <option value="3">3 horas</option>
-                    <option value="4">4 horas</option>
-                    <option value="5">5 horas</option>
+                    <option value="1">1 minuto</option>
+                    <option value="2">2 minuto</option>
+                    <option value="3">3 minuto</option>
+                    <option value="4">4 minuto</option>
+                    <option value="5">5 minuto</option>
                 </select>
                 <button id="confirmar-alargue">Confirmar Alargue</button>
             </div>
+            <div class="botoness">
+                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
+                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
+                <button class="btm-prf"><a href="aulas-profe.html">Reservar</a></button>
+            </div>
+            
         </div>
     </main>
     <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
 </body>
 </html>
+
