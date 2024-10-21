@@ -64,6 +64,13 @@ function functionGuardarAula(event) {
         editLink.textContent = "Editar";
         editLink.classList.remove("save-link");
 
+        var eliminarLink = document.createElement("a");
+        eliminarLink.href = "";
+        eliminarLink.textContent = "Eliminar";
+        aula.appendChild(eliminarLink);
+
+        eliminarLink.addEventListener("click", eliminarAula);
+
         editLink.removeEventListener("click", functionGuardarAula);
         editLink.addEventListener("click", habilitarEdicion);
     } else {
