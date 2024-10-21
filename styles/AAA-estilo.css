@@ -177,10 +177,6 @@ h2 {
     cursor: not-allowed;
 }
 
-.container-inscribirse{
-  background: linear-gradient(180deg, #003b5c, #005b96);
-
-}
 
 @media screen and (max-height: 932px) {
   .container-inscribirse{
