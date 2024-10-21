@@ -1,67 +1,127 @@
-// ADMINISTRADOR: AGREGAR, EDITAR O ELIMINAR MATERIAS //
+document.addEventListener("DOMContentLoaded", inicio);
 
-document.addEventListener("DOMContentLoaded", inicializar);
+function inicio() {
+    var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
+    var editLinks = document.querySelectorAll(".edit-aula");
+    var addLinks = document.querySelectorAll(".edit-link");
 
-
-function inicializar() {
-  const materiasColumn = document.querySelector(".materias-column");
-  const addMateriaButton = document.querySelector(".add-materia-button");
-
-  materiasColumn.addEventListener("click", manejarClickMateria);
-  addMateriaButton.addEventListener("click", agregarMateria);
+    asignarEventosEliminar(eliminarLinks);
+    asignarEventosEdicion(editLinks);
+    asignarEventosAgregar(addLinks);
 }
 
-
-function manejarClickMateria(event) {
-  if (event.target.classList.contains("edit-button")) {
-    editarMateria(event);
-  } else if (event.target.classList.contains("delete-button")) {
-    eliminarMateria(event);
-  }
+function asignarEventosEliminar(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", eliminarMateria);
+    }
 }
-
-
-function editarMateria(event) {
-  event.preventDefault();
-  const materiaItem = event.target.closest(".materia-item");
-  const materiaName = materiaItem.querySelector("p").innerText;
-  const newMateriaName = prompt("Editar materia:", materiaName);
-
-  if (newMateriaName) {
-    materiaItem.querySelector("p").innerText = newMateriaName;
-  }
-}
-
 
 function eliminarMateria(event) {
-  event.preventDefault();
-  const materiaItem = event.target.closest(".materia-item");
-  const confirmacion = confirm("¿Estás seguro de que deseas eliminar esta materia?");
-
-  if (confirmacion) {
-    const materiasColumn = materiaItem.parentElement;
-    materiasColumn.removeChild(materiaItem);
-  }
+    event.preventDefault();
+    var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta materia?");
+    if (confirmacion) {
+        var materia = event.target.parentElement;
+        materia.remove();
+    } else {
+        alert("Acción cancelada");
+    }
 }
 
+function asignarEventosEdicion(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", habilitarEdicion);
+    }
+}
+
+function habilitarEdicion(event) {
+    event.preventDefault();
+    var editLink = event.target;
+    var materia = editLink.previousElementSibling;
+    var materiaTexto = materia.textContent;
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.value = materiaTexto;
+    materia.innerHTML = "";  
+    materia.appendChild(input);
+
+    editLink.textContent = "Guardar";
+    editLink.classList.add("save-link");
+
+    editLink.removeEventListener("click", habilitarEdicion);
+    editLink.addEventListener("click", functionGuardarMateria);
+}
+
+function functionGuardarMateria(event) {
+    event.preventDefault();
+    var editLink = event.target;
+    var materia = editLink.previousElementSibling;
+    var input = materia.querySelector("input");
+
+    if (input && input.value.trim() !== "") {
+        materia.textContent = input.value;
+
+        editLink.textContent = "Editar";
+        editLink.classList.remove("save-link");
+
+        var eliminarLink = document.createElement("a");
+        eliminarLink.href = "";
+        eliminarLink.textContent = "Eliminar";
+        aula.appendChild(eliminarLink);
+
+        eliminarLink.addEventListener("click", eliminarMateria);
+
+        editLink.removeEventListener("click", functionGuardarMateria);
+        editLink.addEventListener("click", habilitarEdicion);
+    } else {
+        alert("El nombre de la materia no puede estar vacío.");
+    }
+}
+
+function asignarEventosAgregar(links) {
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", agregarMateria);
+    }
+}
 
 function agregarMateria(event) {
-  event.preventDefault();
-  const newMateriaName = prompt("Nombre de la nueva materia:");
+    event.preventDefault();
+    var columna = event.target.parentElement;
+    var nuevaMateria = document.createElement("div");
+    nuevaAula.classList.add("aula");
 
-  if (newMateriaName) {
-    const newMateriaItem = document.createElement("div");
-    newMateriaItem.classList.add("materia-item");
-    newMateriaItem.innerHTML = `
-      <p>${newMateriaName}</p>
-      <div class="materia-actions">
-        <a href="#" class="edit-button">Editar</a>
-        <a href="#" class="delete-button">Eliminar</a>
-      </div>
-    `;
-    const materiasColumn = document.querySelector(".materias-column");
-    const addMateriaButton = document.querySelector(".add-materia-button");
-    materiasColumn.insertBefore(newMateriaItem, addMateriaButton);
-  }
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Nombre de la materia";
+
+    var guardarAulaLink = document.createElement("a");
+    guardarMateriaLink.href = "";
+    guardarMateriaLink.classList.add("save-link");
+    guardarMateriaLink.textContent = "Guardar";
+
+    nuevaMateria.appendChild(input);
+    nuevaMateria.appendChild(guardarAulaLink);
+    columna.insertBefore(nuevaMateria, event.target);
+
+    guardarMateriaLink.addEventListener("click", functionGuardarNuevaMateria);
 }
 
+function functionGuardarNuevaMateria(event) {
+    event.preventDefault();
+    var guardarMateriaLink = event.target;
+    var nuevaMateria = guardarMateriaLink.parentElement;
+    var input = nuevaMateria.querySelector("input");
+    var materiaTexto = input.value;
+
+    if (materiaTexto.trim() !== "") {
+        nuevaMateria.innerHTML = '<p>' + materiaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
+
+        var newEditMateria = nuevaAula.querySelector(".edit-aula");
+        var newEliminarMateria = nuevaAula.querySelector("a:not(.edit-aula)");
+
+        asignarEventosEdicion([newEditMateria]);
+        asignarEventosEliminar([newEliminarMateria]);
+    } else {
+        alert("El nombre de la materia no puede estar vacío");
+    }
+}
