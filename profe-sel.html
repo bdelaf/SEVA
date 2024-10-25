@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEVA</title>
-    <link rel="stylesheet" href="./styles/AAA-styles.css" />
+    <title>Clases Reservadas</title>
+    <link rel="stylesheet" href="./styles/style-profe.css">
 </head>
-<body class="custom-body">
+<body>
     <header>
         <a href="#">
             <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
@@ -16,47 +16,28 @@
             <a href="perfil-profe.html" id="perfil-nav">Mi perfil</a>
         </div>
     </header>
-    
-    <main class="main-prof">
-        <div class="container-prof">
-            
-            <div class="contenttt">
-               <div class="info-container">  
-                    
-                   <div class="mi-bloque"  >
-                        <div class="classroom-image-profe">
-                            <img src="./img/uca-aula.jpg" alt="Aula Magno">
-                            <div class="classroom-image">
-                            </div>
-                        </div>
-                    </div>   
-                    
-                   <div class="end">
-                        <div class="materia">Materia:</div>
-                        <div class="tiempo">Tiempo Restante: <span id="tiempo-restante">00 : 00</span></div>
-                    </div>
-                </div>
+    <main>
+        <section class="reservas">
+            <div class="reserva">
+                <h2>Clase: Álgebra</h2>
+                <p>Comisión: AM</p>
+                <p>Horario: Lunes, 10:00 - 12:00</p>
+                <p>Aula: San Jose 101</p>
             </div>
-            <div id="selector-horas">
-                <label for="horas">Selecciona horas para alargar reserva:</label>
-                <select id="horas">
-                    <option value="1">1 hora</option>
-                    <option value="2">2 hora</option>
-                    <option value="3">3 hora</option>
-                    <option value="4">4 hora</option>
-                    <option value="5">5 hora</option>
-                </select>
-                <button id="confirmar-alargue">Confirmar Alargue</button>
+            <div class="reserva">
+                <h2>Clase: Física I</h2>
+                <p>Comisión: BM</p>
+                <p>Horario: Miércoles, 14:00 - 16:00</p>
+                <p>Aula: Moro 202</p>
             </div>
-            <div class="botoness">
-                <button id="alargar-reserva" class="btn-prf">Alargar reserva</button>
-                <button id="cancelar-reserva" class="btn-prf">Cancelar reserva</button>
-                <button class="btm-prf" onclick="location.href='aulas-profe-reserva.html'">Reservar</button>
+            <div class="reserva">
+                <h2>Clase: Programación Web</h2>
+                <p>Comisión: CM</p>
+                <p>Horario: Viernes, 16:00 - 18:00</p>
+                <p>Aula: Magno 303</p>
             </div>
-            
-        </div>
+        </section>
     </main>
-    <script language="javascript" type="text/javascript" src="./script/profe-sel.js"></script>
 </body>
 </html>
 
