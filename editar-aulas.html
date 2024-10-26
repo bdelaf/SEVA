@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Aula</title>
+    <link rel="stylesheet" href="./styles/AAA-styles.css" />
+</head>
+<body>
+    <header>
+        <div class="left-section">
+            <a href="#">
+                <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+            </a>
+            <a href="inicio-admin.html" id="texto-nav">SEVA</a>
+        </div>
+        <div class="right-section">
+            <a href="perfil-admin.html" id="perfil-nav">Mi perfil</a>
+        </div>
+    </header>
+    <div class="container-editar-aula">
+        <h1>Editar Aula</h1>
+        <div class="form-content">
+            <div class="image-section">
+                <label>Foto del Aula:</label>
+                <div class="image-preview" id="image-preview">
+                    <img id="image-preview-placeholder" src="./img/img-placeholder.jpg" alt="Imagen del aula" />
+                </div>
+                <input type="file" id="foto-aula" name="foto-aula" accept="image/*" />
+            </div>
+            <div class="line-separator"></div>
+            <form id="form-editar-aula">
+                <div class="form-group">
+                    <label for="nombre-aula">Nombre del Aula:</label>
+                    <input type="text" id="nombre-aula" name="nombre-aula" required />
+                </div>
+                <div class="form-group">
+                    <label for="capacidad-aula">Capacidad:</label>
+                    <input type="number" id="capacidad-aula" name="capacidad-aula" required />
+                </div>
+                <div class="form-group">
+                    <label for="proyector-aula">Proyector:</label>
+                    <select id="proyector-aula" name="proyector-aula" required>
+                        <option value="yes">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="computadoras-aula">Computadoras:</label>
+                    <select id="computadoras-aula" name="computadoras-aula" required>
+                        <option value="yes">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="save-button">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script/editar-aulas-admin.js"></script>
+</body>
+</html>
