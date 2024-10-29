@@ -193,7 +193,7 @@ form {
   align-content: center;
 }
 
-main {
+.materias-a-p, .reseñas-main {
   display: flex;
   width: 80%;
   margin-top: 100px;
@@ -1248,14 +1248,6 @@ button:hover {
   }
 }
 
-.edit-aula, .elim-com {
-  cursor: pointer;
-}
-
-.edit-aula:hover, .elim-com:hover {
-  text-decoration: underline;
-}
-
 /* CSS específico para la pantalla de materias */
 .container-mat {
   display: flex;
@@ -2035,3 +2027,154 @@ select {
     display: none;
   }
 }
+
+/* Estilos Generales */
+body.materias-admin-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #8d5151;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-materias-alumno {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: 20px; /* Añadir margen superior para separar del header */
+}
+
+/* Container de Materias */
+.container-materias-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.container-materias-admin h1 {
+  font-size: 2rem;
+  color: #003366;
+}
+
+/* Tabla de Materias */
+.tabla-materias {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+  color: white;
+  overflow-x: auto;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow:  0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-materias thead tr {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tabla-materias th,
+.tabla-materias td {
+  padding: 12px 15px;
+}
+
+.tabla-materias tbody tr {
+  background-color: #002244;
+  border-bottom: 1px solid #dddddd;
+}
+
+.tabla-materias tbody tr:nth-of-type(even) {
+  background-color: #003366;
+}
+
+.tabla-materias tbody tr:last-of-type {
+  border-bottom: 2px solid #003366;
+}
+
+.tabla-materias td a {
+  color: #f0f0f0; /* Color del texto para que sea más visible */
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px; /* Ajustar el padding para que sean más rectangulares */
+  background-color: #00bbd446; /* Color de fondo para que coincida con el tema */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Interacción de los botones */
+.tabla-materias td a:hover {
+  opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+  background-color: #00bbd479; /* Color al pasar el mouse */
+}
+
+/* Botón Agregar Materia */
+.edit-link {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  border: none; /* Sin borde */
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.edit-link:hover {
+  background-color: #002244; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .tabla-materias {
+    font-size: 0.8em;
+  }
+
+  .container-materias-admin h1 {
+    font-size: 1.5rem;
+  }
+
+  .tabla-materias th,
+  .tabla-materias td {
+    padding: 8px 10px;
+  }
+
+  .edit-link {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-materias-admin {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .container-materias-admin h1 {
+    font-size: 1.2rem;
+  }
+
+  .tabla-materias th,
+  .tabla-materias td {
+    padding: 6px 8px;
+  }
+
+  .edit-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .tabla-materias {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
