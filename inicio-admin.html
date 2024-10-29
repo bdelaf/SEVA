@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEVA</title>
     <link rel="stylesheet" href="./styles/AAA-styles.css" />
-  </head>
-  <body>
+</head>
+<body class="home-body-admin">
     <header>
-      <div class="left-section">
-        <a href="#">
-          <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
-        </a>
-        <a href="inicio-admin.html" id="texto-nav">SEVA</a>
-      </div>
-      <div class="right-section">
-        <a href="perfil-admin.html" id="perfil-nav">Mi perfil</a>
-      </div>
+        <div class="left-section">
+            <a href="#">
+                <img src="./img/uca-logo.png" alt="seva-img" id="seva-img" />
+            </a>
+            <a href="inicio-admin.html" id="texto-nav">SEVA</a>
+        </div>
+        <div class="right-section">
+            <a href="perfil-admin.html" id="perfil-nav">Mi perfil</a>
+        </div>
     </header>
-    <div class="main-content">
-      <h1 class="txt-bienv">Bienvenido al SEVA</h1>
-      <p class="instruction-text">
-        Elije entre las opciones: Aula (cambiar,agregar) Materias
-        (cambiar,agregar) Comentarios (Eliminar,verificar)
-      </p>
-      <div class="button-container">
-        <button class="btn-home" onclick="location.href='materias-admin.html'">Materias</button>
-        <button class="btn-home" onclick="location.href='aulas-admin.html'">Aulas</button>
-        <button class="btn-home" onclick="location.href='reseñas-admin.html'">Comentarios</button>
-        <button class="btn-home" onclick="location.href='usuarios-admin.html'">Usuarios</button>
-      </div>
+    <div class="main-content-home">
+        <h1 class="txt-bienv">Bienvenido al SEVA</h1>
+        <div class="dashboard">
+            <div class="card">
+                <h2>Materias</h2>
+                <p>Administra las materias</p>
+                <button class="btn-dashboard" onclick="location.href='materias-admin.html'">Ver Materias</button>
+            </div>
+            <div class="card">
+                <h2>Usuarios</h2>
+                <p>Crear usuarios</p>
+                <button class="btn-dashboard" onclick="location.href='usuarios-admin.html'">Ver Usuarios</button>
+            </div>
+            <div class="card">
+                <h2>Aulas Disponibles</h2>
+                <p>Adminstra las aulas</p>
+                <button class="btn-dashboard" onclick="location.href='aulas-admin.html'">Ver Aulas</button>
+            </div>
+            <div class="card">
+                <h2>Comentarios</h2>
+                <p>Verifica comentarios</p>
+                <button class="btn-dashboard" onclick="location.href='reseñas-admin.html'">Ver Comentarios</button>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
 </html>
+

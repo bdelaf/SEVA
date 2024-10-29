@@ -2177,4 +2177,245 @@ body.materias-admin-body {
   }
 }
 
+body.home-body {
+  background: linear-gradient(135deg, #003366, #00bcd4);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 220vh; /* Mantiene el alto mínimo en pantallas grandes */
+  font-size: 16px; /* Tamaño de fuente base */
+}
 
+.main-content-home {
+  max-width: 1400px; /* Ancho máximo */
+  padding: 20px;
+  margin: 0 auto; /* Centra el contenido */
+  flex-grow: 1; /* Permite que el contenido principal crezca */
+  display: flex; /* Para mantener el contenido centrado */
+  flex-direction: column; /* Contenido apilado verticalmente */
+  padding-top: 150px;
+}
+
+/* Estilo del Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Columnas adaptativas */
+  gap: 20px; /* Espacio entre las tarjetas */
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Tarjetas del Dashboard */
+.card {
+  background-color: #003366; /* Color de fondo */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interno */
+  text-align: center; /* Centra el texto */
+  transition: transform 0.2s; /* Efecto de transición */
+  display: flex; /* Cambiado a flex */
+  flex-direction: column; /* Alineación en columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: space-between; /* Espaciado entre el contenido */
+  min-height: 180px; /* Establece una altura mínima */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para mejorar la apariencia */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efecto al pasar el mouse */
+}
+
+/* Botones del Dashboard */
+.btn-dashboard {
+  background-color: #00bcd4; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s; /* Efecto de transición */
+  margin-top: auto; /* Alinea el botón al fondo de la tarjeta */
+}
+
+.btn-dashboard:hover {
+  background-color: #007c92; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1200px) {
+  body.home-body {
+      font-size: 15px; /* Ajuste del tamaño de fuente */
+  }
+
+  .main-content-home {
+      height: 300vh;
+  }
+
+  .dashboard {
+      gap: 15px; /* Menos espacio entre las tarjetas */
+  }
+
+  .card {
+      padding: 18px; /* Espaciado interno de tarjetas reducido */
+  }
+}
+
+@media (max-width: 992px) {
+  body.home-body {
+      font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  .main-content-home {
+      padding: 10px; /* Espaciado interno aún más reducido */
+  }
+
+  .dashboard {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta el ancho mínimo de las columnas */
+  }
+
+  .card {
+      min-height: 160px; /* Altura mínima de las tarjetas más pequeña */
+      padding: 15px; /* Ajusta el padding de las tarjetas */
+  }
+}
+
+@media (max-width: 768px) {
+  body.home-body {
+      min-height: 100vh; /* Cambiado a 100vh para pantallas pequeñas */
+      font-size: 13px; /* Tamaño de fuente más pequeño */
+  }
+
+  .dashboard {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+      gap: 10px; /* Espacio reducido entre tarjetas */
+  }
+
+  .card {
+      padding: 10px; /* Ajusta el padding de las tarjetas */
+      min-height: 140px; /* Altura mínima de las tarjetas más pequeña */
+  }
+}
+
+@media (max-width: 576px) {
+  body.home-body {
+      font-size: 12px; /* Tamaño de fuente más pequeño */
+  }
+
+  .main-content-home {
+      padding: 5px; /* Espaciado interno mínimo */
+  }
+
+  .dashboard {
+      gap: 5px; /* Espacio mínimo entre tarjetas */
+  }
+
+  .card {
+      padding: 8px; /* Ajusta el padding de las tarjetas */
+      min-height: 120px; /* Altura mínima de las tarjetas más pequeña */
+  }
+}
+
+
+.historia-section {
+  margin: 40px 0; /* Espacio alrededor de la sección */
+  background-color: #003366; /* Color de fondo */
+  color: #f0f0f0; /* Color del texto */
+  padding: 40px 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+.historia-container {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centra la sección */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+}
+
+.historia-section h2 {
+  color: #00bcd4; /* Color del título */
+  text-align: center; /* Centra el título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.historia-section p {
+  margin-bottom: 15px; /* Espacio entre párrafos */
+  line-height: 1.6; /* Aumenta la altura de línea para mejor legibilidad */
+  text-align: justify; /* Justifica el texto */
+}
+
+.img-historia {
+  display: block; /* Asegura que la imagen sea un bloque */
+  margin: 20px auto; /* Espacio alrededor de la imagen */
+  max-width: 100%; /* Ajusta la imagen al contenedor */
+  border-radius: 5px; /* Bordes redondeados para la imagen */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+}
+
+@media (max-width: 1200px) {
+  .historia-section {
+      padding: 30px 15px; /* Espaciado interno reducido */
+  }
+
+  .historia-section h2 {
+      font-size: 1.8rem; /* Ajustar tamaño de fuente para h2 */
+  }
+
+  .historia-section p {
+      font-size: 1.1rem; /* Ajustar tamaño de fuente para párrafos */
+  }
+}
+
+@media (max-width: 992px) {
+  .historia-section {
+      padding: 25px 10px; /* Espaciado interno reducido aún más */
+  }
+
+  .historia-section h2 {
+      font-size: 1.6rem; /* Tamaño de fuente más pequeño para h2 */
+  }
+
+  .historia-section p {
+      font-size: 1rem; /* Tamaño de fuente más pequeño para párrafos */
+  }
+}
+
+@media (max-width: 768px) {
+  .historia-section {
+      padding: 20px 5px; /* Espaciado interno mínimo */
+  }
+
+  .historia-section h2 {
+      font-size: 1.4rem; /* Tamaño de fuente aún más pequeño para h2 */
+  }
+
+  .historia-section p {
+      font-size: 0.9rem; /* Tamaño de fuente aún más pequeño para párrafos */
+  }
+}
+
+@media (max-width: 576px) {
+  .historia-section {
+      padding: 15px 5px; /* Espaciado interno muy pequeño */
+  }
+
+  .historia-section h2 {
+      font-size: 1.2rem; /* Tamaño de fuente más pequeño para h2 */
+  }
+
+  .historia-section p {
+      font-size: 0.8rem; /* Tamaño de fuente más pequeño para párrafos */
+  }
+
+  .img-historia {
+      margin: 10px auto; /* Ajustar el margen alrededor de la imagen */
+  }
+}
+
+.home-body-admin{
+  background: linear-gradient(135deg, #003366, #00bcd4);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+}
