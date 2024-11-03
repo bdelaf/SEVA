@@ -39,8 +39,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: url(../img/img-fondo.jpg);
+}
+
+.aulas-admin-body{
+  min-height: 100vh;
+}
+
+.container-materias-alprof{
+  height: 100vh;
 }
 
 a {
@@ -2030,13 +2037,10 @@ select {
 
 /* Estilos Generales */
 body.materias-admin-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #8d5151;
   color: #f0f0f0;
   display: flex;
   justify-content: center;
+  min-height: 130vh;
 }
 
 .main-materias-alumno {
