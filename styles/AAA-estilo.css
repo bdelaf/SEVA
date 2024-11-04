@@ -200,7 +200,7 @@ h2 {
 
 @media screen and (max-height: 932px) {
   .container-inscribirse{
-    height: 120vh;
+    height: 100vh;
   }
   p,  h3{
     font-size: 14px;
