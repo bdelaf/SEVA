@@ -42,7 +42,7 @@ body {
   background: url(../img/img-fondo.jpg);
 }
 
-.aulas-admin-body{
+.aulas-admin-body,  .editar-aula-body, .reseñas-admin-body{
   min-height: 100vh;
 }
 
