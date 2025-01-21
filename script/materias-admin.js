@@ -1,120 +1,97 @@
-document.addEventListener("DOMContentLoaded", inicio);
+document.addEventListener("DOMContentLoaded", function () {
+    // Referencias a elementos importantes
+    var addLink = document.querySelector(".edit-link");
+    var tableBody = document.querySelector(".tabla-materias tbody");
 
-function inicio() {
-    var eliminarLinks = document.querySelectorAll(".aula a:not(.edit-aula)");
+    // Agregar evento al botón "Agregar Materia"
+    addLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        agregarMateria();
+    });
+
+    // Agregar funcionalidad básica inicial a los botones existentes
     var editLinks = document.querySelectorAll(".edit-aula");
-    var addLinks = document.querySelectorAll(".edit-link");
+    var deleteLinks = document.querySelectorAll(".elim-aula");
 
-    asignarEventosEliminar(eliminarLinks);
-    asignarEventosEdicion(editLinks);
-    asignarEventosAgregar(addLinks);
-}
-
-function asignarEventosEliminar(links) {
-    for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", eliminarMateria);
+    for (var i = 0; i < editLinks.length; i++) {
+        editLinks[i].addEventListener("click", function (event) {
+            event.preventDefault();
+            editarMateria(event.target);
+        });
     }
-}
 
-function eliminarMateria(event) {
-    event.preventDefault();
-    var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta materia?");
-    if (confirmacion) {
-        var materia = event.target.parentElement;
-        materia.remove();
-    } else {
-        alert("Acción cancelada");
+    for (var i = 0; i < deleteLinks.length; i++) {
+        deleteLinks[i].addEventListener("click", function (event) {
+            event.preventDefault();
+            eliminarMateria(event.target);
+        });
     }
-}
 
-function asignarEventosEdicion(links) {
-    for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", habilitarEdicion);
+    // Función para agregar una nueva materia
+    function agregarMateria() {
+        var nuevaMateria = prompt("Ingrese el nombre de la nueva materia:");
+        if (nuevaMateria && nuevaMateria.trim() !== "") {
+            // Crear nueva fila
+            var nuevaFila = document.createElement("tr");
+
+            // Crear celda con el nombre de la materia
+            var celdaMateria = document.createElement("td");
+            celdaMateria.textContent = nuevaMateria;
+            nuevaFila.appendChild(celdaMateria);
+
+            // Crear celda con las acciones (Editar y Eliminar)
+            var celdaAcciones = document.createElement("td");
+            var editLink = document.createElement("a");
+            editLink.href = "#";
+            editLink.textContent = "Editar";
+            editLink.className = "edit-aula";
+            editLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                editarMateria(event.target);
+            });
+
+            var deleteLink = document.createElement("a");
+            deleteLink.href = "#";
+            deleteLink.textContent = "Eliminar";
+            deleteLink.className = "elim-aula";
+            deleteLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                eliminarMateria(event.target);
+            });
+
+            celdaAcciones.appendChild(editLink);
+            celdaAcciones.appendChild(document.createTextNode(" "));
+            celdaAcciones.appendChild(deleteLink);
+
+            nuevaFila.appendChild(celdaAcciones);
+
+            // Agregar la fila a la tabla
+            tableBody.appendChild(nuevaFila);
+        } else {
+            alert("Debe ingresar un nombre válido para la materia.");
+        }
     }
-}
 
-function habilitarEdicion(event) {
-    event.preventDefault();
-    var editLink = event.target;
-    var materia = editLink.previousElementSibling;
-    var materiaTexto = materia.textContent;
+    // Función para editar una materia
+    function editarMateria(link) {
+        var fila = link.parentNode.parentNode;
+        var celdaMateria = fila.children[0];
+        var materiaActual = celdaMateria.textContent;
 
-    var input = document.createElement("input");
-    input.type = "text";
-    input.value = materiaTexto;
-    materia.innerHTML = "";  
-    materia.appendChild(input);
-
-    editLink.textContent = "Guardar";
-    editLink.classList.add("save-link");
-
-    editLink.removeEventListener("click", habilitarEdicion);
-    editLink.addEventListener("click", functionGuardarMateria);
-}
-
-function functionGuardarMateria(event) {
-    event.preventDefault();
-    var editLink = event.target;
-    var materia = editLink.previousElementSibling;
-    var input = materia.querySelector("input");
-
-    if (input && input.value.trim() !== "") {
-        materia.textContent = input.value;
-
-        editLink.textContent = "Editar";
-        editLink.classList.remove("save-link");
-
-        editLink.removeEventListener("click", functionGuardarMateria);
-        editLink.addEventListener("click", habilitarEdicion);
-    } else {
-        alert("El nombre de la materia no puede estar vacío.");
+        var nuevaMateria = prompt("Editar nombre de la materia:", materiaActual);
+        if (nuevaMateria && nuevaMateria.trim() !== "") {
+            celdaMateria.textContent = nuevaMateria;
+        } else {
+            alert("Debe ingresar un nombre válido.");
+        }
     }
-}
 
-function asignarEventosAgregar(links) {
-    for (var i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", agregarMateria);
+    // Función para eliminar una materia
+    function eliminarMateria(link) {
+        var fila = link.parentNode.parentNode;
+        var confirmar = confirm("¿Está seguro de que desea eliminar esta materia?");
+        if (confirmar) {
+            fila.remove();
+        }
     }
-}
-
-function agregarMateria(event) {
-    event.preventDefault();
-    var columna = event.target.parentElement;
-    var nuevaMateria = document.createElement("div");
-    nuevaMateria.classList.add("aula");
-
-    var input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = "Nombre de la materia";
-
-    var guardarMateriaLink = document.createElement("a");
-    guardarMateriaLink.href = "";
-    guardarMateriaLink.classList.add("save-link");
-    guardarMateriaLink.textContent = "Guardar";
-
-    nuevaMateria.appendChild(input);
-    nuevaMateria.appendChild(guardarMateriaLink);
-    columna.insertBefore(nuevaMateria, event.target);
-
-    guardarMateriaLink.addEventListener("click", functionGuardarNuevaMateria);
-}
-
-function functionGuardarNuevaMateria(event) {
-    event.preventDefault();
-    var guardarMateriaLink = event.target;
-    var nuevaMateria = guardarMateriaLink.parentElement;
-    var input = nuevaMateria.querySelector("input");
-    var materiaTexto = input.value;
-
-    if (materiaTexto.trim() !== "") {
-        nuevaMateria.innerHTML = '<p>' + materiaTexto + '</p><a href="" class="edit-aula">Editar</a> <a href="#">Eliminar</a>';
-
-        var newEditMateria = nuevaMateria.querySelector(".edit-aula");
-        var newEliminarMateria = nuevaMateria.querySelector("a:not(.edit-aula)");
-
-        asignarEventosEdicion([newEditMateria]);
-        asignarEventosEliminar([newEliminarMateria]);
-    } else {
-        alert("El nombre de la materia no puede estar vacío.");
-    }
-}
+});
