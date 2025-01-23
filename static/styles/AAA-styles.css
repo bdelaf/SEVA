@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../img/img-fondo.jpg);
+  background: url(/static/img/img-fondo.jpg);
 }
 
 .aulas-admin-body,  .editar-aula-body, .reseñas-admin-body{
